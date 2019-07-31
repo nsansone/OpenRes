@@ -1,3 +1,4 @@
+
 import React from 'react';
 import HomepageContainer from './homepage/homepage_container';
 import SignupFormContainer from './session_form/signup_form_container';
@@ -15,7 +16,19 @@ const App = () => (
             <HomepageContainer />
 
         </header>
-        <p className="home-search-container">Find your table for any occasion</p>
+        <span className="home-search-container">
+            <div className="splash-img"></div>
+            <p>Find your table for any occasion</p>
+        </span>
+        <hr/>
+        <h1>Popular restaurants in Manhattan</h1>
+        <hr/>
+        <span className="pop-rests">
+            
+        </span>
+        <h1>Top Cuisines near Manhattan</h1>
+        <hr/>
+
 
         {/* <AuthRoute path="/signup" component={SignupFormContainer}/>
         <AuthRoute path="/login" component={LogInFormContainer}/> */}

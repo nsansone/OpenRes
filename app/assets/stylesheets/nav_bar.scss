@@ -1,18 +1,4 @@
-// .main-header{
-//     // display: flex;
-//     font-family: sans-serif;
-//     // justify-content: space-between;
-//     // align-items: center;
-//     height: 30px;
-//     margin: 12px;
-//     width: 100%;
-//     display: flex;
 
-//     align-items: center;
-//     a {
-//         text-decoration: none;
-//     }   
-// }
 
 .login-button {
     padding: 0 0.8rem 0 0.2rem;
@@ -35,35 +21,39 @@
     font-size: 18pt;
     font-weight: 550;
     padding-left: 10px;
+    display: flex;
+    align-items: center;
 
     
 }
 
-.home-search-container {
-    width: 100%;
-    height: 416px;
-    display: flex;
-    font-family: BrandonText, "Helvetica Neue",;
-    font-size: 48px;
-    font-weight: 700;
+// .home-search-container {
+//     width: 100%;
+//     height: 416px;
+//     display: flex;
+//     font-family: BrandonText, "Helvetica Neue",;
+//     font-size: 48px;
+//     font-weight: 700;
 
 
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(https://resizer.otstatic.com/v2/photos/wide-huge/25160669.jpg);
-    background-position: 100%;
-    background-size: cover;
-    position: static;
-    opacity: 1;
-    color: white;
-    align-items: center;
-    justify-content: center;
+//     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(https://resizer.otstatic.com/v2/photos/wide-huge/25160669.jpg);
+//     background-position: 100%;
+//     background-size: cover;
+//     position: static;
+//     opacity: 1;
+//     color: white;
+//     align-items: center;
+//     justify-content: center;
 
-}
+// }
 
 .nav-bar {
     display: flex;
     justify-content: space-between;
     font-family: sans-serif;
     align-items: center;
+    padding: 10px;
+    
    
 
 
@@ -72,9 +62,25 @@
 .nav-links {
     display: flex;
     overflow: auto;
+    // padding-left: 5px;
+    // padding-right: 5px;
+    h3 {
+        padding-right: 10px;
+    }
 }
+.full-logo {
+    display: flex;
+}
+.logo-cont {
+    width: 50px;
+    height: 35px;
+}
+.logo {
+    width: 100%;
+    height: 100%;
+    // background-color: pink;
+    background: url('opentable-logo2.png');
+    background-position: 100%;
+    background-size: cover;
 
-.login-signup {
-    padding-top: 10px;
-    padding-bottom: 10px;
 }
