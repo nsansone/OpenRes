@@ -27,25 +27,6 @@
     
 }
 
-// .home-search-container {
-//     width: 100%;
-//     height: 416px;
-//     display: flex;
-//     font-family: BrandonText, "Helvetica Neue",;
-//     font-size: 48px;
-//     font-weight: 700;
-
-
-//     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(https://resizer.otstatic.com/v2/photos/wide-huge/25160669.jpg);
-//     background-position: 100%;
-//     background-size: cover;
-//     position: static;
-//     opacity: 1;
-//     color: white;
-//     align-items: center;
-//     justify-content: center;
-
-// }
 
 .nav-bar {
     display: flex;
@@ -53,6 +34,7 @@
     font-family: sans-serif;
     align-items: center;
     padding: 10px;
+    position: relative;
     
    
 
@@ -61,12 +43,14 @@
 
 .nav-links {
     display: flex;
-    overflow: auto;
-    // padding-left: 5px;
-    // padding-right: 5px;
+    align-items: center;
+    overflow: visible;
+    position: relative;
     h3 {
+
         padding-right: 10px;
     }
+
 }
 .full-logo {
     display: flex;
@@ -78,7 +62,6 @@
 .logo {
     width: 100%;
     height: 100%;
-    // background-color: pink;
     background: url('opentable-logo2.png');
     background-position: 100%;
     background-size: cover;
@@ -86,24 +69,9 @@
 }
 
 i {
-    width: 30px !important;
-    height: 30px !important;
+  
+
 
 }
 
-// .gear-dropdown {
-//     position: absolute;
-//     top: 30px;
-//     right: 0;
-//     background-color: #fff;
-//     border: 1px solid $light-gray;
-//     border-radius: 3px;
-//     padding: 10px;
-//     width: 225px;
-//     z-index: 1;
-//     color: $dark-gray;
-//     font-family: $sans-serif;
-//     text-align: left;
-//     box-shadow: -1px 4px 6px 1px rgba(0,0,0,0.09);
-//     font-weight: initial;
-// }
+

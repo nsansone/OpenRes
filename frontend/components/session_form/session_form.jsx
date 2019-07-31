@@ -2,6 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 
 
+
 class SignupForm extends React.Component {
     constructor(props) {
         super(props);
@@ -39,14 +40,15 @@ class SignupForm extends React.Component {
         return (
             <div className="modal-screen">
                 <form onSubmit={this.handleSubmit} className="modal-form">
-
-                    {this.renderErrors()}
                     {this.props.formType === 'login' &&
                         <>
                             <h1>
                                 Please sign in
                             </h1>
                             <hr/>
+                            <div className="auth-errors">
+                                {this.renderErrors()}
+                            </div>
                         </>
                     } 
                     {this.props.formType === 'signup' &&
@@ -55,6 +57,9 @@ class SignupForm extends React.Component {
                             Welcome to OpenRes!
                         </h1>
                         <hr/>
+                        <div className="auth-errors">
+                            {this.renderErrors()}
+                        </div>
                         <div className="input"> 
                             <input placeholder="First Name *" className="signup-input" type="text" value={this.state.fname} onChange={this.update('fname')} />
                         </div>
