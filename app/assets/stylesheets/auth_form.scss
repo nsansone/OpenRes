@@ -1,0 +1,144 @@
+// .modal {
+//     display: none;
+// }
+
+// // .modal-is-open {
+// //   display: block;
+// // }
+
+// .modal-screen {
+//   display: block;
+//   position: fixed;
+//   background: rgba(0, 0, 0, 0.4);
+//   top: 0;
+//   bottom: 0;
+//   left: 0;
+//   right: 0;
+//   z-index: 2;
+// }
+
+.modal-form {
+  border-radius: 0 !important;
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  display: block;
+  font-size: 16px;
+  margin-left: -220px;
+  height: 350px;
+  width: 418px;
+  padding: 20px;
+  background: #fff;
+  z-index: 3;
+  font-family: BrandonText, "Helvetica Neue";
+}
+
+
+// // .modal-close {
+// //   position: absolute;
+// //   top: 10px;
+// //   right: 20px;
+// //   font-size: 36px;
+// //   line-height: 1;
+// //   cursor: pointer;
+// // }
+
+
+
+.modal-form > h1 {
+  font-size: 24px;
+  line-height: 1;
+  font-weight: 300;
+}
+
+.input {
+  border-radius: 3px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  
+  font-size: 14px;
+  font-family: BrandonText, "Helvetica Neue";
+  font-stretch: 100%;
+  font-weight: 500;
+  margin-bottom: 8px;
+  padding: 16px;
+  width: 362px;
+  text-size-adjust: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  color: grey;
+
+}
+
+.session-submit {
+  font-size: 19.2px;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  font-family: BrandonText, "Helvetica Neue";
+  font-weight: 300;
+  margin: 0 0 1rem;
+  position: relative;
+  text-align: center;
+  border-radius: 3px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #da3743;
+  color: white;
+  padding: 0.9375rem 1.75rem 0.9373rem;
+  width: 396px;
+
+
+}
+
+hr {
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  clear: both;
+  margin: 0.5rem 0;
+  height: 0;
+}
+
+.forgot {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 396px;
+  padding: 6px;
+  text-align: right;
+
+  a {
+      color: #237B98;
+      text-decoration: none;
+  }
+
+}
+
+.new-account {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 396px;
+  padding: 6px;
+  a {
+    color: red;
+    text-decoration: none;
+  }
+}
+
+
+.modal-background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 10;
+}
+
+.modal-child {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
