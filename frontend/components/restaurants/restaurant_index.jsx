@@ -11,7 +11,17 @@ class RestaurantIndex extends React.Component {
         const restaurants = this.props.restaurants.map(restaurant => {
             return (
                 <RestaurantIndexItem key={restaurant.id} restaurant={restaurant} />
-            )
-        })
+            );
+        });
+
+        return (
+            <div>
+                <ul>
+                    {restaurants}
+                </ul>
+            </div>
+        );
     }
 }
+
+export default RestaurantIndex;

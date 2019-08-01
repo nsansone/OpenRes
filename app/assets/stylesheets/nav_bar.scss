@@ -17,15 +17,6 @@
     background-color: #1c627a;
 }
 
-.app-name {
-    font-size: 18pt;
-    font-weight: 550;
-    padding-left: 10px;
-    display: flex;
-    align-items: center;
-
-    
-}
 
 
 .nav-bar {
@@ -42,33 +33,32 @@
     align-items: center;
     overflow: visible;
     position: relative;
-    h3 {
-
+    h3 {  
         padding-right: 10px;
     }
-
+    
 }
 .full-logo {
-    display: block;
+    display: flex;
+    max-width: 30px;
+ 
+
 }
-.logo-cont {
-    width: 50px;
-    height: 35px;
-    display: block;
-}
+
 .logo {
     width: 100%;
-    height: 100%;
+    height: auto;  
+}
+.app-name {
+    font-size: 18pt;
+    font-weight: 550;
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
 
-    background-position: 100%;
-    background-size: cover;
-
+    
 }
 
-i {
-  
 
-
-}
 
 

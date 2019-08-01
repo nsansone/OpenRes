@@ -28,32 +28,19 @@ class Navbar extends React.Component {
 
 
     render(){
-    const sessionLinks = () => (
-        <nav className="nav-bar">
-            <span className="full-logo">
-                <div className="logo-cont">
-                    <img src={window.logo}/>      
-                </div>
-                <h1 className="app-name" >OpenRes</h1>
-            </span>
-            <ul className="nav-links"> 
-                <button className="signup-button" onClick={this.openModalFor('signup')}>Sign up</button>  
-                <button className="login-button" onClick={this.openModalFor('login')}>Sign in</button>     
+    
+        const sessionLinks = () => (
+            <ul className="nav-links">
+                <button className="signup-button" onClick={this.openModalFor('signup')}>Sign up</button>
+                <button className="login-button" onClick={this.openModalFor('login')}>Sign in</button>
             </ul> 
-        </nav>
-    );
-    const greeting = () => (
-        <nav className="nav-bar">
-            <span className="full-logo">
-                <div className="logo-cont">
-                    <div className="logo"></div>
-                </div>
-                <h1 className="app-name" >OpenRes</h1>
-            </span>
+        );
+ 
+        const greeting = () => (
             <span className="nav-links">
                 <h3 className="header-name">Hi, {this.props.currentUser.fname}</h3>
                 <ul id='dropdown'  className={this.state.dropdown}>
-                <span className="li-cont">
+                    <span className="li-cont">
                         <li className="drop-list-item">
                             My Profile
                         </li>
@@ -70,9 +57,17 @@ class Navbar extends React.Component {
                 </ul>
                 <i className="fa fa-chevron-down" onClick={this.toggleDropdown}></i>
             </span>
-        </nav>
-    );
-    return this.props.currentUser ? greeting() : sessionLinks();
+
+        );
+        return( 
+            <nav className="nav-bar">
+                <span className="full-logo">
+                    <img className="logo" src={window.logo} />
+                    <h1 className="app-name" >OpenRes</h1>
+                </span>
+                {this.props.currentUser ? greeting() : sessionLinks()}
+            </nav>
+        );
     }
 };
 

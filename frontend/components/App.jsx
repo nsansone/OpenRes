@@ -7,6 +7,7 @@ import { Route, Redirect, Switch, Link, HashRouter } from 'react-router-dom';
 import { AuthRoute } from '../util/route_util';
 import Modal from './modal';
 import FindResSearch from './find_res_search/find_res_search';
+import RestaurantIndexContainer from './restaurants/restaurant_index_container';
 
 
 const App = () => (
@@ -19,7 +20,7 @@ const App = () => (
         </header>
         <FindResSearch />
 
-
+        <Route exact path="/" component={ RestaurantIndexContainer } />
 
         {/* <AuthRoute path="/signup" component={SignupFormContainer}/>
         <AuthRoute path="/login" component={LogInFormContainer}/> */}
