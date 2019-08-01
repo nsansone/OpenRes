@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const FindResSearch = () => {
 
@@ -22,7 +23,7 @@ const FindResSearch = () => {
                     <input placeholder="Manhattan" type="text"/>
                 </div>
                 <div className="res-search-submit">
-                    <input type="submit" value="Let's go"/>
+                    <Link className="res-search-submit"to="/restaurants">Let's go</Link>
                 </div>
 
             </form>

@@ -24,7 +24,7 @@
     justify-content: space-between;
     font-family: 'Josefin Sans', sans-serif;
     align-items: center;
-    padding: 10px;
+    padding: 5px;
     position: relative;
 }
 
@@ -40,7 +40,8 @@
 }
 .full-logo {
     display: flex;
-    max-width: 30px;
+    max-width: 50px;
+    max-height: 50px;
  
 
 }
@@ -52,7 +53,6 @@
 .app-name {
     font-size: 18pt;
     font-weight: 550;
-    padding-left: 10px;
     display: flex;
     align-items: center;
 

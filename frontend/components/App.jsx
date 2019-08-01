@@ -8,22 +8,22 @@ import { AuthRoute } from '../util/route_util';
 import Modal from './modal';
 import FindResSearch from './find_res_search/find_res_search';
 import RestaurantIndexContainer from './restaurants/restaurant_index_container';
+import RestaurantShowContainer from './restaurants/restaurant_show_container';
 
 
 const App = () => (
     <div>
         <Modal />
         <header className="main-header">
-            
             <NavbarContainer />
 
         </header>
-        <FindResSearch />
-
-        <Route exact path="/" component={ RestaurantIndexContainer } />
-
-        {/* <AuthRoute path="/signup" component={SignupFormContainer}/>
-        <AuthRoute path="/login" component={LogInFormContainer}/> */}
+        <Switch>
+            <Route exact path="/restaurants" component={ RestaurantIndexContainer } />
+            <Route path="/restaurants/:restaurantId" component={ RestaurantShowContainer } />
+            <Route exact path="/" component={ FindResSearch } />
+ 
+        </Switch>
 
     </div>
 );

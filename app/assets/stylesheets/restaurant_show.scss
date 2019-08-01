@@ -1,0 +1,104 @@
+.show-cont {
+    display: block;
+}
+
+.show-body {
+    display: flex;
+    
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -48px;
+    background-color: transparent;
+
+
+
+    aside {
+        width: 320px;
+        height: 500px;
+        display: block;
+        margin-left: 16px;
+        
+        border: 1px solid black;
+        background-color: white;
+        text-size-adjust: 100%;
+    
+    }
+
+    main {
+        width: 640px;
+        display: block;
+        margin-right: 16px;
+        border: 1px solid black;
+        background-color: white;
+    }
+}
+
+.rest-background {
+    height: 459px;
+    background: url('katz.jpeg');
+    background-size: cover;
+    background-position: center;
+    display: block;
+    position: relative;
+    z-index: -1 !important;
+    
+}
+
+
+.make-res {
+    width: 288px;
+    margin: 0px auto;
+    height: 300px;
+    box-shadow: 0 2px 8px rgba(153,153,153,.4);
+    h1 {
+        font-size: 21px;
+        font-family: 'Josefin Sans', sans-serif;
+        height: 47px;
+        text-align: center;
+        margin: 0px auto;
+    }
+    .new-res-detail {
+        font-size: 14px;
+        font-family:'Josefin Sans', sans-serif;
+        display: block;
+        height: 57px;
+        flex-basis: 50%;
+        flex-grow: 1;
+        flex-shrink: 1;
+        margin: 0px auto;
+    }
+    .new-res-detail-container {
+        display: flex;
+        align-items: space-around;
+        margin: 0px auto;
+    }
+    .res-search-submit {
+        margin: 0px auto;
+        display: block;
+            
+            input {
+                margin-bottom: 15px;
+                padding: 17px;
+                font-stretch: 100%;
+                text-size-adjust: 100%;
+                font-weight: 500;
+                border-radius: 4px;
+                font-size: 16px;
+                font-family: 'Josefin Sans', sans-serif;
+                color: white;
+                background-color: #DA3743;
+                width: 288px;
+                height: 100%;
+            }
+    }
+}
+
+.rest-detail {
+    h1 {
+        font-family: 'Josefin Sans', sans-serif;
+    
+    }
+}
+
+
