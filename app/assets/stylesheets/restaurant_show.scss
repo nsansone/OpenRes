@@ -24,11 +24,23 @@
     }
 
     main {
+        font-size: 15px;
+        font-family:'Josefin Sans', sans-serif;
         width: 640px;
         display: block;
         margin-right: 16px;
         background-color: white;
         border-radius: 3px;
+    
+        ul {
+            list-style: disc;
+            padding: 10px;
+            display: flex;
+            justify-content: space-evenly;
+            li:first-of-type {
+                list-style: none;
+            }
+        }
     }
 }
 
@@ -66,21 +78,58 @@
         // margin: 0px auto;
     }
     hr {
-        margin: 0px;
+        margin-top: 0px;
+        margin-bottom: 8px;
+
     }
-    .new-res-detail {
+    .res-cont {
         font-size: 14px;
         font-family:'Josefin Sans', sans-serif;
         display: block;
+        width: 288px;
+        height: 130px;
+        padding: 8px 0px 0px;
+        p {
+            display: block;
+            padding-top: 8px;
+            width: 50%;
+
+        }
+        .res-party-cont {
+            border-bottom: 1px solid lightgrey;
+        }
+        .res-party {
+            padding: 2px 7px;
+        }
+        select {
+            border-radius: 0px !important;
+            margin: 0px auto;
+            height: 35px;
+            width: 100%;
+            display: block;
+            background-color: white;
+        }
+    }
+    .new-res-detail {
+        display: block;
+        padding: 7px;
         height: 57px;
-        flex-basis: 50%;
-        flex-grow: 1;
-        flex-shrink: 1;
+        width: 50%;
+        // flex-grow: 1;
+        // flex-shrink: 1;
+        .res-date {
+
+            margin: 0px auto;
+            height: 35px !important;
+            display: block;
+            background-color: white;
+        }
         // margin: 0px auto;
     }
     .new-res-detail-container {
         display: flex;
         align-items: space-around;
+        border-bottom: 1px solid lightgrey;
         // margin: 0px auto;
     }
     .res-search-submit {
@@ -88,7 +137,7 @@
         display: block;
             
             input {
-                margin-bottom: 15px;
+                margin: 15px 0px;
                 padding: 17px;
                 font-stretch: 100%;
                 text-size-adjust: 100%;
@@ -111,13 +160,16 @@
     margin-bottom: 16px;
     margin-top: 32px !important;
     margin: 0px auto;
+    font-family: 'Josefin Sans', sans-serif;
     h1 {
         display: block;
         font-size: 50px;
         font-weight: 700px;
         color: #2D333F;
-        font-family: 'Josefin Sans', sans-serif;
-    
+    }
+    .rest-description {
+        line-height: 1.5;
+        margin-bottom: 30px;
     }
 }
 

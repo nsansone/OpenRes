@@ -13,6 +13,8 @@ const RestaurantDetail = ({ restaurant }) => {
             <li>{restaurant.website}</li>
             <li>{restaurant.phone}</li>
         </ul>
+        <hr />
+        <p className="rest-description">{restaurant.description}</p>
         <Link to="/restaurants">All Restaurants</Link>
     </div>
     );
