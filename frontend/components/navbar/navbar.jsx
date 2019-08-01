@@ -32,11 +32,11 @@ class Navbar extends React.Component {
         <nav className="nav-bar">
             <span className="full-logo">
                 <div className="logo-cont">
-                    <div className="logo"></div>
+                    <img src={window.logo}/>      
                 </div>
                 <h1 className="app-name" >OpenRes</h1>
             </span>
-            <ul className="nav-links">       
+            <ul className="nav-links"> 
                 <button className="signup-button" onClick={this.openModalFor('signup')}>Sign up</button>  
                 <button className="login-button" onClick={this.openModalFor('login')}>Sign in</button>     
             </ul> 

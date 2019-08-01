@@ -5,3 +5,25 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Restaurant.delete_all
+
+
+Restaurant.create!({
+    name: 'Russ & Daughters',
+    address: '179 E Houston St, New York, NY 10002',
+    phone: '(212) 475-4880',
+    website: 'shop.russanddaughters.com',
+    lat: 40.722616,
+    lng: -73.988296
+})
+
+Restaurant.create!({
+    name: "Katz\'s Delicatessen",
+    address: "205 E Houston St, New York, NY 10002",
+    phone: "(212) 254-2246",
+    website: "katzsdelicatessen.com",
+    lat: 40.722313,
+    lng: -73.987335
+})
+
