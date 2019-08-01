@@ -1,16 +1,19 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const RestaurantDetail = ({ restaurant }) => {
     
     return (
-    <div className="rest-detail">
+    <div className="rest-details">
 
             <h1>{restaurant.name}</h1>
+            <hr/>
         <ul>
             <li>{restaurant.address}</li>
             <li>{restaurant.website}</li>
             <li>{restaurant.phone}</li>
         </ul>
+        <Link to="/restaurants">All Restaurants</Link>
     </div>
     );
 };

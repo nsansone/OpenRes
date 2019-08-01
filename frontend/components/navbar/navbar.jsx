@@ -61,10 +61,12 @@ class Navbar extends React.Component {
         );
         return( 
             <nav className="nav-bar">
-                <span className="full-logo">
-                    <img className="logo" src={window.logo} />
-                    <h1 className="app-name" >OpenRes</h1>
-                </span>
+   
+                    <Link className="full-logo" to="/">
+                        <img className="logo" src={window.logo} />
+                      <h1 className="app-name" >OpenRes</h1>
+                    </Link>
+
                 {this.props.currentUser ? greeting() : sessionLinks()}
             </nav>
         );

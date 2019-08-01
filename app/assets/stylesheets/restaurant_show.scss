@@ -18,10 +18,8 @@
         height: 500px;
         display: block;
         margin-left: 16px;
-        
-        border: 1px solid black;
         background-color: white;
-        text-size-adjust: 100%;
+        border-radius: 3px;
     
     }
 
@@ -29,8 +27,8 @@
         width: 640px;
         display: block;
         margin-right: 16px;
-        border: 1px solid black;
         background-color: white;
+        border-radius: 3px;
     }
 }
 
@@ -45,18 +43,30 @@
     
 }
 
+.res-form-cont {
+    width: 320px;
+    height: 300px;
+     box-shadow: 0 2px 8px rgba(153,153,153,.4);
+}
+
 
 .make-res {
     width: 288px;
     margin: 0px auto;
     height: 300px;
-    box-shadow: 0 2px 8px rgba(153,153,153,.4);
+    
     h1 {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
         font-size: 21px;
         font-family: 'Josefin Sans', sans-serif;
-        height: 47px;
+        height: 48px;
         text-align: center;
-        margin: 0px auto;
+        // margin: 0px auto;
+    }
+    hr {
+        margin: 0px;
     }
     .new-res-detail {
         font-size: 14px;
@@ -66,15 +76,15 @@
         flex-basis: 50%;
         flex-grow: 1;
         flex-shrink: 1;
-        margin: 0px auto;
+        // margin: 0px auto;
     }
     .new-res-detail-container {
         display: flex;
         align-items: space-around;
-        margin: 0px auto;
+        // margin: 0px auto;
     }
     .res-search-submit {
-        margin: 0px auto;
+        // margin: 0px auto;
         display: block;
             
             input {
@@ -94,8 +104,18 @@
     }
 }
 
-.rest-detail {
+.rest-details {
+    width: 608px;
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-bottom: 16px;
+    margin-top: 32px !important;
+    margin: 0px auto;
     h1 {
+        display: block;
+        font-size: 50px;
+        font-weight: 700px;
+        color: #2D333F;
         font-family: 'Josefin Sans', sans-serif;
     
     }
