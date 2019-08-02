@@ -6,10 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Restaurant.delete_all
+Restaurant.destroy_all
 
 
-Restaurant.create!({
+russ = Restaurant.create!({
     name: 'Russ & Daughters',
     address: '179 E Houston St, New York, NY 10002',
     phone: '(212) 475-4880',
@@ -21,8 +21,12 @@ Restaurant.create!({
     Building a reputation on longevity alone is nothin’ to brag about, which is why we’ve built ours on quality. Now that’s somethin’ special. We only select the best cuts of beef for our corned beef, pastrami, brisket, and other fine foods. Our corned beef and pastrami is cured using a slower method, which best flavors the meat, without injecting chemicals, water, or other additives to speed the process.
     Our finished product can take up to a full 30 days to cure, while commercially prepared corned beef is often pressure-injected (or “pumped”) to cure in 36 hours. Yep, you read that right. 30 days vs. 36 hours. Now, which sounds like the better meat to you?'
 })
+file = open('https://s3.amazonaws.com/openres-aa-seeds/russ.jpeg')
 
-Restaurant.create!({
+russ.photo.attach(io: file, filename: 'russ.jpeg')
+
+
+katz = Restaurant.create!({
     name: "Katz\'s Delicatessen",
     address: "205 E Houston St, New York, NY 10002",
     phone: "(212) 254-2246",
@@ -32,4 +36,10 @@ Restaurant.create!({
     description: 'At Russ & Daughters Cafe, expert smoked salmon slicers work their craft in front of guests; an open kitchen provides an over-the-counter connection like one feels in the store;  a soda fountain bar beckons with homemade sodas, egg creams, shrubs, and superb cocktails; friendly staff proudly wear the iconic white Russ & Daughters lab coats; and 105 years of living history permeates throughout the entire space.
                     The timeless appeal of the Russ & Daughters Cafe makes it a perfect spot any time of day: whether it’s a for a light nosh, brunch, lunch, cocktails, dinner, or a special occasion. You will be part of the mishpocha (family) — whether you have been a regular in the shop for 70 years or if you are a first time visitor.'
 })
+
+file2 = open('https://s3.amazonaws.com/openres-aa-seeds/katz.jpg')
+
+katz.photo.attach(io: file2, filename: 'katz.jpg')
+
+
 

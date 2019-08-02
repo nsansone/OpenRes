@@ -48,10 +48,9 @@
 .index-img {
     width: 206px;
     height: 206px;
-    background: url('katz.jpeg');
-    background-size: cover;
+    object-fit: cover;
     background-position: center;
-    // z-index: 3;
+    
     border-radius: 4px;
 }
 .index-li {
@@ -91,7 +90,7 @@
         margin-right: 5px;
     }
     i {
-        color: #fdaf08;
+        color: #fdaf08;  
         padding: 1px;
     }
     p {

@@ -1,7 +1,7 @@
 import React from 'react';
 import RestaurantDetail from './restaurant_detail';
 import ResForm from './res_form';
-
+import RestaurantMap from '../restaurant_map/restaurant_map';
 
 class RestaurantShow extends React.Component {
     componentDidMount() {
@@ -23,8 +23,7 @@ class RestaurantShow extends React.Component {
 
         return (
             <div className="show-cont">
-                <div className="rest-background">
-                </div>
+                <img className="rest-background" src={restaurant.photoUrl} alt="" />
                 <div className="show-body">
                     <main>
                         <RestaurantDetail restaurant={restaurant} />
@@ -33,6 +32,7 @@ class RestaurantShow extends React.Component {
                         <div className="res-form-cont">
 
                             <ResForm />
+                            <RestaurantMap />
                         </div>
                     </aside>
                 </div>
