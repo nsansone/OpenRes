@@ -26,6 +26,9 @@ time, mark, audio, video, Link, select {
 	-webkit-box-shadow: none;
 	outline: none;
 
+	color: inherit;
+	font-family: inherit;
+
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 

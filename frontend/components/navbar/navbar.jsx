@@ -7,6 +7,7 @@ class Navbar extends React.Component {
         this.state = {dropdown: 'dropdown-hidden'}
         this.toggleDropdown = this.toggleDropdown.bind(this);
         this.openModalFor = this.openModalFor.bind(this);
+        this.handleClick = this.handleClick.bind(this);
 
 
     }
@@ -26,6 +27,20 @@ class Navbar extends React.Component {
         }
     }
 
+    componentWillMount() {
+        document.addEventListener('mousedown', this.handleClick, false)
+    }
+    componentWillUnmount() {
+        document.removeEventListener('mousedown', this.handleClick, false)
+    }
+
+    handleClick(e) {
+        if (this.dropdownRef && (this.dropdownRef.contains(e.target) || this.iconRef.contains(e.target))) {
+            return
+        }
+        this.setState({ dropdown: 'dropdown-hidden' })
+    }
+
 
     render(){
     
@@ -39,7 +54,7 @@ class Navbar extends React.Component {
         const greeting = () => (
             <span className="nav-links">
                 <h3 className="header-name">Hi, {this.props.currentUser.fname}</h3>
-                <ul id='dropdown'  className={this.state.dropdown}>
+                <ul ref={dropdownRef => this.dropdownRef = dropdownRef} id='dropdown'  className={this.state.dropdown}>
                     <span className="li-cont">
                         <li className="drop-list-item">
                             My Profile
@@ -55,7 +70,7 @@ class Navbar extends React.Component {
                         </li>
                     </span>
                 </ul>
-                <i className="fa fa-chevron-down" onClick={this.toggleDropdown}></i>
+                <i ref={iconRef => this.iconRef = iconRef} className="fa fa-chevron-down" onClick={this.toggleDropdown}></i>
             </span>
 
         );

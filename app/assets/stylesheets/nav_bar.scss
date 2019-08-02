@@ -29,12 +29,18 @@
 }
 
 .nav-links {
+    margin-right: 5px;
     display: flex;
     align-items: center;
     overflow: visible;
     position: relative;
     h3 {  
         padding-right: 10px;
+    }
+    i {
+        padding: 5px;
+        
+        cursor: pointer;
     }
     
 }
@@ -56,9 +62,7 @@
 }
 .app-name {
     display: flex;
-    align-items: center;
-
-    
+    align-items: center;    
 }
 
 
