@@ -10,7 +10,10 @@ class Navbar extends React.Component {
         this.handleClick = this.handleClick.bind(this);
 
 
-    }
+
+    };
+
+   
 
     toggleDropdown() {
         if (this.state.dropdown === 'dropdown-hidden'){
@@ -75,7 +78,7 @@ class Navbar extends React.Component {
 
         );
         return( 
-            <nav className="nav-bar">
+            <nav className="navbar">
    
                     <Link className="full-logo" to="/">
                         <img className="logo" src={window.logo} />

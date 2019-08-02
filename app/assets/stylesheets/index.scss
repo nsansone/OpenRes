@@ -1,8 +1,8 @@
 .index-cont {
     .index-search {
         height: 80px;
-        display: flex;
-        width: 100%;
+        // display: flex;
+        // width: 100%;
         background: url('images.jpeg');
     }
     .index-content {
@@ -11,14 +11,14 @@
         .aside-checkbox {
             padding: 20px 10px;
             font-family: 'Josefin Sans', sans-serif;
-            font-weight: bold !important;
+            // font-weight: bold !important;
             li {
                 padding: 3px 0px;
                 color: rgb(102, 102, 102);
             }
             .checkbox-title {
                 font-size: 20px;
-                font-weight: 600;
+                // font-weight: 600;
                 padding-bottom: 5px;
                 color: rgb(102, 102, 102);
             }
@@ -35,8 +35,8 @@
     aside {
         width: 224px;
         height: 1000px;
-        display: block;
-        margin-right: 10px;
+        // display: block;
+        // margin-right: 10px;
     }
     .index-list {
         width: 768px;
@@ -51,7 +51,7 @@
     background: url('katz.jpeg');
     background-size: cover;
     background-position: center;
-    z-index: 3;
+    // z-index: 3;
     border-radius: 4px;
 }
 .index-li {
@@ -64,7 +64,7 @@
             text-decoration: none;
             font-family: 'Josefin Sans', sans-serif;
             color: #247F9E;
-            font-weight: 500; 
+            // font-weight: 500; 
         }
         p {
             font-size: 16px;
@@ -76,24 +76,32 @@
             font-size: 16px;
             font-family: 'Josefin Sans', sans-serif;
             color: rgb(45, 51, 63);
-            margin-top: 10px;
+            // margin-top: 10px;
             cursor: pointer;
         }
     }
 }
 .avg-review {
     display: flex;
-    padding: 5px 0px;
+    align-items: center;
+    // padding: 5px 0px;
+    ul {
+        padding: 15px 0px;
+        margin-bottom: 7px;
+        margin-right: 5px;
+    }
     i {
         color: #fdaf08;
         padding: 1px;
     }
     p {
-        padding-left: 5px;
+        // display: flex;
+        // align-igit tems: center;
         font-family: 'Josefin Sans', sans-serif;
         color: rgb(45, 51, 63);
     }
 }
+
 
 .index-search {
     display: flex;

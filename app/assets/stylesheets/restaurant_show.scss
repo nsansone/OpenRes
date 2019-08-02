@@ -34,7 +34,6 @@
     
         ul {
             list-style: disc;
-            padding: 10px;
             display: flex;
             justify-content: space-evenly;
             li:first-of-type {
@@ -172,12 +171,6 @@
         margin-bottom: 30px;
     }
 }
-.avg-review {
-    display: flex;
-    p {
-        display: flex;
-        align-items: center;
-    }
-}
+
 
 

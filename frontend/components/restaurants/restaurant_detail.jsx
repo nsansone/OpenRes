@@ -10,7 +10,9 @@ const RestaurantDetail = ({ restaurant }) => {
             <hr/>
         <ul>
             <li>{restaurant.address}</li>
+                &nbsp;
             <li>{restaurant.website}</li>
+                &nbsp;
             <li>{restaurant.phone}</li>
         </ul>
         <hr />
