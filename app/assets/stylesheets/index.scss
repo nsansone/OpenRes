@@ -6,6 +6,7 @@
         background: url('images.jpeg');
     }
     .index-content {
+        height: 1000px;
         display: flex;
         justify-content: center;
         .aside-checkbox {
@@ -39,9 +40,15 @@
         // margin-right: 10px;
     }
     .index-list {
+
         width: 768px;
         height: 1000px;
         margin-left: 10px;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+
     }
 }
 
@@ -55,7 +62,7 @@
 }
 .index-li {
     display: flex;
-    padding-top: 20px;
+    margin: 20px 0;
     .ind-details-cont {
         padding: 15px;
         .ind-name {

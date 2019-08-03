@@ -4,6 +4,7 @@
 }
 
 .show-body {
+    height: 700px;
     display: flex;
     // z-index: 5 !important;
     max-width: 1000px;
@@ -16,7 +17,7 @@
 
     aside {
         width: 320px;
-        height: 500px;
+        height: 700px;
         display: block;
         margin-left: 16px;
         background-color: white;

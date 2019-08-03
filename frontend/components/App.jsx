@@ -6,14 +6,14 @@ import LogInFormContainer from './session_form/login_form_container';
 import { Route, Redirect, Switch, Link, HashRouter } from 'react-router-dom';
 import { AuthRoute } from '../util/route_util';
 import Modal from './modal';
-import FindResSearch from './find_res_search/find_res_search';
+import Homepage from './homepage'
 import RestaurantIndexContainer from './restaurants/restaurant_index_container';
 import RestaurantShowContainer from './restaurants/restaurant_show_container';
 import SearchContainer from './search/search_container';
 import Footer from './footer';
 
 const App = () => (
-    <>
+    <div>
 
         <Modal />
             <header className="main-header">
@@ -25,12 +25,12 @@ const App = () => (
                 <Route exact path="/search_restaurants" component={ SearchContainer } />
                 <Route exact path="/restaurants" component={ RestaurantIndexContainer } />
                 <Route path="/restaurants/:restaurantId" component={ RestaurantShowContainer } />
-                <Route exact path="/" component={ FindResSearch } />
+                <Route exact path="/" component={ Homepage } />
     
             </Switch>
         </div>
         <Footer />
-    </>
+    </div>
 );
 
 export default App;

@@ -1,0 +1,66 @@
+.scroll-cont {
+    width: 952px;
+    margin: 0 auto;
+    font-family: 'Doppio One', sans-serif;
+    h1 {
+        font-size: 24px;
+        color: #2D333F;
+        margin: 30px 0;
+    }
+    .scroll-list {
+        overflow-x: scroll;
+        overflow-y: hidden;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+        padding-top: .5rem;
+        padding-bottom: 2rem;
+    }
+    .scroll-li {
+        margin: 0 0.5rem;
+        width: 236px;
+        border: 1px solid #d8d9db;
+        border-radius: 4px;
+        display: inline-block;
+        margin-top: 20px;
+        .scroll-img {
+            height: 132px;
+            object-fit: cover;
+            background-position: center;
+            width: 100%;
+        }
+        .scroll-details-cont {
+            padding: 0.5rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            position: relative;
+            color: #2D333F;
+            .scroll-name {
+                font-size: 20px;
+                text-decoration: none;
+                margin: 0px 0px 4px; 
+            }
+            .scroll-review {
+                display: flex;
+                align-items: center;
+                ul {
+                    padding: 15px 0px;
+                    margin-bottom: 7px;
+                    margin-right: 5px;
+                }
+                i {
+                    color: #da3743;  
+                    padding: 1px;
+                }
+            }
+            p {
+                font-size: 12px;
+                color: rgb(45, 51, 63);
+                padding: 10px 0px;
+            } 
+        }
+    }
+}
+
+
+

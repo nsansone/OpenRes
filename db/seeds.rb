@@ -41,5 +41,66 @@ file2 = open('https://s3.amazonaws.com/openres-aa-seeds/katz.jpg')
 
 katz.photo.attach(io: file2, filename: 'katz.jpg')
 
+serra = Restaurant.create!({
+    name: 'Serra by Birreria',
+    address: '200 Fifth Avenue New York, NY 10010',
+    phone: '(212) 937-8910',
+    website: 'eataly.com',
+    lat: 40.7401,
+    lng: -73.9903,
+    description: 
+    'SERRA by Birreria is a seasonal rooftop restaurant located on the 14th floor of Eataly NYC Flatiron. Meaning “greenhouse” in Italian, SERRA changes with the seasons, always offering a fun, themed atmosphere and a rustic menu reflective of the Italian countryside.
+
+    And now, spring is in full bloom on the roof! Escape the hustle and bustle of Manhattan to relax at SERRA FIORITA, our “flowering greenhouse” replete with a lush, colorful atmosphere, an extensive Spritz cocktail menu, and vibrant seasonal plates infused with Italian springtime traditions. Book your table to be one of the first to experience it!'
+})
+file3 = open('https://s3.amazonaws.com/openres-aa-seeds/serra.jpg')
+
+serra.photo.attach(io: file3, filename: 'serra.jpg')
+
+momo = Restaurant.create!({
+    name: 'Momofuku Noodle Bar',
+    address: '171 1st Avenue, New York, NY 10003',
+    phone: '(212) 777-7773',
+    website: 'noodlebar-ny.momofuku.com',
+    lat: 40.723163774,
+    lng: -73.984829394,
+    description: 
+    'Momofuku was founded by chef David Chang in 2004 with the opening of Momofuku Noodle Bar in New York City. Credited with “the rise of contemporary Asian-American cuisine” by the New York Times and named the “most important restaurant in America” by Bon Appétit magazine, Momofuku has opened restaurants in the United States, Australia, and Canada. The restaurants have gained world-wide recognition for their innovative take on cuisine, while supporting sustainable and responsible farmers and food purveyors.'
+})
+file4 = open('https://s3.amazonaws.com/openres-aa-seeds/momo.jpg')
+
+momo.photo.attach(io: file4, filename: 'momo.jpg')
+
+milkbar = Restaurant.create!({
+    name: 'Milk Bar',
+    address: '220 8th Ave, New York, NY 10011',
+    phone: '(917) 475-1187',
+    website: 'milkbarstore.com',
+    lat: 40.722616,
+    lng: -73.988296,
+    description: 
+    'Milk Bar is a sweet (and occasionally savory) shop that’s been turning familiar treats upside down and on their heads, quietly shaking up the dessert scene since 2008. Bon Appetit magazine called us “one of the most exciting bakeries in the country.” But you can literally just call us Milk Bar. We’re not big on feeding the hype beast. But we’re super into feeding our flavorful treats to those who crave the unexpected.'
+})
+file5 = open('https://s3.amazonaws.com/openres-aa-seeds/milkbar.jpg')
+
+milkbar.photo.attach(io: file5, filename: 'milkbar.jpg')
+
+pizza = Restaurant.create!({
+    name: 'Roberta\'s',
+    address: '261 Moore St, Brooklyn, NY 11206',
+    phone: '(718) 417-1118',
+    website: 'http://robertaspizza.com/',
+    lat: 40.7142,
+    lng: -73.9316,
+    description: 
+    'Roberta\'s is a New American pizzeria in Brooklyn, New York. Located in the neighborhood of East Williamsburg, it is known for its wood oven cooked pizza and hipster vibe.The restaurant serves pizza containing ingredients cooked from a rooftop garden, and houses a radio station in the rear of the building.
+
+Roberta\'s has recently gained notoriety for its so-called "Tiki Disco" parties, which are thrown throughout Brooklyn, and in 2013 at the Bonnaroo Music Festival in Manchester, Tennessee. That same year, USA Today published a column from The Daily Meal which named Roberta\'s as one of America\'s top 15 pizzerias.'
+})
+file6 = open('https://s3.amazonaws.com/openres-aa-seeds/pizza.jpg')
+
+pizza.photo.attach(io: file6, filename: 'pizza.jpg')
+
+
 
 
