@@ -1,10 +1,11 @@
 .show-cont {
     display: block;
+
 }
 
 .show-body {
     display: flex;
-    
+    // z-index: 5 !important;
     max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
@@ -20,17 +21,40 @@
         margin-left: 16px;
         background-color: white;
         border-radius: 3px;
-        .map {
-            z-index: 6;
-            height: 300px;
-            // padding: 50px 0px;
+        z-index: 2;
+        .map-cont {
+            width: 100%;
+            border: 1px solid lightgray;
+            height: 330px;
             margin: 50px 0px;
-
+            border-radius: 4px;
+        }
+        .map {
+            border-radius: 4px;
+            font-family:'Josefin Sans', sans-serif;
+            z-index: 6;
+            width: 300x;
+            padding: 30px;
+            // border: 1px solid black;
+            height: 230px;
+            // padding: 50px 0px;
+            margin: 4px 4px 8px;
+        }
+        .map-address {
+            margin: 10px;
+            font-family:'Josefin Sans', sans-serif;
+            font-size: 15px;
+            color: red;
+            i {
+                margin-right: 5px;
+                color: lightgray;
+            }
         }
     
     }
 
     main {
+        z-index: 3;
         font-size: 15px;
         font-family:'Josefin Sans', sans-serif;
         width: 640px;
@@ -52,20 +76,21 @@
 
 .rest-background {
     height: 459px;
-    background: url('katz.jpeg');
+    object-fit: cover;
+
     background-size: cover;
     background-position: center;
     display: block;
     position: relative;
-    z-index: -1 !important;
+    z-index: 1 !important;
     width: 100%;
-    
+
 }
 
 .res-form-cont {
     width: 320px;
     height: 300px;
-     box-shadow: 0 2px 8px rgba(153,153,153,.4);
+    box-shadow: 0 2px 8px rgba(153,153,153,.4);
 }
 
 

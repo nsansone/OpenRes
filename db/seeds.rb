@@ -21,9 +21,9 @@ russ = Restaurant.create!({
     Building a reputation on longevity alone is nothin’ to brag about, which is why we’ve built ours on quality. Now that’s somethin’ special. We only select the best cuts of beef for our corned beef, pastrami, brisket, and other fine foods. Our corned beef and pastrami is cured using a slower method, which best flavors the meat, without injecting chemicals, water, or other additives to speed the process.
     Our finished product can take up to a full 30 days to cure, while commercially prepared corned beef is often pressure-injected (or “pumped”) to cure in 36 hours. Yep, you read that right. 30 days vs. 36 hours. Now, which sounds like the better meat to you?'
 })
-file = open('https://s3.amazonaws.com/openres-aa-seeds/russ.jpeg')
+file = open('https://s3.amazonaws.com/openres-aa-seeds/russ3.jpg')
 
-russ.photo.attach(io: file, filename: 'russ.jpeg')
+russ.photo.attach(io: file, filename: 'russ3.jpg')
 
 
 katz = Restaurant.create!({
