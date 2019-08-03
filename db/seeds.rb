@@ -67,9 +67,9 @@ momo = Restaurant.create!({
     description: 
     'Momofuku was founded by chef David Chang in 2004 with the opening of Momofuku Noodle Bar in New York City. Credited with “the rise of contemporary Asian-American cuisine” by the New York Times and named the “most important restaurant in America” by Bon Appétit magazine, Momofuku has opened restaurants in the United States, Australia, and Canada. The restaurants have gained world-wide recognition for their innovative take on cuisine, while supporting sustainable and responsible farmers and food purveyors.'
 })
-file4 = open('https://s3.amazonaws.com/openres-aa-seeds/momo.jpg')
+file4 = open('https://s3.amazonaws.com/openres-aa-seeds/momo.jpeg')
 
-momo.photo.attach(io: file4, filename: 'momo.jpg')
+momo.photo.attach(io: file4, filename: 'momo.jpeg')
 
 milkbar = Restaurant.create!({
     name: 'Milk Bar',
