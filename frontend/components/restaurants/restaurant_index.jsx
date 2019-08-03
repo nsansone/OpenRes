@@ -18,6 +18,7 @@ class RestaurantIndex extends React.Component {
 
         return (
             <div className="index-cont">
+                    <img className="index-search-background" src={window.index_search_background} />
                 <ul className="index-search">
                     <li >
                         <input placeholder="Jul 31, 2019" type="text" />

@@ -1,10 +1,14 @@
 .index-cont {
     .index-search {
         height: 80px;
-        // display: flex;
-        // width: 100%;
-        background: url('images.jpeg');
+        position: relative;
     }
+        .index-search-background {
+            height: 80px;
+            position: absolute;
+            width: 100%;
+        }
+    
     .index-content {
         height: 1000px;
         display: flex;
