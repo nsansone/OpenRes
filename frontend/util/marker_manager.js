@@ -4,9 +4,16 @@ export default class MarkerManager {
         this.markers = {};
     }
 
-    updateMarkers(restaurants){
-        console.log('time to update')
-    }
+    // updateMarkers(restaurants){
+    //     const newRestaurants = {};
+    //     restaurants.forEach(restaurant => {
+    //         if (!this.markers[restaurant.id]) {
+    //         newRestaurants[restaurant.id] = restaurant;
+    //         }
+    //     }
+   
+
+    // }
 
     componentDidMount(){
         this.map = new google.maps.Map(mapDOMNode, mapOptions);
