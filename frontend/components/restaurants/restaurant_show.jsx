@@ -32,8 +32,8 @@ class RestaurantShow extends React.Component {
                         <div className="res-form-cont">
 
                             <ResForm />
-                            <RestaurantMap />
                         </div>
+                            <RestaurantMap />
                     </aside>
                 </div>
             </div>

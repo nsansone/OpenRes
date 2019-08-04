@@ -4,4 +4,10 @@ class Restaurant < ApplicationRecord
     has_one_attached :photo
 
     has_many :reservations
+    has_many :reviews
+
+    def average_rating
+        reviews.average(:rating)
+    end
+    
 end

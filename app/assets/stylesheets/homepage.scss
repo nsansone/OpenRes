@@ -1,6 +1,11 @@
 html {
     background-color: #f7f7f7;
 }
+#root {
+    max-width: 1600px;
+    margin: 0 auto;
+    height: 100%
+}
 .all-content {
     max-width: 1600px;
     height: 100%;
@@ -14,8 +19,7 @@ html {
 
 }
 .footer-cont {
-    // position: fixed;
-    bottom: 0;
+
     width: 100%;
     height: 100px;
     background-color: white;
@@ -50,14 +54,15 @@ html {
     .splash-img {
         width: 100%;
         height: 100%;
-        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://resizer.otstatic.com/v2/photos/wide-huge/25160669.jpg);
+        border-radius: 4px;
+        background: linear-gradient(rgba(47, 45, 65, 0.7), rgba(47, 45, 65, 0.7)), url(https://resizer.otstatic.com/v2/photos/wide-huge/25160669.jpg);
         background-position: 100%;
         background-size: cover;
     }
 
     .find-res-search {
         position: absolute;
-        top: 50%;
+        top: 55%;
         left: 50%;
         transform: translate(-50%, -50%);
         width: 663px;
@@ -111,7 +116,7 @@ html {
 
             }
          }
-         .res-search-submit {
+        .res-search-submit {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -124,10 +129,14 @@ html {
             font-family: 'Doppio One', sans-serif;
             color: white;
             background-color: #DA3743;
+            border-color: #b8222d;
             width: 663px;
             height: 48px;
   
-         }
+        }
+        .res-search-submit:hover {
+            background-color: #b8222d;
+        }
     }
 
 

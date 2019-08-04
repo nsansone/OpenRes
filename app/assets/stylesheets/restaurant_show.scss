@@ -4,7 +4,7 @@
 }
 
 .show-body {
-    height: 700px;
+    height: 100%;
     display: flex;
     // z-index: 5 !important;
     max-width: 1000px;
@@ -12,6 +12,7 @@
     margin-right: auto;
     margin-top: -48px;
     background-color: transparent;
+    margin-bottom: 30px;
 
 
 
@@ -20,7 +21,7 @@
         height: 700px;
         display: block;
         margin-left: 16px;
-        background-color: white;
+        background-color: transparent;
         border-radius: 3px;
         z-index: 2;
         .map-cont {
@@ -33,7 +34,7 @@
         .map {
             border-radius: 4px;
             font-family: 'Doppio One', sans-serif;
-            z-index: 6;
+            // z-index: 0;
             width: 300x;
             padding: 30px;
             // border: 1px solid black;
@@ -89,6 +90,11 @@
 }
 
 .res-form-cont {
+    position: sticky;
+    background-color: white;
+    z-index: 100;
+    border-radius: 4px;
+    top: 0px;
     width: 320px;
     height: 300px;
     box-shadow: 0 2px 8px rgba(153,153,153,.4);
