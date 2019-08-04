@@ -33,7 +33,7 @@
         }
         .map {
             border-radius: 4px;
-            font-family: 'Doppio One', sans-serif;
+            font-family: 'Raleway', sans-serif;
             // z-index: 0;
             width: 300x;
             padding: 30px;
@@ -44,7 +44,7 @@
         }
         .map-address {
             margin: 10px;
-            font-family: 'Doppio One', sans-serif;
+            font-family: 'Raleway', sans-serif;
             font-size: 15px;
             color: red;
             i {
@@ -58,7 +58,7 @@
     main {
         z-index: 3;
         font-size: 15px;
-        font-family: 'Doppio One', sans-serif;
+        font-family: 'Raleway', sans-serif;
         width: 640px;
         display: block;
         margin-right: 16px;
@@ -66,9 +66,10 @@
         border-radius: 3px;
     
         ul {
-            list-style: disc;
+            // font-size: 14px;
+            // list-style: disc;
             display: flex;
-            justify-content: space-evenly;
+            justify-content: space-between;
             li:first-of-type {
                 list-style: none;
             }
@@ -111,7 +112,7 @@
         justify-content: center;
         flex-direction: column;
         font-size: 21px;
-        font-family: 'Doppio One', sans-serif;
+        font-family: 'Raleway', sans-serif;
         height: 48px;
         text-align: center;
         // margin: 0px auto;
@@ -123,7 +124,7 @@
     }
     .res-cont {
         font-size: 14px;
-        font-family: 'Doppio One', sans-serif;
+        font-family: 'Raleway', sans-serif;
         display: block;
         width: 288px;
         height: 130px;
@@ -183,7 +184,7 @@
                 font-weight: 500;
                 border-radius: 4px;
                 font-size: 16px;
-                font-family: 'Doppio One', sans-serif;
+                font-family: 'Raleway', sans-serif;
                 color: white;
                 background-color: #DA3743;
                 width: 288px;
@@ -199,7 +200,7 @@
     margin-bottom: 16px;
     margin-top: 32px !important;
     margin: 0px auto;
-    font-family: 'Doppio One', sans-serif;
+    font-family: 'Raleway', sans-serif;
     h1 {
         display: block;
         font-size: 50px;

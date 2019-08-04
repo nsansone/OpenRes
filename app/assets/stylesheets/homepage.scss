@@ -19,6 +19,7 @@ html {
 
 }
 .footer-cont {
+    position: absolute;
 
     width: 100%;
     height: 100px;
@@ -31,7 +32,7 @@ html {
     background-color: #333333;
     justify-content: space-around;
     font-size: 16px;
-    font-family: 'Doppio One', sans-serif;
+    font-family: 'Raleway', sans-serif;
     li {
         padding-top: 30px;
         color: white; 
@@ -51,15 +52,31 @@ html {
     height: 416px;
     display: block;
     position: relative;
+
+    background-color: rgba(47,45,65,.7);
+    img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+
+        -webkit-transition: opacity 1s ease-in-out;
+        -moz-transition: opacity 1s ease-in-out;
+        -o-transition: opacity 1s ease-in-out;
+        transition: opacity 1s ease-in-out;
+    }
+    img.transparent {
+        opacity:0;
+    }
     .splash-img {
+        position: relative;
         width: 100%;
         height: 100%;
         border-radius: 4px;
-        background: linear-gradient(rgba(47, 45, 65, 0.7), rgba(47, 45, 65, 0.7)), url(https://resizer.otstatic.com/v2/photos/wide-huge/25160669.jpg);
+        background: rgba(47, 45, 65, 0.7);
         background-position: 100%;
         background-size: cover;
     }
-
+// linear-gradient(rgba(47, 45, 65, 0.7), rgba(47, 45, 65, 0.7))
     .find-res-search {
         position: absolute;
         top: 55%;
@@ -73,7 +90,7 @@ html {
                 flex-basis: 33.3%;
                 color: grey;
                 font-size: 16px;
-                font-family: 'Doppio One', sans-serif;
+                font-family: 'Raleway', sans-serif;
                 font-stretch: 100%;
 
                 margin-bottom: 15px;
@@ -95,9 +112,10 @@ html {
         h1 {
         display: block;
         color: white;
-        font-family: 'Doppio One', sans-serif;
-        font-size: 44px;;
-        font-weight: 550;
+        font-family: 'Raleway', sans-serif;        
+        font-size: 43px;;
+        font-weight: 600;
+        font-stretch: 100%;
         width: 100%;
         padding-bottom: 35px;
          }
@@ -105,7 +123,7 @@ html {
                 background-color: white;
                 color: grey;
                 font-size: 16px;
-                font-family: 'Doppio One', sans-serif;
+                font-family: 'Raleway', sans-serif;
                 font-stretch: 100%;
                 margin-bottom: 15px;
                 padding: 16px;
@@ -126,7 +144,7 @@ html {
             font-weight: 500;
             border-radius: 4px;
             font-size: 16px;
-            font-family: 'Doppio One', sans-serif;
+            font-family: 'Raleway', sans-serif;
             color: white;
             background-color: #DA3743;
             border-color: #b8222d;
@@ -141,3 +159,41 @@ html {
 
 
 }
+  @keyframes home-search-containerFadeInOut {
+    0% {
+        opacity:1;
+    }
+    22% {
+        opacity:1;
+    }
+    33% {
+        opacity:0;
+    }
+    89% {
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
+    }
+
+
+.home-search-container img:nth-of-type(1) {
+    animation-delay: 12s;
+}
+.home-search-container img:nth-of-type(2) {
+    animation-delay: 6s;
+}
+.home-search-container img:nth-of-type(3) {
+    animation-delay: 0s;
+}
+
+
+.home-search-container img {
+    animation-name: home-search-containerFadeInOut;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-duration: 18s;
+    animation-fill-mode: forwards;
+}
+// animation was done using demos from this site: http://css3.bradshawenterprises.com/cfimg/#cfimg1

@@ -11,9 +11,9 @@ const RestaurantDetail = ({ restaurant }) => {
             <hr/>
         <ul>
             <li>{restaurant.address}</li>
-                &nbsp;
+                &nbsp;&nbsp;
             <li>{restaurant.website}</li>
-                &nbsp;
+                &nbsp;&nbsp;
             <li>{restaurant.phone}</li>
         </ul>
         <hr />

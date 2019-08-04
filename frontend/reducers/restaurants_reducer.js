@@ -10,7 +10,7 @@ const restaurantsReducer = (state = {}, action) => {
         case RECEIVE_REVIEW:
             const { review, average_rating } = action;
             const newState = merge({}, state);
-            newState[review.restaurant_id].restaurantIds.push(restaurant.id);
+            newState[review.restaurant_id].reviewIds.push(review.id);
             newState[review.restaurant_id].average_rating = average_rating;
             return newState;
         default:
