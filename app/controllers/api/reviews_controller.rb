@@ -2,8 +2,7 @@ class Api::ReviewsController < ApplicationController
     # before_action :require_logged_in
     
     def create
-        @revew = current_user.reviews.new(review_params)
-
+        @review = current_user.reviews.new(review_params)
         if @review.save
             render :show
         else
@@ -12,6 +11,6 @@ class Api::ReviewsController < ApplicationController
     end
 
     def review_params
-        params.require(:review).permit(:rating, :body, :restaurant_id, :author_id)
+        params.require(:review).permit(:rating, :body, :restaurant_id)
     end
 end

@@ -1,0 +1,42 @@
+// .rating {
+//     overflow: hidden;
+//     display: inline-block;
+// }
+// .rating-input {
+//     float: right;
+//     width: 16px;
+//     padding: 0;
+//     margin: 0 0 0 -16px;
+//     opacity: 0;
+// }
+// .rating-star {
+//     cursor: pointer;
+//     position: relative;
+//     display: block;
+//     width: 16px;
+//     height: 16px;
+//     background: url('https://cdn2.iconfinder.com/data/icons/universal-signs-symbols/128/star-yellow-512.png') 0 -16px;
+// }
+// .rating-star:hover {
+//     background-position: 0 0;
+// }
+// .star-div {
+//     height: 100px;
+//     width: 100px;
+//     background: url('star-yellow-512.png');
+//     // z-index: 1000 !important;
+//     // background-color: pink;
+// }
+
+.review-form {
+    display: block;
+    h1 {
+        display: block;
+    }
+    label {
+        display: block;
+    }
+    input {
+    display: block;
+    }    
+}

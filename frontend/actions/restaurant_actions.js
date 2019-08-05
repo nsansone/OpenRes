@@ -21,13 +21,15 @@ export const receiveReview = ({ review, average_rating, author }) => ({
     review,
     average_rating,
     author,
-})
+});
 
 export const createReview = review => dispatch => (
     APIUtil.createReview(review).then(review => (
         dispatch(receiveReview(review))
     ))
 );
+
+
 
 export const fetchRestaurants = restaurants => dispatch => (
     APIUtil.fetchRestaurants(restaurants).then(restaurants => (
