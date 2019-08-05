@@ -13,10 +13,10 @@ const Review = ({ review, author }) => {
     return (
         <div className="review-cont">
             <div className="review">
-                <p className="review-left">
+                <div className="review-left">
                     <p className="user-icon">N</p>
                     <p className="user-fname">Nicole</p>
-                </p>
+                </div>
                 <div className="review-right">
                     <span className="avg-review">
                         <ul className="stars">

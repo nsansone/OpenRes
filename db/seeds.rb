@@ -7,12 +7,17 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Restaurant.destroy_all
+User.destroy_all 
 
-
+user = User.create!({
+    fname: 'Nicole',
+    lname: 'Nicole',
+    email: 'Nicole',
+    password: 'Nicole'
+})
 
 
 russ = Restaurant.create!({
-    id: 1,
     name: 'Russ & Daughters',
     address: '179 E Houston St, New York, NY 10002',
     phone: '(212) 475-4880',
@@ -30,7 +35,6 @@ russ.photo.attach(io: file, filename: 'russ3.jpg')
 
 
 katz = Restaurant.create!({
-    id: 2,
     name: "Katz\'s Delicatessen",
     address: "205 E Houston St, New York, NY 10002",
     phone: "(212) 254-2246",
@@ -46,7 +50,6 @@ file2 = open('https://s3.amazonaws.com/openres-aa-seeds/katz.jpg')
 katz.photo.attach(io: file2, filename: 'katz.jpg')
 
 serra = Restaurant.create!({
-    id: 3,
     name: 'Serra by Birreria',
     address: '200 Fifth Avenue New York, NY 10010',
     phone: '(212) 937-8910',
@@ -63,7 +66,6 @@ file3 = open('https://s3.amazonaws.com/openres-aa-seeds/serra.jpg')
 serra.photo.attach(io: file3, filename: 'serra.jpg')
 
 momo = Restaurant.create!({
-    id: 4,
     name: 'Momofuku Noodle Bar',
     address: '171 1st Avenue, New York, NY 10003',
     phone: '(212) 777-7773',
@@ -78,7 +80,6 @@ file4 = open('https://s3.amazonaws.com/openres-aa-seeds/momo.jpeg')
 momo.photo.attach(io: file4, filename: 'momo.jpeg')
 
 milkbar = Restaurant.create!({
-    id: 5,
     name: 'Milk Bar',
     address: '220 8th Ave, New York, NY 10011',
     phone: '(917) 475-1187',
@@ -93,7 +94,6 @@ file5 = open('https://s3.amazonaws.com/openres-aa-seeds/milkbar.jpg')
 milkbar.photo.attach(io: file5, filename: 'milkbar.jpg')
 
 pizza = Restaurant.create!({
-    id: 6,
     name: 'Roberta\'s',
     address: '261 Moore St, Brooklyn, NY 11206',
     phone: '(718) 417-1118',
@@ -115,16 +115,16 @@ review1 = Review.create!({
 Amazing selection of fish, salmon and herring especially.
 Bagels also have some special options.
 Busy, expect some time in a line.',
-    restaurant_id: 1,
-    author_id: 5,
+    restaurant_id: russ.id,
+    author_id: user.id,
 
 })
 
 review2 = Review.create!({
     rating: 5,
     body: 'Had to have a bagel when I visited New York, and Russ & Daughters really delivered. We came on a Sunday morning, and the place was full! There are maybe 5 guys working behind the counter, and you can tell they\'ve been doing this for years. There\'s not really room to eat inside, but there are some nice benches right outside as well as a park around the corner. We split an everything bagel with scallion schmear, lox, onion, capers, and tomato. It was really tasty!! Keep in mind that this place is definitely more about the lox than the bagels, so if you\'re looking for warm bagels fresh out of the oven, maybe go elsewhere. Overall, I really enjoyed the food I had here and would highly recommend!',
-    restaurant_id: 1,
-    author_id: 5,
+    restaurant_id: russ.id,
+    author_id: user.id,
 
 })
 
@@ -133,8 +133,8 @@ review3 = Review.create!({
     body: 'Wonderful!  Long wait for your food but worth it!  Pick a bagel offering they suggest or create your own. Nice!  Had one of their own creations that featured Gaspe Nova Smoked Salmon and Wild Alaskan Salmon Roe. Along with all the other features such as cram cheese and onions. Wow. Fabulous. So many things I wanted to take with me. I just took some smoked peepers mackerel. Nice light flavor. 
 
 Love it. Take it and go find a spot to eat. Joy!!  While you wait you have time to expire all the choices and offerings. Lots here!',
-    restaurant_id: 1,
-    author_id: 5,
+    restaurant_id: russ.id,
+    author_id: user.id,
 
 })
 
@@ -143,8 +143,8 @@ review4 = Review.create!({
     body: 'If you like bagels and lox, you HAVE to come here. It\'s the best I\'ve ever had! You create your own "sandwich" by picking your bagel, your spread, and your lox. 
 
 I got the everything bagel with scallion cream cheese and the gaspe nova. Did not disappoint! The bagel is perfectly toasted and they are generous with the lox. Every bite was a dream.',
-    restaurant_id: 1,
-    author_id: 5,
+    restaurant_id: russ.id,
+    author_id: user.id,
 
 })
 

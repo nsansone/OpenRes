@@ -69,7 +69,7 @@ class Navbar extends React.Component {
                             My Saved Restaurants
                         </li>
                         <li className="drop-list-item">
-                            <button className="login-button" onClick={this.props.logout}>Log Out</button>
+                            <button onClick={this.props.logout}>Log Out</button>
                         </li>
                     </span>
                 </ul>
