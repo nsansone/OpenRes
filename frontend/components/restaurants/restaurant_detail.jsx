@@ -2,12 +2,11 @@ import React from 'react';
 import { Link, Route } from 'react-router-dom';
 import ReviewListItemContainer from '../reviews/review_list_item_container';
 import ReviewFormContainer from '../reviews/review_form_container';
-// import { ReviewLink } from '../../util/link_util';
-const reviewList = (reviews) => (
-    reviews.map(review => (
-        <ReviewListItemContainer review={review} key={review.id} />
-    ))
-);
+// const reviewList = (reviews) => (
+//     reviews.map(review => (
+//         <ReviewListItemContainer review={review} key={review.id} />
+//     ))
+// );
 const RestaurantDetail = ({ restaurant, reviews }) => {
     return (
         <div className="rest-details">
@@ -33,14 +32,12 @@ const RestaurantDetail = ({ restaurant, reviews }) => {
             </span>
             <p className="rest-description">{restaurant.description}</p>
             <Link to="/restaurants">All Restaurants</Link>
-            <h2>What {reviews.length} People Are Saying</h2>
-            {/* <ReviewLink component={ReviewFormContainer} to={`/restaurants/${restaurantId}/review`} label="Leave a Review" /> */}
-            {/* <Route path="/restaurants/:restaurantId/review"
-            component={ReviewFormContainer}
-            /> */}
+            {/* <h2>What {reviews.length} People Are Saying</h2> */}
+            {/* <ReviewLink component={ReviewFormContainer} to={`/restaurants/${restaurant.id}/review`} label="Leave a Review" /> */}
+            {/* <Link to={`/restaurants/${restaurant.id}/review`}>Leave a review</Link>
             <hr />
-            {reviewList(reviews)}
-            <ReviewFormContainer />
+            {reviewList(reviews)} */}
+            {/* <ReviewFormContainer /> */}
         </div>
     );
 };
