@@ -9,17 +9,18 @@ export const receiveRestaurants = restaurants => ({
     restaurants,
 });
 
-export const receiveRestaurant = ({ restaurant, reviews }) => ({
+export const receiveRestaurant = ({ restaurant, reviews, authors }) => ({
     type: RECEIVE_RESTAURANT,
     restaurant,
     reviews,
+    authors,
 });
 
-export const receiveReview = ({ review, average_rating }) => ({
+export const receiveReview = ({ review, average_rating, author }) => ({
     type: RECEIVE_REVIEW,
     review,
     average_rating,
-    authors,
+    author,
 })
 
 export const createReview = review => dispatch => (

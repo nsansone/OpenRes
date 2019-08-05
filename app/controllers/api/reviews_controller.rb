@@ -1,17 +1,17 @@
 class Api::ReviewsController < ApplicationController
-    before_action :require_logged_in
+    # before_action :require_logged_in
     
     def create
-        @revew = current_user.reviews.new(review_param)
+        @revew = current_user.reviews.new(review_params)
 
         if @review.save
             render :show
         else
-            render json: @revew, status: :unprocessable_entity
+            render json: @review, status: :unprocessable_entity
         end
     end
 
     def review_params
-        params.require(:review).permit(:rating, :body, :restaurant_id)
+        params.require(:review).permit(:rating, :body, :restaurant_id, :author_id)
     end
 end

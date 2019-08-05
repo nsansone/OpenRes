@@ -1,9 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import ReviewListItemContainer from '../reviews/review_list_item_container';
 
+const reviewList = (reviews) => (
+    reviews.map(review => (
+        <ReviewListItemContainer review={review} key={review.id} />
+    ))
+);
 
-const RestaurantDetail = ({ restaurant }) => {
-    
+const RestaurantDetail = ({ restaurant, reviews }) => {
+
     return (
     <div className="rest-details">
 
@@ -29,6 +35,9 @@ const RestaurantDetail = ({ restaurant }) => {
         </span>
         <p className="rest-description">{restaurant.description}</p>
         <Link to="/restaurants">All Restaurants</Link>
+        <h2>What {reviews.length} People Are Saying</h2>
+        <hr/>
+        {reviewList(reviews)}
     </div>
     );
 };

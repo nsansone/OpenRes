@@ -16,7 +16,7 @@ class RestaurantShow extends React.Component {
   
 
     render(){
-        const { restaurant } = this.props;
+        const { restaurant, reviews } = this.props;
       
         
      
@@ -26,7 +26,7 @@ class RestaurantShow extends React.Component {
                 <img className="rest-background" src={restaurant.photoUrl} alt="" />
                 <div className="show-body">
                     <main>
-                        <RestaurantDetail restaurant={restaurant} />
+                        <RestaurantDetail restaurant={restaurant} reviews={reviews} />
                     </main>
                     <aside>
                         <div className="res-form-cont">

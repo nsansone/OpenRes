@@ -15,7 +15,7 @@ class ContentScroller extends React.Component {
 
         return (
             <div className="scroll-cont">
-                    <h1 className="scroll-title">Popular restaurants in Manhatten</h1>
+                    <h1 className="scroll-title">Popular restaurants in Manhattan</h1>
                     <hr />
                     <ul className="scroll-list">
                         {restaurants}

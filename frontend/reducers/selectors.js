@@ -1,5 +1,5 @@
 export const selectRestaurant = ({ restaurants }, restaurantId) => {
-    restaurants[restaurantId] || { reviewIds: [] };
+    return restaurants[restaurantId] || { reviewIds: [] };
 };
 
 export const selectReviewsForRestaurant = ({ restaurants, reviews }, restaurant) => {

@@ -1,7 +1,9 @@
 class Api::RestaurantsController < ApplicationController
 
     def index
-        @restaurants = Restaurant.all
+        restaurants = Restaurant.all
+        
+        @restaurants = restaurants.includes(:reviews)
         render :index
     end
 

@@ -1,9 +1,2 @@
-json.review do 
-    json.partial! '/api/reviews/review',
-end
+json.extract! review, :id, :rating, :body, :restaurant_id, :author_id
 
-json.author do
-    json.partial! '/api/users/user', user: @review.author
-end
-
-json.average_rating @review.bench.average_rating
