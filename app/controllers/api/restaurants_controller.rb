@@ -1,9 +1,9 @@
 class Api::RestaurantsController < ApplicationController
 
     def index
-        restaurants = Restaurant.all
+        @restaurants = Restaurant.all
         
-        @restaurants = restaurants.includes(:reviews)
+        
         render :index
     end
 
@@ -17,7 +17,7 @@ class Api::RestaurantsController < ApplicationController
     end
 
     def show 
-        @restaurant = Restaurant.find(params[:id])
+        @restaurant = Restaurant.includes(:reviews).includes(:review_authors).find(params[:id])
         render :show
     end
 
