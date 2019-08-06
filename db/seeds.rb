@@ -8,6 +8,7 @@
 
 Restaurant.destroy_all
 User.destroy_all 
+Review.destroy_all
 
 user = User.create!({
     fname: 'Nicole',
