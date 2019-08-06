@@ -2,10 +2,10 @@ import { connect } from 'react-redux';
 import { fetchRestaurants } from '../../actions/restaurant_actions';
 
 import RestaurantIndex from './restaurant_index';
-import { asArray } from '../../reducers/selectors';
+
 
 const mapStateToProps = state => ({
-    restaurants: asArray(state.entities)
+    restaurants: Object.keys(state.entities.restaurants).map(key => state.entities.restaurants[key])
 });
 
 const mapDispatchToProps = dispatch => ({

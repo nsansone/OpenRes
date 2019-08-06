@@ -28,8 +28,8 @@ class RestaurantShow extends React.Component {
         );
       
         
-     
-
+        const reviewButton = this.props.session.id ? <Link to={`/restaurants/${restaurant.id}/review`}>Leave a review</Link> : <div></div>
+        
         return (
             <div className="show-cont">
                 <img className="rest-background" src={restaurant.photoUrl} alt="" />
@@ -37,11 +37,9 @@ class RestaurantShow extends React.Component {
                     <main className="show-main">
                         <RestaurantDetail restaurant={restaurant} reviews={reviews} />
                         <h2>What {reviews.length} People Are Saying</h2>
-                        
-                        <Link to={`/restaurants/${restaurant.id}/review`}>Leave a review</Link>
+                        {reviewButton}
                         <hr />
                         {reviewList(reviews)}
-                        {/* <ReviewFormContainer /> */}
                     </main>
                     <aside>
                         <div className="res-form-cont">

@@ -30,33 +30,21 @@ class ReviewForm extends React.Component {
     render() {
         return (
             <div className="review-form-cont">
-                <h1>How was your experience at {this.props.restaurant.name}</h1>
-                {/* <div className="star-div"></div> */}
+                <h1>How was your experience at {this.props.restaurant.name}?</h1>
+
                 <form className="review-form" onSubmit={this.handleSubmit}>
-                    {/* <span className="star-rating">
-                        <input id='rating-input-1-5' type="radio" className='rating-input' />
-                        <label htmlFor='rating-input-1-5' className='rating-star'></label>
-                        <input id='rating-input-1-4' type="radio" className='rating-input' />
-                        <label htmlFor='rating-input-1-4' className='rating-star'></label>
-                        <input id='rating-input-1-3' type="radio" className='rating-input' />
-                        <label htmlFor='rating-input-1-3' className='rating-star'></label>
-                        <input id='rating-input-1-2' type="radio" className='rating-input' />
-                        <label htmlFor='rating-input-1-2' className='rating-star'></label>
-                        <input id='rating-input-1-1' type="radio" className='rating-input' />
-                        <label htmlFor='rating-input-1-1' className='rating-star'></label>
-                    </span> */}
-                <label className=""htmlFor="rating-value">Rating (1-5)</label>
-                <input id="rating-value"type="number" value={this.state.rating} onChange={this.update('rating')} />
-                {/* <label> Would you recommend to a friend
-                    <input id='rating-input-yes' type="radio" />
-                    <label htmlFor='rating-input-yes' >yes</label>
-                    <input id='rating-input-no' type="radio"  />
-                    <label htmlFor='rating-input-no' >no</label>
-                </label> */}
-                <label htmlFor="review-body">Write a review</label>
+                   
+                    <div className="label-cont">
+                        <label className=""htmlFor="rating-value">Rating (1-5):</label>
+                        <input id="rating-value"type="number" value={this.state.rating} onChange={this.update('rating')} />
+                    </div>
+                    <div className="body-cont">
+                        <label>Write a review</label>
+                    </div>
                     <textarea value={this.state.body} onChange={this.update('body')} id="review-body" cols="80" rows="12"></textarea>
-                {/* <input onChange={this.update('body')} value={this.state.body} id="review-body" type="textarea" /> */}
-                <input type="submit" value="submit"/>
+                    <div className="review-submit">
+                        <input type="submit" value="Submit"/>
+                    </div>
                 </form>
             </div>
         )
