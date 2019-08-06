@@ -5,7 +5,7 @@ class ReservationsController < ApplicationController
         if @reservation.save
             render :show
         else
-            render json: @reservation, status: 422
+            render json: ['please fill out the entire form'], status: 422
         end
     end
 
