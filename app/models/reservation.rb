@@ -6,9 +6,5 @@ belongs_to :user
 
 belongs_to :restaurant
 
-def overlapping_res
-    # Reservation.where(restaurant_id: restaurant_id).where(date: date AND time: time)
-end
-
 
 end
