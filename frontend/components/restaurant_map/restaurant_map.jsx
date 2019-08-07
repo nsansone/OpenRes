@@ -8,17 +8,22 @@ import { connect } from 'react-redux';
 
 
 class RestaurantMap extends React.Component {
-    componentDidMount() {
-        const myLatLng = new google.maps.LatLng(40.7484, -73.9857);
+    constructor(props){
+        super(props);
+    }
+    componentDidUpdate() {
+        const myLat = parseInt(this.props.restaurant.lat);
+        const myLng = parseInt(this.props.restaurant.lng);
+        const myLatLng = new google.maps.LatLng(myLat, myLng);
         const mapOptions = {
             center: myLatLng,
-            zoom: 13
+            zoom: 12
         };
         this.map = new google.maps.Map(this.mapNode, mapOptions);
         const marker = new google.maps.Marker({
             position: myLatLng,
-            title: "Hello World"
-        })
+            title: "spencer was here"
+        });
         marker.setMap(this.map);
     }
 
@@ -29,12 +34,14 @@ class RestaurantMap extends React.Component {
             <div className="map-cont"> 
                 <div className="map" ref={ map => this.mapNode = map}></div>
                 <p className="map-address">
-                    <i className="fas fa-map-marker-alt"></i>  sample address
+                    <i className="fas fa-map-marker-alt"></i>  {this.props.restaurant.address}
                 </p>
             </div>
         )
     }
 
+
+    
     
 }
 

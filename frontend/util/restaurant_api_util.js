@@ -19,4 +19,4 @@ export const createReview = review => (
         url: 'api/reviews',
         data: { review }
     })
-)
+);

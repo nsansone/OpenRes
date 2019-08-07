@@ -11,6 +11,7 @@ import RestaurantShowContainer from './restaurants/restaurant_show_container';
 import SearchContainer from './search/search_container';
 import Footer from './footer';
 import ReviewFormContainer from './reviews/review_form_container';
+import ProfileContainer from './profile/profile_container';
 
 const App = () => (
     <div>
@@ -27,6 +28,7 @@ const App = () => (
                 <Route exact path="/restaurants/:restaurantId" component={ RestaurantShowContainer } />
                 <Route exact path="/restaurants/:restaurantId/review"
                     component={ReviewFormContainer} /> 
+                <Route exact path="/users/:sessionId/profile" component={ ProfileContainer }/>
                 <Route exact path="/" component={ Homepage } />
     
             </Switch>

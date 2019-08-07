@@ -23,8 +23,8 @@ russ = Restaurant.create!({
     address: '179 E Houston St, New York, NY 10002',
     phone: '(212) 475-4880',
     website: 'shop.russanddaughters.com',
-    lat: 40.722616,
-    lng: -73.988296,
+    lat: 40.722645000000036,
+    lng: -73.988292,
     description: 
     'Each week thousands of visitors from around the world flock to Katz’s to dine in this legendary deli, and to feast on the most delectable sandwiches, platters and meats. But it’s really New Yorkers have made Katz’s Delicatessen what it is, making Katz’s an inherent part of the city’s culture and history. They enthusiastically spread the word, brought their friends in, wrote books, shot films, and kept coming back for a pastrami on rye.
     Building a reputation on longevity alone is nothin’ to brag about, which is why we’ve built ours on quality. Now that’s somethin’ special. We only select the best cuts of beef for our corned beef, pastrami, brisket, and other fine foods. Our corned beef and pastrami is cured using a slower method, which best flavors the meat, without injecting chemicals, water, or other additives to speed the process.
@@ -40,8 +40,8 @@ katz = Restaurant.create!({
     address: "205 E Houston St, New York, NY 10002",
     phone: "(212) 254-2246",
     website: "katzsdelicatessen.com",
-    lat: 40.722313,
-    lng: -73.987335,
+    lat: 40.72297400279524,
+    lng: -73.98917,
     description: 'At Russ & Daughters Cafe, expert smoked salmon slicers work their craft in front of guests; an open kitchen provides an over-the-counter connection like one feels in the store;  a soda fountain bar beckons with homemade sodas, egg creams, shrubs, and superb cocktails; friendly staff proudly wear the iconic white Russ & Daughters lab coats; and 105 years of living history permeates throughout the entire space.
                     The timeless appeal of the Russ & Daughters Cafe makes it a perfect spot any time of day: whether it’s a for a light nosh, brunch, lunch, cocktails, dinner, or a special occasion. You will be part of the mishpocha (family) — whether you have been a regular in the shop for 70 years or if you are a first time visitor.'
 })
@@ -55,8 +55,8 @@ serra = Restaurant.create!({
     address: '200 Fifth Avenue New York, NY 10010',
     phone: '(212) 937-8910',
     website: 'eataly.com',
-    lat: 40.7401,
-    lng: -73.9903,
+    lat: 40.7420207,
+    lng: -73.989928,
     description: 
     'SERRA by Birreria is a seasonal rooftop restaurant located on the 14th floor of Eataly NYC Flatiron. Meaning “greenhouse” in Italian, SERRA changes with the seasons, always offering a fun, themed atmosphere and a rustic menu reflective of the Italian countryside.
 
@@ -71,8 +71,8 @@ momo = Restaurant.create!({
     address: '171 1st Avenue, New York, NY 10003',
     phone: '(212) 777-7773',
     website: 'noodlebar-ny.momofuku.com',
-    lat: 40.723163774,
-    lng: -73.984829394,
+    lat: 40.729233,
+    lng: -73.98451,
     description: 
     'Momofuku was founded by chef David Chang in 2004 with the opening of Momofuku Noodle Bar in New York City. Credited with “the rise of contemporary Asian-American cuisine” by the New York Times and named the “most important restaurant in America” by Bon Appétit magazine, Momofuku has opened restaurants in the United States, Australia, and Canada. The restaurants have gained world-wide recognition for their innovative take on cuisine, while supporting sustainable and responsible farmers and food purveyors.'
 })
@@ -85,8 +85,8 @@ milkbar = Restaurant.create!({
     address: '220 8th Ave, New York, NY 10011',
     phone: '(917) 475-1187',
     website: 'milkbarstore.com',
-    lat: 40.722616,
-    lng: -73.988296,
+    lat: 40.7440859,
+    lng: -73.9991359,
     description: 
     'Milk Bar is a sweet (and occasionally savory) shop that’s been turning familiar treats upside down and on their heads, quietly shaking up the dessert scene since 2008. Bon Appetit magazine called us “one of the most exciting bakeries in the country.” But you can literally just call us Milk Bar. We’re not big on feeding the hype beast. But we’re super into feeding our flavorful treats to those who crave the unexpected.'
 })
@@ -99,8 +99,8 @@ pizza = Restaurant.create!({
     address: '261 Moore St, Brooklyn, NY 11206',
     phone: '(718) 417-1118',
     website: 'http://robertaspizza.com/',
-    lat: 40.7142,
-    lng: -73.9316,
+    lat: 40.7050766,
+    lng: -73.9335923,
     description: 
     'Roberta\'s is a New American pizzeria in Brooklyn, New York. Located in the neighborhood of East Williamsburg, it is known for its wood oven cooked pizza and hipster vibe.The restaurant serves pizza containing ingredients cooked from a rooftop garden, and houses a radio station in the rear of the building.
 
