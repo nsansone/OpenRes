@@ -44,12 +44,7 @@
     
             }
             .res-ind-details-cont {
-                padding-left: 10px;
-                a { 
-                    font-size: 18px;
-                    cursor: pointer;
-                    text-decoration: none;
-                }
+                padding-left: 10px;x
                 p {
                     padding: 3px 0px;
                 }
@@ -61,12 +56,12 @@
                 .leave-review {
                     color: red;
                     i {
-                        width: 5px;
-                        height: 5px;
+                        font-size: 12px;
                     }
                     .review-link {
+                        text-decoration: none;
                         font-family: "Darker Grotesque", sans-serif;
-                        padding-left: 15px;
+                        padding-left: 5px;
                         font-size: 16px;
                         cursor: pointer;
                     }
@@ -74,4 +69,10 @@
             }
         }
     }
+}
+
+.res-ind-name { 
+    font-size: 18px;
+    cursor: pointer;
+    text-decoration: none !important;
 }

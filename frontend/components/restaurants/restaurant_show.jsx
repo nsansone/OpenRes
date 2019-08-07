@@ -29,7 +29,7 @@ class RestaurantShow extends React.Component {
       
         
         const reviewButton = this.props.session.id ? <Link to={`/restaurants/${restaurant.id}/review`}>Leave a review</Link> : <div></div>
-        
+
         return (
             <div className="show-cont">
                 <img className="rest-background" src={restaurant.photoUrl} alt="" />
@@ -37,6 +37,8 @@ class RestaurantShow extends React.Component {
                     <main className="show-main">
                         <RestaurantDetail restaurant={restaurant} reviews={reviews} />
                         <h2>What {reviews.length} People Are Saying</h2>
+                
+                        {restaurant.average_rating}
                         {reviewButton}
                         <hr />
                         {reviewList(reviews)}

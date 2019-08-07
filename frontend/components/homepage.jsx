@@ -15,16 +15,20 @@ const Homepage = () => {
                     <h1>Find your table for any occasion</h1>
                     <div className="res-detail-container">
                         <div className="res-detail">
+                            <i className="far fa-calendar"></i>
                             <input placeholder="Jul 31, 2019" type="text"/>
                         </div>
                         <div className="res-detail">
+                            <i className="far fa-clock"></i>
                             <input placeholder="7:00 PM" type="text"/>
                         </div>
                         <div className="res-detail">
+                            <i className="far fa-user"></i>
                             <input placeholder="2 people" type="number"/>
                         </div>
                     </div>
                     <div className="search-bar">
+                        <i className="fas fa-search"></i>
                         <input placeholder="Manhattan" type="text"/>
                     </div>
                     <div className="res-search-submit">

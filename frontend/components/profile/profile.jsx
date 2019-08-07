@@ -1,14 +1,13 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import ResIndexItem from '../reservations/res_index_item';
-import { deflateSync } from 'zlib';
 
 
 class Profile extends React.Component {
     constructor(props){
         super(props);
         this.state= {
-            time: new Date()
+            date: new Date()
         };
     }
     componentDidMount(){
@@ -20,7 +19,7 @@ class Profile extends React.Component {
     render(){
 
         const pastReservations = this.props.reservations.map(reservation => {
-            const todaysDate = this.state.time.getTime();
+            const todaysDate = this.state.date.getTime();
             const resDate = Date.parse(reservation.date)
             if (todaysDate > resDate) {
                 return (
@@ -34,9 +33,9 @@ class Profile extends React.Component {
         });
 
         const upcomingReservations = this.props.reservations.map(reservation => {
-            const todaysDate = this.state.time.getTime();
+            const todaysDate = this.state.date.getTime();
             const resDate = Date.parse(reservation.date);
-            if (todaysDate < resDate) {
+            if (todaysDate <= resDate) {
                 return (
                         <ResIndexItem 
                             key={`upcoming-resIndex-${reservation.id}`} 

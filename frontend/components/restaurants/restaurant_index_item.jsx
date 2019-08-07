@@ -20,6 +20,7 @@ const RestaurantIndexItem = ({restaurant}) => {
                             <i className="fas fa-star"></i>
                         </ul>
                         <p>Awesome (3610)</p>
+                        <p>{restaurant.average_rating}</p>
                     </span>
                     <p className="ind-address">{restaurant.address}</p>
                     <a className="ind-web" href="https://www.katzsdelicatessen.com/menu_and_local-delivery">{restaurant.website}</a>
