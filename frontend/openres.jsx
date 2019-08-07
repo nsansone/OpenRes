@@ -3,10 +3,12 @@ import ReactDOM from 'react-dom';
 import { signup, login, logout } from './actions/session_actions';
 import configureStore from './store/store';
 import Root from './components/root';
+import { fetchReservations } from './actions/reservation_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
     const root = document.getElementById('root');
     let store;
+    window.fetchReservations = fetchReservations;
     if (window.currentUser) {
         const preloadedState = {
             entities: {

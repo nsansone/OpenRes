@@ -1,6 +1,6 @@
 import React from 'react';
 import RestaurantDetail from './restaurant_detail';
-import ResForm from './res_form';
+import ResFormContainer from '../reservations/res_form_container';
 import RestaurantMap from '../restaurant_map/restaurant_map';
 import { Link, Route } from 'react-router-dom';
 import ReviewListItemContainer from '../reviews/review_list_item_container';
@@ -44,9 +44,9 @@ class RestaurantShow extends React.Component {
                     <aside>
                         <div className="res-form-cont">
 
-                            <ResForm />
+                            <ResFormContainer restaurantId={restaurant.id} />
                         </div>
-                            <RestaurantMap />
+                            <RestaurantMap restaurant={restaurant}/>
                     </aside>
                 </div>
             </div>
