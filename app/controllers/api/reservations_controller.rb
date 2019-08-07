@@ -9,6 +9,7 @@ class Api::ReservationsController < ApplicationController
         @reservation = current_user.reservations.new(reservation_params)
         if @reservation.save
             render :show
+ 
         else
             render json: ['please fill out the entire form'], status: 422
         end

@@ -13,7 +13,7 @@ const ResIndexItem = (props) => {
     }
 
     const dateArr = props.reservation.date.split("-")
-    const date = dateArr[2].concat("/").concat(dateArr[1]).concat("/").concat(dateArr[0])
+    const date = dateArr[1].concat("/").concat(dateArr[2]).concat("/").concat(dateArr[0])
     return (
         <li className="res-item">
             {/* <div className="index-img"></div> */}

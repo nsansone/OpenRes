@@ -21,12 +21,15 @@ class RestaurantIndex extends React.Component {
                     <img className="index-search-background" src={window.index_search_background} />
                 <ul className="index-search">
                     <li >
+                        <i className="far fa-calendar"></i>
                         <input placeholder="Jul 31, 2019" type="text" />
                     </li>
                     <li >
+                        <i className="far fa-clock"></i>
                         <input placeholder="7:00 PM" type="text" />
                     </li>
                     <li >
+                        <i className="far fa-user"></i>
                         <input placeholder="2 people" type="number" />
                     </li>
                     <li className="index-search-bar">

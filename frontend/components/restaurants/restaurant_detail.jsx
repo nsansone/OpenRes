@@ -8,11 +8,11 @@ const RestaurantDetail = ({ restaurant, reviews }) => {
             <h1>{restaurant.name}</h1>
             <hr />
             <ul>
-                <li>{restaurant.address}</li>
+                <li><i className="far fa-map"></i>{restaurant.address}</li>
                 &nbsp;&nbsp;
-            <li>{restaurant.website}</li>
+                <li><i className="fas fa-external-link-alt"></i>{restaurant.website}</li>
                 &nbsp;&nbsp;
-            <li>{restaurant.phone}</li>
+                <li><i className="fas fa-phone"></i>{restaurant.phone}</li>
             </ul>
             <hr />
             <span className="avg-review">
