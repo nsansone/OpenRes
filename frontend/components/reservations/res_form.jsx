@@ -5,12 +5,16 @@ class ResForm extends React.Component {
     constructor(props){
         super(props);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleClick = this.handleClick.bind(this);
         this.state = {
             user_id: 0,
             restaurant_id: 0,
             date: "1999-08-08",
             time: "6:00 PM",
-            party_size: 2
+            party_size: 2,
+            hidden: "hidden",
+            buttonHidden: "button-vis",
+            buttonText: "Find a Table"
         };
 
     }
@@ -34,6 +38,14 @@ class ResForm extends React.Component {
             this.setState({[field]: e.target.value});
         };
     }
+
+    handleClick(e){
+        e.preventDefault();
+        this.setState({hidden: 'visible', buttonHidden: '.button-hid', buttonText: ""})
+        
+    }
+
+
 
     render(){
 
@@ -69,7 +81,19 @@ class ResForm extends React.Component {
                         </div>
                     </div>
                     <div className="res-search-submit">
-                        <input type="submit" value="Find a Table" />
+                        <button className={this.state.buttonHidden} onClick={this.handleClick}>{this.state.buttonText}</button>
+                        <div className={this.state.hidden}>
+                            <p>Select a time:</p>
+                            <ul className="hidden-cont">
+                                <input className="times"type="submit" value="6:15 PM"/>
+                                <input className="times"type="submit" value="6:30 PM"/>
+                                <input className="times"type="submit" value="6:45 PM"/>
+                                <input className="times"type="submit" value="7:00 PM"/>
+                                <input className="times"type="submit" value="7:15 PM"/>
+
+                            </ul>
+                        </div>
+
                     </div>
     
                 </form>

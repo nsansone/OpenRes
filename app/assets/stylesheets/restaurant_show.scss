@@ -97,7 +97,7 @@
     border-radius: 4px;
     top: 0px;
     width: 320px;
-    height: 300px;
+    height: 330px;
     box-shadow: 0 2px 8px rgba(153,153,153,.4);
 }
 
@@ -176,7 +176,7 @@
         // margin: 0px auto;
         display: block;
             
-            input {
+            .button-vis {
                 margin: 15px 0px;
                 padding: 17px;
                 font-stretch: 100%;
@@ -190,6 +190,36 @@
                 width: 288px;
                 height: 100%;
             }
+            .button-hid {
+                display: none;
+            }
+    }
+    .hidden {
+        display: none;
+    
+    }
+    .visible {
+        p {
+            font-family: 'Raleway', sans-serif;
+            padding-bottom: 3px;
+            padding-left: 5px;
+        }
+        .hidden-cont {
+            display: flex;
+            width: 100%;
+            flex-wrap: wrap;
+        }
+        input {
+            cursor: pointer;
+
+            border-radius: 4px;
+            color: white;
+            font-family: 'Darker Grotesque',sans-serif;
+            width: 80px;
+            height: 36px;
+            background-color: #DA3743;
+            margin: 5px;
+        }
     }
 }
 

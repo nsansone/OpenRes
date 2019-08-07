@@ -16,6 +16,8 @@
         padding-bottom: 2rem;
     }
     .scroll-li {
+        cursor: pointer;
+        position: relative;
         margin: 0 0.5rem;
         width: 236px;
         border: 1px solid #d8d9db;
@@ -60,6 +62,11 @@
             } 
         }
     }
+
+}
+.scroll-li:hover {
+    top: -10px;
+    box-shadow: 3px 3px 1px 1px lightgrey;
 }
 
 .area-list {

@@ -60,7 +60,7 @@ class Navbar extends React.Component {
                 <ul ref={dropdownRef => this.dropdownRef = dropdownRef} id='dropdown'  className={this.state.dropdown}>
                     <span className="li-cont">
                         <li className="drop-list-item">
-                            <Link to={`/users/${this.props.currentUser.id}/profile`}>Go to Profile</Link>
+                            <Link className="go-to-profile" to={`/users/${this.props.currentUser.id}/profile`}>Go to Profile</Link>
                         </li>
                         <li className="drop-list-item">
                             My Dining History
