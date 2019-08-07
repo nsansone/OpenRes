@@ -33,5 +33,5 @@ export const updateReservation = id => dispatch => (
 );
 
 export const deleteReservation = reservationId => dispatch => (
-    ResApiUtil.removeReservation(reservationId).then(reservation => dispatch(removeReservation(reservationId)))
+    ResApiUtil.deleteReservation(reservationId).then(reservation => dispatch(removeReservation(reservationId)))
 );

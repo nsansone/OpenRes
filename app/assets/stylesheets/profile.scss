@@ -1,8 +1,77 @@
 .profile-cont {
-    .full-name {
-        padding: 30px;
-        font-size: 50px;
-        font-family: "Darker Grotesque", sans-serif;
-        color: grey;
+    background-color: #f7f7f7;
+    font-family: "Darker Grotesque", sans-serif;
+    .name-cont {
+        height: 90px;
+        width: 100%;
+        background-color: white;
+        margin-bottom: 10px;
+
+        .full-name {
+            width: 913px;
+            margin: 0 auto;
+            padding: 15px 30px;;
+            font-size: 50px;
+            color: #303030;
+
+        }
+        
+    }
+    .res-item-cont {
+        border-radius: 4px;
+        width: 913px;
+        margin: 0 auto;
+        background-color: white;
+
+        .section-titles {
+            width: 913px;
+            margin: 0 auto;
+            padding: 20px;
+            font-size: 30px;
+            color: #303030;
+        }
+        .res-item {
+            color: #333333;
+            display: flex;
+            padding: 15px 30px;
+            img {
+                cursor: pointer;
+                height: 80px;
+                width: 80px;
+                object-fit: cover;
+                background-position: center;
+                border-radius: 5px;
+    
+            }
+            .res-ind-details-cont {
+                padding-left: 10px;
+                a { 
+                    font-size: 18px;
+                    cursor: pointer;
+                    text-decoration: none;
+                }
+                p {
+                    padding: 3px 0px;
+                }
+                button {
+                    cursor: pointer;
+                    color: #237B98;
+                    padding-top: 3px;
+                }
+                .leave-review {
+                    color: red;
+                    i {
+                        width: 5px;
+                        height: 5px;
+                    }
+                    .review-link {
+                        font-family: "Darker Grotesque", sans-serif;
+                        padding-left: 15px;
+                        font-size: 16px;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
     }
 }

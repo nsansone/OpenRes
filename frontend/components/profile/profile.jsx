@@ -25,7 +25,7 @@ class Profile extends React.Component {
             if (todaysDate > resDate) {
                 return (
                     <ResIndexItem 
-                        key={`resIndex-${reservation.id}`} 
+                        key={`past-resIndex-${reservation.id}`} 
                         reservation={reservation} 
                         restaurant={this.props.restaurants[reservation.restaurant_id]} 
                     />
@@ -35,14 +35,14 @@ class Profile extends React.Component {
 
         const upcomingReservations = this.props.reservations.map(reservation => {
             const todaysDate = this.state.time.getTime();
-            const resDate = Date.parse(reservation.date)
+            const resDate = Date.parse(reservation.date);
             if (todaysDate < resDate) {
                 return (
-                    <ResIndexItem
-                        key={`resIndex-${reservation.id}`}
-                        reservation={reservation}
-                        restaurant={this.props.restaurants[reservation.restaurant_id]}
-                    />
+                        <ResIndexItem 
+                            key={`upcoming-resIndex-${reservation.id}`} 
+                            reservation={reservation} restaurant={this.props.restaurants[reservation.restaurant_id]} 
+                            deleteReservation={this.props.deleteReservation}
+                        />
                 );
             }
         });
@@ -50,16 +50,20 @@ class Profile extends React.Component {
 
         return (
             <div className="profile-cont">
-                <h1 className="full-name">
-                    {this.props.currentUser.fname}&nbsp;{this.props.currentUser.lname} 
-                </h1>
-                <hr/>
-                <h1 className="section-titles">Upcoming Reservations</h1>
-                <ul className="res-items">
+                <div className="name-cont">
+                    <h1 className="full-name">
+                        {this.props.currentUser.fname}&nbsp;{this.props.currentUser.lname} 
+                    </h1>
+                    <hr/>
+                </div>
+                <ul className="res-item-cont">
+                    <h1 className="section-titles">Upcoming Reservations</h1>
+                    <hr/>
                     {upcomingReservations}
                 </ul>
-                <h1 className="section-titles">Past Reservations</h1>
-                <ul className="res-items">
+                <ul className="res-item-cont">
+                    <h1 className="section-titles">Past Reservations</h1>
+                    <hr/>
                     {pastReservations}
                 </ul>
             </div>
