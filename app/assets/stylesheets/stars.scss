@@ -1,15 +1,22 @@
+//https://codepen.io/filcp/pen/QvZVOg
+//guided by above tutorial for star filling
+
 .header_star{
   float: left;
-  margin-left: 10px;
+  // margin-left: 10px;
   position: relative;
+    color: lightgray !important;
+  // i {
+  //   font-size: 16px;
+  // }
 }
 .header_star .fa.fa-star{
-  font-size: 20px;
 }
 .header_star:hover {
   text-decoration: none;
 }
 .header_star .star_hover .fa.fa-star {
+  // font-size: 2-px;
   color: #FFC125;
 }
 .star_hover {
@@ -22,12 +29,24 @@
   width: 0;
   transition: all 0.3s linear 0s;
 }
-.header_star .star_hover {
-//   width: 92%;
-}
+// .header_star .star_hover {
+
+// //   width: 92%;
+// }
 .show-review {
     display: flex;
-}
+    align-items: center;
+    padding-bottom: 10px;
+  }
+  
+  .header_stars {
+    max-width: 112.5px;
+    font-size: 16px;
+  }
+
+  .homepage-header-stars {
+    max-width: 90px;
+  }
 
 
 

@@ -3,9 +3,9 @@ import { Link, Route } from 'react-router-dom';
 
 
 const RestaurantDetail = ({ restaurant, reviews }) => {
-    let avgRat = reviews.length === 0 ? "" : restaurant.average_rating
+    let avgRat = reviews.length === 0 ? "" : restaurant.average_rating;
     let revNum = reviews.length === 0 ? "No reviews yet!" : `${reviews.length} Reviews`
-    let icon = reviews.length === 0 ? "" : (<i className="far fa-comment-alt"></i>)
+    let icon = reviews.length === 0 ? "" : (<i className="far fa-comment-alt fa-flip-horizontal"></i>)
     const styleWidth = (parseFloat(restaurant.average_rating)/5)*100 
 
     return (
@@ -21,13 +21,13 @@ const RestaurantDetail = ({ restaurant, reviews }) => {
             </ul>
             <hr />
             <span className="show-review">
-                <div className="header_star" style={{ width: `${styleWidth}%` }}>
+                <div className="header_stars" style={{ width: `${styleWidth}%` }}>
                     <a href="#" className="header_star">
-                        <i className="fa fa-star" aria-hidden="true"></i>
-                        <i className="fa fa-star" aria-hidden="true"></i>
-                        <i className="fa fa-star" aria-hidden="true"></i>
-                        <i className="fa fa-star" aria-hidden="true"></i>
-                        <i className="fa fa-star" aria-hidden="true"></i>
+                            <i className="fa fa-star" aria-hidden="true"></i>
+                            <i className="fa fa-star" aria-hidden="true"></i>
+                            <i className="fa fa-star" aria-hidden="true"></i>
+                            <i className="fa fa-star" aria-hidden="true"></i>
+                            <i className="fa fa-star" aria-hidden="true"></i>
                         <div className="star_hover" style={{ width: `${styleWidth}%` }}>
                             <i className="fa fa-star" aria-hidden="true"></i>
                             <i className="fa fa-star" aria-hidden="true"></i>
@@ -38,8 +38,8 @@ const RestaurantDetail = ({ restaurant, reviews }) => {
                     </a>
                 </div>      
            
-                <p>{avgRat}</p>&nbsp;&nbsp;
-                <p>{icon}</p>&nbsp;&nbsp;
+                <p>{avgRat}</p>&nbsp;&nbsp;&nbsp;&nbsp;
+                <p>{icon}</p>&nbsp;
                 <p>{revNum}</p>
             </span>
             <p className="rest-description">{restaurant.description}</p>
