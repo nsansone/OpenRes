@@ -1,7 +1,7 @@
 import React from 'react';
 import RestaurantDetail from './restaurant_detail';
 import ResFormContainer from '../reservations/res_form_container';
-import RestaurantMap from '../restaurant_map/restaurant_map';
+import ShowRestaurantMap from '../restaurant_map/show_restaurant_map';
 import { Link, Route } from 'react-router-dom';
 import ReviewListItemContainer from '../reviews/review_list_item_container';
 
@@ -37,7 +37,6 @@ class RestaurantShow extends React.Component {
                     <main className="show-main">
                         <RestaurantDetail restaurant={restaurant} reviews={reviews} />
                         <h2>What {reviews.length} People Are Saying</h2>
-                
                         {restaurant.average_rating}
                         {reviewButton}
                         <hr />
@@ -48,7 +47,16 @@ class RestaurantShow extends React.Component {
 
                             <ResFormContainer restaurantId={restaurant.id} />
                         </div>
-                            <RestaurantMap restaurant={restaurant}/>
+                        <div className="map-cont">
+                            <ShowRestaurantMap singleRestaurant={true}
+                                fetchRestaurant={this.props.fetchRestaurant}
+                                restaurantId={restaurant.id}
+                                restaurant={restaurant}
+                            />
+                            <p className="map-address">
+                                <i className="fas fa-map-marker-alt"></i>  {this.props.restaurant.address}
+                            </p>
+                        </div>
                     </aside>
                 </div>
             </div>

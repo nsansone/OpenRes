@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import ContentScrollerContainer from './content_scrollers/content_scroller_container';
+import SearchBar from './search/search_bar';
 
 const Homepage = () => {
 
@@ -27,13 +28,7 @@ const Homepage = () => {
                             <input placeholder="2 people" type="number"/>
                         </div>
                     </div>
-                    <div className="search-bar">
-                        <i className="fas fa-search"></i>
-                        <input placeholder="Manhattan" type="text"/>
-                    </div>
-                    <div className="res-search-submit">
-                        <Link className="res-search-submit"to="/restaurants">Let's go</Link>
-                    </div>
+                    <SearchBar page="homepage" />
                 </form>
             </span>
             <ContentScrollerContainer />

@@ -6,7 +6,7 @@ import LogInFormContainer from './session_form/login_form_container';
 import { Route, Redirect, Switch, Link, HashRouter } from 'react-router-dom';
 import Modal from './modal';
 import Homepage from './homepage'
-import RestaurantIndexContainer from './restaurants/restaurant_index_container';
+import RestaurantIndexContainer from './search/restaurant_index_container';
 import RestaurantShowContainer from './restaurants/restaurant_show_container';
 import SearchContainer from './search/search_container';
 import Footer from './footer';
@@ -24,7 +24,7 @@ const App = () => (
         <div className="all-content">
             <Switch>
                 <Route exact path="/search_restaurants" component={ SearchContainer } />
-                <Route exact path="/restaurants" component={ RestaurantIndexContainer } />
+                <Route exact path="/restaurants" component={ SearchContainer } />
                 <Route exact path="/restaurants/:restaurantId" component={ RestaurantShowContainer } />
                 <Route exact path="/restaurants/:restaurantId/review"
                     component={ReviewFormContainer} /> 

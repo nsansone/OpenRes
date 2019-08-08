@@ -49,6 +49,7 @@
 
 .session-submit {
   font-size: 19.2px;
+
   margin-bottom: 1rem;
   cursor: pointer;
   font-family: 'Karla', sans-serif;
@@ -61,10 +62,13 @@
   margin-right: auto;
   background-color: #da3743;
   color: white;
-  padding: 0.9375rem 1.75rem 0.9373rem;
+  padding: 15px 0px;
+
   width: 396px;
 
-
+}
+.session-submit::placeholder {
+  color: white;
 }
 
 hr {
