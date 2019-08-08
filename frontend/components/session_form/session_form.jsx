@@ -8,6 +8,7 @@ class SignupForm extends React.Component {
         super(props);
         this.state = { fname: "", lname: "", email: "", password: "" };
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleClick = this.handleClick.bind(this);
     }
 
     update(field) {
@@ -20,6 +21,11 @@ class SignupForm extends React.Component {
         e.preventDefault();
         const user = Object.assign({}, this.state);
         this.props.processForm(user).then(this.props.closeModal);
+    }
+
+    handleClick(e) {
+        e.preventDefault();
+        this.props.processForm(this.props.demoUser).then(this.props.closeModal);
     }
 
     renderErrors() {
@@ -82,14 +88,15 @@ class SignupForm extends React.Component {
                 {this.props.formType === 'login' && 
                     <>
                         <div className="forgot">
-                          <a href="#">Forgot Password?</a>
-                       </div>
+                            <a href="#">Forgot Password?</a>
+                        </div>
                         <div className="submit">
-                          <input className="session-submit" type="submit" value="Sign In"/>
-                          </div>
-                           <div className="new-account">
-                               New to OpenRes? &nbsp;
-                      <a href="#">Create an account</a>
+                            <input className="session-submit" type="submit" value="Sign In"/>
+                            <button onClick={this.handleClick} className="session-submit" >Demo User</button>
+                        </div>
+                        <div className="new-account">
+                            New to OpenRes? &nbsp;
+                            <a href="#">Create an account</a>
                         </div> 
                     </>
                 }
