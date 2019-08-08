@@ -7,8 +7,9 @@ const mapStateToProps = (state, ownProps) => {
     const restaurantId = parseInt(ownProps.match.params.restaurantId);
     const restaurant = state.entities.restaurants[restaurantId] || {reviewIds: [], lat: 0, lng: 0};
     const reviewIds = restaurant.reviewIds || [];
-    const reviews = reviewIds.map(reviewId => state.entities.reviews[reviewId])
+    const reviews = reviewIds.map(reviewId => state.entities.reviews[reviewId]);
     const session = state.session;
+
     return { restaurantId, restaurant, reviews, session }; 
 };
 

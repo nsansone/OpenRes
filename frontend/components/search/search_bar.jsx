@@ -11,6 +11,7 @@ class SearchBar extends React.Component {
         super(props);
         this.state = { searchText: "" };
         this.handleClick = this.handleClick.bind(this);
+        this.handleKeyUp = this.handleKeyUp.bind(this);
     }
 
     update(field) {
@@ -19,13 +20,32 @@ class SearchBar extends React.Component {
         };
     }
 
-    handleClick(e) {
-        e.preventDefault()
-        this.props.updateFilter("search", this.state.searchText).then(() => {
-            if (this.props.page === "homepage"){
-                this.props.history.push('/restaurants'); 
+    handleClick(page) {
+        return (e) => {
+            e.preventDefault();
+            this.props.updateFilter("search", this.state.searchText).then(() => {
+                    this.props.history.push({
+                        pathname: '/restaurants',
+                        fromPage: `${page}`
+                    }); 
+                
+            });
+        };
+    }
+
+    handleKeyUp(page){
+        return (e) => {
+            e.preventDefault();
+            if (e.keyCode === 13){
+                this.props.updateFilter("search", this.state.searchText).then(() => {
+                        this.props.history.push({
+                            pathname: '/restaurants',
+                            fromPage: `${page}`
+                        });
+
+                });
             }
-        });
+        };
     }
 
     render() {
@@ -34,10 +54,10 @@ class SearchBar extends React.Component {
                 <>
                     <div className="search-bar">
                         <i className="fas fa-search"></i>&nbsp;&nbsp;
-                        <input onChange={this.update('searchText')} placeholder="Location, Restaurant, or Cuisine" type="text" value={this.state.searchText} />
+                        <input id="hi" onKeyUp={this.handleKeyUp('homepage')} onChange={this.update('searchText')} placeholder="Location, Restaurant, or Cuisine" type="text" value={this.state.searchText} />
                     </div>
                     <div className="res-search-submit">
-                        <a className="res-search-submit" onClick={this.handleClick}>Let's go</a>
+                        <a className="res-search-submit" onClick={this.handleClick('homepage')}>Let's go</a>
                     </div>
                 </>
             )
@@ -46,10 +66,10 @@ class SearchBar extends React.Component {
             <>
                 <li className="index-search-bar">
                     <i className="fas fa-search"></i>&nbsp;&nbsp;
-                <input onChange={this.update('searchText')} placeholder="Location, Restaurant, or Cuisine" type="text" value={this.state.searchText} />
+                <input onKeyUp={this.handleKeyUp('index')} onChange={this.update('searchText')} placeholder="Location, Restaurant, or Cuisine" type="text" value={this.state.searchText} />
                 </li>
                 <li className="res-search-submit">
-                    <a className="res-search-submit" onClick={this.handleClick}>Let's go</a>
+                    <a className="res-search-submit" onClick={this.handleClick('index')}>Let's go</a>
                 </li>
             </>
         );

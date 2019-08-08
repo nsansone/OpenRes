@@ -17,10 +17,12 @@ class RestaurantShow extends React.Component {
             this.props.fetchRestaurant(this.props.match.params.restaurantId);
         }
     }
-  
 
+    
+    
     render(){
         const { restaurant, reviews } = this.props;
+        const revHeader = reviews.length === 0 ? "No reviews yet!" : `What ${reviews.length} People Are Saying`
         const reviewList = (reviews) => (
             reviews.map(review => (
                 <ReviewListItemContainer review={review} key={review.id} />
@@ -29,15 +31,14 @@ class RestaurantShow extends React.Component {
       
         
         const reviewButton = this.props.session.id ? <Link to={`/restaurants/${restaurant.id}/review`}>Leave a review</Link> : <div></div>
-
+        
         return (
             <div className="show-cont">
                 <img className="rest-background" src={restaurant.photoUrl} alt="" />
                 <div className="show-body">
                     <main className="show-main">
                         <RestaurantDetail restaurant={restaurant} reviews={reviews} />
-                        <h2>What {reviews.length} People Are Saying</h2>
-                        {restaurant.average_rating}
+                        <h2>{revHeader}</h2>
                         {reviewButton}
                         <hr />
                         {reviewList(reviews)}
@@ -47,12 +48,12 @@ class RestaurantShow extends React.Component {
 
                             <ResFormContainer restaurantId={restaurant.id} />
                         </div>
-                        <div className="map-cont">
-                            <ShowRestaurantMap singleRestaurant={true}
-                                fetchRestaurant={this.props.fetchRestaurant}
-                                restaurantId={restaurant.id}
-                                restaurant={restaurant}
-                            />
+                        <div>
+                            <ShowRestaurantMap restaurant={restaurant} 
+                                    fetchRestaurant={this.props.fetchRestaurant} 
+                                    singleRestaurant={true} 
+                                    restaurantId={restaurant.id}
+                            />                   
                             <p className="map-address">
                                 <i className="fas fa-map-marker-alt"></i>  {this.props.restaurant.address}
                             </p>

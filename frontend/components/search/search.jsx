@@ -12,7 +12,9 @@ class Search extends React.Component {
     }
 
     componentDidMount(){
-        this.props.fetchRestaurants();
+        if (this.props.history.location.fromPage !== "homepage") {
+            this.props.fetchRestaurants();
+        }
     }
 
     render(){

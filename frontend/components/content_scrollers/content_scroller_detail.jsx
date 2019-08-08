@@ -18,7 +18,7 @@ const ContentScrollerDetail = ({ restaurant }) => {
                             <i className="fas fa-star"></i>
                             <i className="fas fa-star"></i>
                         </ul>
-                        <p>Awesome (3610)</p>
+                        <p>{restaurant.numReviews.length} Reviews</p>
                     </span>
                     <p className="scroll-address">{restaurant.address}</p>
 

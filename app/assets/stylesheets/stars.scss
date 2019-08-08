@@ -1,0 +1,37 @@
+.header_star{
+  float: left;
+  margin-left: 10px;
+  position: relative;
+}
+.header_star .fa.fa-star{
+  font-size: 20px;
+}
+.header_star:hover {
+  text-decoration: none;
+}
+.header_star .star_hover .fa.fa-star {
+  color: #FFC125;
+}
+.star_hover {
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  white-space: nowrap;
+  width: 0;
+  transition: all 0.3s linear 0s;
+}
+.header_star .star_hover {
+//   width: 92%;
+}
+.show-review {
+    display: flex;
+}
+
+
+
+
+
+
+

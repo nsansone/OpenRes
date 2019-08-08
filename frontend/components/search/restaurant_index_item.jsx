@@ -2,6 +2,26 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 
 const RestaurantIndexItem = ({restaurant}) => {
+    let reviewWord = "";
+    let reviewNum = restaurant.numReviews.length !== 0 ? `(${restaurant.numReviews.length})` : ""; 
+    if (restaurant.numReviews.length === 0){
+        reviewWord = "No reviews yet!";
+    }
+    if (restaurant.average_rating <= 2 && restaurant.numReviews.length !== 0){
+        reviewWord = "Not amazing";
+    }
+    if (restaurant.average_rating > 2 && restaurant.average_rating < 3){
+        reviewWord = "Okay";
+    }
+    if (restaurant.average_rating >= 3 && restaurant.average_rating < 4) {
+        reviewWord = "Good";
+    }
+    if (restaurant.average_rating >= 4 && restaurant.average_rating < 4.7) {
+        reviewWord = "Awesome";
+    }
+    if (restaurant.average_rating >= 4.7) {
+        reviewWord = "Exceptional";
+    }
     return(
         <li className="index-li">
             {/* <div className="index-img"></div> */}
@@ -19,8 +39,8 @@ const RestaurantIndexItem = ({restaurant}) => {
                             <i className="fas fa-star"></i>
                             <i className="fas fa-star"></i>
                         </ul>
-                        <p>Awesome (3610)</p>
-                        <p>{restaurant.average_rating}</p>
+                        <p>{reviewWord}</p> &nbsp;
+                        <p>{reviewNum}</p>
                     </span>
                     <p className="ind-address">{restaurant.address}</p>
                     <a className="ind-web" href="https://www.katzsdelicatessen.com/menu_and_local-delivery">{restaurant.website}</a>
