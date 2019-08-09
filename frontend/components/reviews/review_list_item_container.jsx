@@ -14,6 +14,7 @@ const Review = ({ review, author }) => {
     const { rating, body } = review;
     const colors = ["#6C8AE4", "#BB6ACD", "#D86441", "#DF4E96"]
     const randColor = colors[Math.floor(Math.random() * colors.length)];
+    const styleWidth = (parseFloat(review.rating) / 5) * 100; 
     return (
         <div className="review-cont">
             <div className="review">
@@ -22,14 +23,23 @@ const Review = ({ review, author }) => {
                     <p className="user-fname">{author.fname}</p>
                 </div>
                 <div className="review-right">
-                    <span className="avg-review">
-                        <ul className="stars">
-                            <i className="fas fa-star"></i>
-                            <i className="fas fa-star"></i>
-                            <i className="fas fa-star"></i>
-                            <i className="fas fa-star"></i>
-                            <i className="fas fa-star"></i>
-                        </ul>
+                    <span className="show-review">
+                        <div className="header_stars" style={{ width: `${styleWidth}%` }}>
+                            <a href="#" className="home-header_star">
+                                <i className="fa fa-star" aria-hidden="true"></i>
+                                <i className="fa fa-star" aria-hidden="true"></i>
+                                <i className="fa fa-star" aria-hidden="true"></i>
+                                <i className="fa fa-star" aria-hidden="true"></i>
+                                <i className="fa fa-star" aria-hidden="true"></i>
+                                <div className="star_hover" style={{ width: `${styleWidth}%` }}>
+                                    <i className="fa fa-star" aria-hidden="true"></i>
+                                    <i className="fa fa-star" aria-hidden="true"></i>
+                                    <i className="fa fa-star" aria-hidden="true"></i>
+                                    <i className="fa fa-star" aria-hidden="true"></i>
+                                    <i className="fa fa-star" aria-hidden="true"></i>
+                                </div>
+                            </a>
+                        </div>
                         <p>{rating} stars out of 5</p>
                     </span>
                     <p className="review-body">{body}</p>
