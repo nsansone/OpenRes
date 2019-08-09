@@ -48,7 +48,7 @@ class RestaurantShow extends React.Component {
 
                             <ResFormContainer restaurantId={restaurant.id} />
                         </div>
-                        <div>
+                        <div className="map-cont">
                             <ShowRestaurantMap restaurant={restaurant} 
                                     fetchRestaurant={this.props.fetchRestaurant} 
                                     singleRestaurant={true} 

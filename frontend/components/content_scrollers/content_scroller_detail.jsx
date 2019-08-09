@@ -12,8 +12,8 @@ const ContentScrollerDetail = ({ restaurant }) => {
                 </Link>
                 <ul className="scroll-details">
                     <span className="show-review">
-                        <div className="homepage-header_stars" style={{ width: `${styleWidth}%` }}>
-                            <a href="#" className="header_star">
+                        <div className="header_stars" style={{ width: `${styleWidth}%` }}>
+                            <a href="#" className="home-header_star">
                                     <i className="fa fa-star" aria-hidden="true"></i>
                                     <i className="fa fa-star" aria-hidden="true"></i>
                                     <i className="fa fa-star" aria-hidden="true"></i>

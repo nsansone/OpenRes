@@ -31,13 +31,15 @@
             width: 100%;
         }
         .scroll-details-cont {
-            padding: 0.5rem;
+            // padding: 0.5rem;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
             position: relative;
             color: #2D333F;
+            padding-left: 5px;
             .scroll-name {
+
                 font-size: 20px;
                 text-decoration: none;
                 margin: 0px 0px 4px; 
@@ -68,6 +70,7 @@
     top: -10px;
     box-shadow: 3px 3px 1px 1px lightgrey;
 }
+
 
 .area-list {
     padding: 15px;

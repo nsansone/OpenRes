@@ -7,16 +7,12 @@
 .show-body {
     height: 100%;
     display: flex;
-    // z-index: 5 !important;
     max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
     margin-top: -48px;
     background-color: transparent;
     margin-bottom: 30px;
-
-
-
     aside {
         width: 320px;
         display: block;
@@ -154,13 +150,16 @@
         height: 57px;
         width: 288px;
         border-bottom: 3px solid lightgrey !important;
+        select {
+            -webkit-appearance: none;
+        }
         .res-date {
             font-family: "Darker Grotesque", sans-serif;
             font-size: 16px;
+            background-color: white;
             border-top: none;
             border-left: none;
             border-right: none;
-            border-radius: 0px !important;
             color: grey;
             outline: none;
             cursor: pointer;
@@ -274,7 +273,12 @@
         margin-bottom: 30px;
         text-align: justify;
     }
+    a {
+        cursor: pointer;
+    }
 }
+
+
 
 
 

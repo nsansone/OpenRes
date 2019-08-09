@@ -3,20 +3,14 @@
 
 .header_star{
   float: left;
-  // margin-left: 10px;
   position: relative;
-    color: lightgray !important;
-  // i {
-  //   font-size: 16px;
-  // }
+  color: lightgray !important;
 }
-.header_star .fa.fa-star{
-}
+
 .header_star:hover {
   text-decoration: none;
 }
 .header_star .star_hover .fa.fa-star {
-  // font-size: 2-px;
   color: #FFC125;
 }
 .star_hover {
@@ -29,28 +23,36 @@
   width: 0;
   transition: all 0.3s linear 0s;
 }
-// .header_star .star_hover {
-
-// //   width: 92%;
-// }
 .show-review {
-    display: flex;
-    align-items: center;
-    padding-bottom: 10px;
-  }
+  display: flex;
+  align-items: center;
+  padding-bottom: 10px;
+}
   
-  .header_stars {
-    max-width: 112.5px;
-    font-size: 16px;
-  }
+.header_stars {
+  max-width: 90px;
+  font-size: 16px;
+  padding-right: 10px;
+}
+  
+.home-header_star {
+  float: left;
+  // margin-left: 5px;
+  position: relative;
+  color: lightgray !important;
+  .star_hover {
+    i {
+      color: red;
+    }
+   }
+ }
 
-  .homepage-header-stars {
-    max-width: 90px;
-  }
-
-
-
-
-
-
-
+  
+  
+  
+  
+  
+  
+  
+  
+  

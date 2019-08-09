@@ -59,13 +59,18 @@ class ResForm extends React.Component {
 
     handleClick2(e){
         e.preventDefault();
+        if (this.state.user_id === 0) {
+            this.setState({ hidden: 'hidden', confirm: "confirm-vis" });
+        } else {
         this.setState({time: e.target.key });
         const reservation = Object.assign(this.state, {restaurant_id: this.props.match.params.restaurantId });
         this.props.createReservation(reservation).then(this.setState({ hidden: 'hidden', confirm: "confirm-vis" }))
+        }
     }
 
     handleClick(e){
         e.preventDefault();
+
         this.pickTimes(this.state.time);
         this.setState({hidden: 'visible', buttonHidden: '.button-hid', buttonText: ""});
         
@@ -86,7 +91,8 @@ class ResForm extends React.Component {
 
 
     render(){
-
+        const resConfirm = this.state.user_id === 0 ? "Whoops! Please log in to make a reservation!" : "Your reservation has been confirmed! Please see your profile for details on upcoming reservations."
+      
         return (
                 <form className="make-res">
                     <h1>Make a reservation</h1>
@@ -94,14 +100,7 @@ class ResForm extends React.Component {
                     <div className="res-cont">
                         <div className="res-party-cont">
                             <p className="res-party">Party Size</p>
-                            {/* <select onChange={this.update('party-size')}>
-                                <option value={parseInt("1")}>For 1</option>
-                                <option value={parseInt("2")}>For 2</option>
-                                <option value={parseInt("3")}>For 3</option>
-                                <option value={parseInt("4")}>For 4</option>
-                            </select> */}
-                        <input onChange={this.update('party_size')} type="number" placeholder="For 2"/>
-    
+                            <input onChange={this.update('party_size')} type="number" placeholder="For 2"/>
                         </div>
                         <div className="new-res-detail-container">
                             <div className="new-res-detail">
@@ -125,7 +124,7 @@ class ResForm extends React.Component {
                     </div>
                     <div className="res-search-submit">
                     <button onClick={this.handleClick} className={this.state.buttonHidden}>{this.state.buttonText}</button>
-                        <p className={this.state.confirm}>Your reservation has been confirmed! Please see your profile for details on upcoming reservations.</p>
+                        <p className={this.state.confirm}>{resConfirm}</p>
                         <div className={this.state.hidden}>
                             <p>Select a time:</p>
                             <ul className="hidden-cont">

@@ -36,8 +36,8 @@ const RestaurantDetail = ({ restaurant, reviews }) => {
                             <i className="fa fa-star" aria-hidden="true"></i>
                         </div>
                     </a>
-                </div>      
-           
+                </div>     
+
                 <p>{avgRat}</p>&nbsp;&nbsp;&nbsp;&nbsp;
                 <p>{icon}</p>&nbsp;
                 <p>{revNum}</p>
