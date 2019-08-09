@@ -1,9 +1,10 @@
 class Api::RestaurantsController < ApplicationController
 
     def index
-        restaurants = bounds ? Restaurant.in_bounds(bounds) : Restaurant.all
-        restaurants = restaurants.text_includes(search) 
-        @restaurants = restaurants.includes(:reviews)
+        restaurants = bounds ? Restaurant.with_attached_photo.in_bounds(bounds) : Restaurant.with_attached_photo.all
+        restaurants = restaurants.text_includes(search)
+
+        @restaurants = restaurants.includes(:reviews, :cuisines)
         
         
         render :index
@@ -19,7 +20,7 @@ class Api::RestaurantsController < ApplicationController
     end
 
     def show 
-        @restaurant = Restaurant.includes(:reviews).includes(:review_authors).find(params[:id])
+        @restaurant = Restaurant.with_attached_photo.includes(:reviews, :cuisines).includes(:review_authors).find(params[:id])
         render :show
     end
 
@@ -35,6 +36,10 @@ class Api::RestaurantsController < ApplicationController
     def search
         params[:search]
     end
+
+    # def cuisines
+    #     params[:restCuisine]
+    # end
 
 
 end

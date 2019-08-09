@@ -12,7 +12,7 @@ const mapStateToProps = ({ entities: { users } }, { review }) => {
 
 const Review = ({ review, author }) => {
     const { rating, body } = review;
-    const colors = ["#6C8AE4", "#BB6ACD", "#D86441", "DF4E96"]
+    const colors = ["#6C8AE4", "#BB6ACD", "#D86441", "#DF4E96"]
     const randColor = colors[Math.floor(Math.random() * colors.length)];
     return (
         <div className="review-cont">

@@ -16,7 +16,6 @@ const ResIndexItem = (props) => {
     const date = dateArr[1].concat("/").concat(dateArr[2]).concat("/").concat(dateArr[0])
     return (
         <li className="res-item">
-            {/* <div className="index-img"></div> */}
             <Link to={`/restaurants/${props.restaurant.id}`}>
                 <img className="res-index-img" src={props.restaurant.photoUrl} alt="" />
             </Link>

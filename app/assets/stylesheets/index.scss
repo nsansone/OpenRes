@@ -77,12 +77,15 @@
             }
         }
     }
-    aside {
+    .aside-vis {
         width: 224px;
         height: 1000px;
     }
+    .aside-hid {
+        display: none;
+    }
     .index-list {
-        width: 768px;
+        width: 500px;
         height: 1000px;
         margin-left: 10px;
         overflow-y: scroll;
@@ -142,9 +145,53 @@
     }
 }
 
-.index-map {
-    width: 300px;
-    height: 300px;
+.map-visible {
+    width: 1000px;
+    height: 1000px;
+    margin-top: 5px;
 }
 
+.map-hidden {
+    display: none;
+}
+
+.map-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Karla", sans-serif;
+    width: 192px;
+    height: 64px;
+    border: 1px solid #247F9E;
+    border-radius: 3px;
+    margin: 16px;
+    background-size: 100% 100%;
+    background-image: url('https://media.otstatic.com/search-result-node/images/mapImage@2x.e764d473.png');
+    button {
+        cursor: pointer;
+        border-radius: 3px;
+        background-color: #247F9E;
+        color: white;
+        width: 80px;
+        height: 32px;
+    }
+}
+
+.button-hid {
+    display: none;
+}
+
+.button-vis {
+    cursor: pointer;
+    height: 45px;
+    width: 85px;
+    border-radius: 3px;
+    border: 1px solid #247F9E;
+    font-family: "Karla", sans-serif;
+    color: #247F9E;
+    background-color: #eef8fb;
+    font-size: 14px;
+    margin-top: 30px;
+    margin-left: 10px;
+}
 

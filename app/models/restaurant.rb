@@ -27,6 +27,14 @@ class Restaurant < ApplicationRecord
         through: :reviews,
         source: :author
 
+    has_many :restaurant_cuisines,
+        foreign_key: :restaurant_id,
+        class_name: :RestaurantCuisine
+    
+    has_many :cuisines,
+        through: :restaurant_cuisines,
+        source: :cuisine
+
     def average_rating
         reviews.average(:rating)
     end
@@ -41,5 +49,8 @@ class Restaurant < ApplicationRecord
     def self.text_includes(string)
         self.where("name LIKE '%#{string}%'")
     end
+
+    # def self.rest_cuisine(string)
+    #    const restIds = self.select()
     
 end

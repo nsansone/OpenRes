@@ -84,6 +84,7 @@ class RestaurantMap extends React.Component {
 
     render() {
         return (
+
             <div className="index-map" ref="map"></div>
         );
             // <div className="map-cont"> 

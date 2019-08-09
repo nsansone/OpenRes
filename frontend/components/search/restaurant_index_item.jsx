@@ -25,7 +25,6 @@ const RestaurantIndexItem = ({restaurant}) => {
     const styleWidth = (parseFloat(restaurant.average_rating) / 5) * 100; 
     return(
         <li className="index-li">
-            {/* <div className="index-img"></div> */}
             <img className="index-img" src={restaurant.photoUrl} alt="" />
             <div className="ind-details-cont">
                 <Link className="ind-name" to={`/restaurants/${restaurant.id}`}>
