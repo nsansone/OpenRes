@@ -12,12 +12,13 @@ const mapStateToProps = ({ entities: { users } }, { review }) => {
 
 const Review = ({ review, author }) => {
     const { rating, body } = review;
-    
+    const colors = ["#6C8AE4", "#BB6ACD", "#D86441", "DF4E96"]
+    const randColor = colors[Math.floor(Math.random() * colors.length)];
     return (
         <div className="review-cont">
             <div className="review">
                 <div className="review-left">
-                    <p className="user-icon">N</p>
+                    <p style={{ background: `${randColor}`}} className="user-icon">{author.fname.slice(0,1).toUpperCase()}</p>
                     <p className="user-fname">{author.fname}</p>
                 </div>
                 <div className="review-right">
