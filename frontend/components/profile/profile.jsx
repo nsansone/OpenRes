@@ -17,11 +17,13 @@ class Profile extends React.Component {
 
 
     render(){
-
+ 
         const pastReservations = this.props.reservations.map(reservation => {
-            const todaysDate = this.state.date.getTime();
-            const resDate = Date.parse(reservation.date)
-            if (todaysDate > resDate) {
+            const todaysDate = new Date();
+            // const resHour = parseInt(reservation.time.split(":")[0])
+            const resDate = Date.parse(reservation.date);
+            const newToday = todaysDate.setDate(todaysDate.getDate() - 1)
+            if (newToday > resDate) {
                 return (
                     <ResIndexItem 
                         key={`past-resIndex-${reservation.id}`} 
@@ -33,9 +35,10 @@ class Profile extends React.Component {
         });
 
         const upcomingReservations = this.props.reservations.map(reservation => {
-            const todaysDate = this.state.date.getTime();
-            const resDate = Date.parse(reservation.date);
-            if (todaysDate <= resDate) {
+            const todaysDate = new Date();
+            const newToday = todaysDate.setDate(todaysDate.getDate() - 1)
+            const resDate = Date.parse(reservation.date)
+            if (newToday < resDate) {
                 return (
                         <ResIndexItem 
                             key={`upcoming-resIndex-${reservation.id}`} 
@@ -44,6 +47,7 @@ class Profile extends React.Component {
                         />
                 );
             }
+
         });
 
 

@@ -4,7 +4,7 @@ import { createReservation, deleteReservation } from '../../actions/reservation_
 import { fetchRestaurant } from '../../actions/restaurant_actions';
 
 const mapStateToProps = (state, ownProps) => {
-
+    
     const restaurant = state.entities.restaurants[ownProps.restaurantId]
     return({
         user: state.entities.users[state.session.id],

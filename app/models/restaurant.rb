@@ -47,8 +47,11 @@ class Restaurant < ApplicationRecord
     end
 
     def self.text_includes(string)
-        self.where("name LIKE '%#{string}%'")
+        self.where("lower(name) LIKE '%#{string.downcase}%'")
     end
+
+    #https://stackoverflow.com/questions/2220423/case-insensitive-search-in-rails-model
+    # used above stack overflow question to help with case insensitive query
 
     # def self.rest_cuisine(string)
     #    const restIds = self.select()

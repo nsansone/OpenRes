@@ -10,7 +10,7 @@
 .header_star:hover {
   text-decoration: none;
 }
-.header_star .star_hover .fa.fa-star {
+.header_star .star_hover {
   color: #FFC125;
 }
 .star_hover {
@@ -37,7 +37,6 @@
   
 .home-header_star {
   float: left;
-  // margin-left: 5px;
   position: relative;
   color: lightgray !important;
   .star_hover {

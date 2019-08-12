@@ -12,7 +12,7 @@ class ResForm extends React.Component {
         const month = (today.getMonth() + 1) < 10 ? "0".concat(String(today.getMonth() + 1)) : String(today.getMonth() + 1);
         const day = (today.getDate() < 10) ? "0".concat(String(today.getDate())) : String(today.getDate());
         this.state = {
-            user_id: 0,
+            user_id: this.props.user.id,
             restaurant_id: 0,
             date: year.concat("-").concat(month).concat("-").concat(day),
             time: "16:00:00",
@@ -91,7 +91,7 @@ class ResForm extends React.Component {
 
 
     render(){
-        const resConfirm = this.state.user_id === 0 ? "Whoops! Please log in to make a reservation!" : "Your reservation has been confirmed! Please see your profile for details on upcoming reservations."
+        const resConfirm = !this.state.user_id ? "Whoops! Please log in to make a reservation!" : "Your reservation has been confirmed! Please see your profile for details on upcoming reservations."
       
         return (
                 <form className="make-res">

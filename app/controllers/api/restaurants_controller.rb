@@ -2,7 +2,7 @@ class Api::RestaurantsController < ApplicationController
 
     def index
         restaurants = bounds ? Restaurant.with_attached_photo.in_bounds(bounds) : Restaurant.with_attached_photo.all
-        restaurants = restaurants.text_includes(search)
+        restaurants = restaurants.text_includes(search) if search
 
         @restaurants = restaurants.includes(:reviews, :cuisines)
         

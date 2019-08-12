@@ -3,9 +3,9 @@ import { RECEIVE_RESERVATIONS } from '../actions/reservation_actions';
 
 const restaurantsReducer = (state = {}, action) => {
     Object.freeze(state)
-    switch (action.type) {
+    switch(action.type) {
         case RECEIVE_RESERVATIONS:
-            return action.payload.restaurants;
+            return Object.assign({}, action.payload.restaurants);
         case RECEIVE_RESTAURANTS:
             return Object.assign({}, action.restaurants);
         case RECEIVE_RESTAURANT:
