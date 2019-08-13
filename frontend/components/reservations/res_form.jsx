@@ -4,15 +4,15 @@ import { withRouter } from 'react-router-dom';
 class ResForm extends React.Component {
     constructor(props){
         super(props);
-        // this.handleSubmit = this.handleSubmit.bind(this);
         this.handleClick = this.handleClick.bind(this);
         this.handleClick2 = this.handleClick2.bind(this);
         const today = new Date()
         const year = String(today.getFullYear());
         const month = (today.getMonth() + 1) < 10 ? "0".concat(String(today.getMonth() + 1)) : String(today.getMonth() + 1);
         const day = (today.getDate() < 10) ? "0".concat(String(today.getDate())) : String(today.getDate());
+        const user_id = this.props.user ? this.props.user.id : 0
         this.state = {
-            user_id: this.props.user.id,
+            user_id: user_id,
             restaurant_id: 0,
             date: year.concat("-").concat(month).concat("-").concat(day),
             time: "16:00:00",
@@ -21,6 +21,7 @@ class ResForm extends React.Component {
             buttonHidden: "button-vis",
             buttonText: "Find a Table",
             confirm: "confirm-hid",
+            pastRes: "past-res-hidden",
             time1: "1",
             time2: "2",
             time3: "3",
@@ -30,20 +31,36 @@ class ResForm extends React.Component {
 
     }
 
-    // componentDidMount(){
-    
-    //     // this.props.fetchRestaurant(this.props.match.params.restaurantId)
-    //    this.setState({ restaurant_id: this.props.match.params.restaurantId });
 
-    // }
 
-    // handleSubmit(e){
-    //     e.preventDefault();
-       
-    //     const reservation = Object.assign(this.state, {restaurant_id: this.props.match.params.restaurantId})
-    //     this.props.createReservation(reservation);
-        
-    // }
+    componentDidUpdate(prevProps){
+        if (this.props.user !== prevProps.user){
+            const today = new Date()
+            const year = String(today.getFullYear());
+            const month = (today.getMonth() + 1) < 10 ? "0".concat(String(today.getMonth() + 1)) : String(today.getMonth() + 1);
+            const day = (today.getDate() < 10) ? "0".concat(String(today.getDate())) : String(today.getDate());
+            const user_id = this.props.user ? this.props.user.id : 0
+            this.setState({
+                user_id: user_id,
+                restaurant_id: 0,
+                date: year.concat("-").concat(month).concat("-").concat(day),
+                time: "16:00:00",
+                party_size: 2,
+                hidden: "hidden",
+                buttonHidden: "button-vis",
+                buttonText: "Find a Table",
+                confirm: "confirm-hid",
+                pastRes: "past-res-hidden",
+                time1: "1",
+                time2: "2",
+                time3: "3",
+                time4: "4",
+                time5: "5"
+            });
+        }
+    }
+
+
 
     update(field){
         return (e) => {
@@ -59,12 +76,23 @@ class ResForm extends React.Component {
 
     handleClick2(e){
         e.preventDefault();
-        if (this.state.user_id === 0) {
+
+        if (!this.props.user) {
             this.setState({ hidden: 'hidden', confirm: "confirm-vis" });
         } else {
-        this.setState({time: e.target.key });
-        const reservation = Object.assign(this.state, {restaurant_id: this.props.match.params.restaurantId });
-        this.props.createReservation(reservation).then(this.setState({ hidden: 'hidden', confirm: "confirm-vis" }))
+
+            const todaysDate = new Date();
+            const resDate = Date.parse(this.state.date);
+            const newToday = todaysDate.setDate(todaysDate.getDate() - 1);
+
+            if (newToday > resDate) {
+                this.setState({ hidden: 'hidden', pastRes: "past-res-vis" });
+            } else {
+
+                this.setState({time: e.target.key });
+                const reservation = Object.assign(this.state, {restaurant_id: this.props.match.params.restaurantId, user_id: this.props.user.id });
+                this.props.createReservation(reservation).then(this.setState({ hidden: 'hidden', confirm: "confirm-vis" }))
+            }
         }
     }
 
@@ -91,7 +119,7 @@ class ResForm extends React.Component {
 
 
     render(){
-        const resConfirm = !this.state.user_id ? "Whoops! Please log in to make a reservation!" : "Your reservation has been confirmed! Please see your profile for details on upcoming reservations."
+        const resConfirm = !this.props.user ? "Whoops! Please log in to make a reservation!" : "Your reservation has been confirmed! Please see your profile for details on upcoming reservations."
       
         return (
                 <form className="make-res">
@@ -125,6 +153,7 @@ class ResForm extends React.Component {
                     <div className="res-search-submit">
                     <button onClick={this.handleClick} className={this.state.buttonHidden}>{this.state.buttonText}</button>
                         <p className={this.state.confirm}>{resConfirm}</p>
+                        <p className={this.state.pastRes}>Whoops! Please select a date that has not already passed.</p>
                         <div className={this.state.hidden}>
                             <p>Select a time:</p>
                             <ul className="hidden-cont">

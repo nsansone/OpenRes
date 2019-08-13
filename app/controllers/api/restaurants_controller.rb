@@ -3,6 +3,18 @@ class Api::RestaurantsController < ApplicationController
     def index
         restaurants = bounds ? Restaurant.with_attached_photo.in_bounds(bounds) : Restaurant.with_attached_photo.all
         restaurants = restaurants.text_includes(search) if search
+        
+        # cuisines = Cuisine.text_includes(search) if search
+        # if !cuisines.nil?
+        #     restaurants = []
+        #     cuisines.each do |cuisine|
+        #         cuisine.restaurants.each do |restaurant|
+        #             restaurants << restaurant
+        #         end
+        #     end
+        # end
+
+
 
         @restaurants = restaurants.includes(:reviews, :cuisines)
         

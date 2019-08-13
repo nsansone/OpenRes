@@ -251,6 +251,17 @@
         margin-top: 30px;
         font-size: 14px;
     }
+    .past-res-hidden {
+        display: none;
+    }
+    .past-res-vis {
+        display: block;
+        color: black;
+        text-align: center;
+        font-family: 'Karla',sans-serif;
+        margin-top: 30px;
+        font-size: 14px;
+    }
 }
 
 .rest-details {

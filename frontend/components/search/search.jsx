@@ -21,7 +21,8 @@ class Search extends React.Component {
         this.handleClick = this.handleClick.bind(this);
         this.state = {mapHidden: "map-hidden",
                       asideVisible: "aside-vis",
-                      buttonHid: "button-hid"
+                      buttonHid: "button-hid",
+                      indexCont: "index-cont-no-map"
                     }
         this.registerListeners = this.registerListeners.bind(this);
     }
@@ -48,7 +49,7 @@ class Search extends React.Component {
             this.map = new google.maps.Map(map, mapOptions);
             this.MarkerManager = new MarkerManager(this.map, this.handleClick);
             // this.MarkerManager.updateMarkers(this.props.restaurants) 
-            this.setState({ mapHidden: 'map-visible', asideVisible: 'aside-hid', buttonHid: "button-vis" });
+            this.setState({ mapHidden: 'map-visible', asideVisible: 'aside-hid', buttonHid: "button-vis" , indexCont: "index-cont-map"});
             this.registerListeners();
             this.MarkerManager.updateMarkers(this.props.restaurants) 
         } else {
@@ -140,7 +141,7 @@ class Search extends React.Component {
                             </ul>
                         </aside>
                     </div>
-                    <div className="index-cont">
+                    <div className={this.state.indexCont}>
   
                         <button className={this.state.buttonHid} onClick={this.handleClick}><i className="fa fa-list" aria-hidden="true"></i>&nbsp;&nbsp;List</button>
 

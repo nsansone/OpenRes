@@ -86,7 +86,7 @@
     }
     .index-list {
         width: 520px;
-        height: 1000px;
+        height: 100%;
         margin-left: 10px;
         overflow-y: scroll;
         overflow-x: hidden;
@@ -147,8 +147,8 @@
 
 .map-visible {
     width: 1000px;
-    height: 1000px;
-    margin-top: 5px;
+    height: 99%;
+    margin: 5px;
 }
 
 .map-hidden {
@@ -193,5 +193,10 @@
     font-size: 14px;
     margin-top: 30px;
     margin-left: 10px;
+}
+
+.index-cont-map {
+    height: 90%;
+    // position: relative;
 }
 
