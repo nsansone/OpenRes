@@ -11,7 +11,7 @@
         display: flex;
         .review-left {
             padding: 0 24px;
-            height: 148px;
+            height: 90px;
             display: inline-block;
             text-align: center;
             .user-fname {
@@ -36,6 +36,7 @@
                 width: 150px;
             }
             .review-body {
+                width: 400px;
                 font-size: 18px;
                 font-family: 'Darker Grotesque', sans-serif;
             }

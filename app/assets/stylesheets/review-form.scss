@@ -1,39 +1,12 @@
-// .rating {
-//     overflow: hidden;
-//     display: inline-block;
-// }
-// .rating-input {
-//     float: right;
-//     width: 16px;
-//     padding: 0;
-//     margin: 0 0 0 -16px;
-//     opacity: 0;
-// }
-// .rating-star {
-//     cursor: pointer;
-//     position: relative;
-//     display: block;
-//     width: 16px;
-//     height: 16px;
-//     background: url('https://cdn2.iconfinder.com/data/icons/universal-signs-symbols/128/star-yellow-512.png') 0 -16px;
-// }
-// .rating-star:hover {
-//     background-position: 0 0;
-// }
-// .star-div {
-//     height: 100px;
-//     width: 100px;
-//     background: url('star-yellow-512.png');
-//     // z-index: 1000 !important;
-//     // background-color: pink;
-// }
+
 .review-form-cont {
-    font-family: "Darker Grotesque", sans-serif;
+    font-family: "Karla", sans-serif;
     width: 500px;
     height: 500px;
     margin: 0 auto;
     color: #333333;
     h1 {
+        font-size: 20px;
         font-family: "Karla", sans-serif;
         text-align: center;
         padding: 10px;
@@ -48,33 +21,44 @@
             justify-content: center;
         
             label {
-                display: block;
-                padding-right: 20px;
+                display: flex;
+                font-size: 20px;
+                margin-top: 10px;
+                .react-stars {
+                    padding-left: 10px;
+                }
             }
-            input {
-                border: 1px solid #D8D9DB;
-                display: block;
-                padding-left: 5px;
-            }  
+            // input {
+            //     border: 1px solid #D8D9DB;
+            //     display: block;
+            //     padding-left: 5px;
+            // }  
   
 
         }
         .body-cont {
             font-family: "Karla", sans-serif;
-            font-size: 14px;
+            font-size: 20px;
             padding: 20px;
             display: flex;
             justify-content: center;
+
         }
         .review-submit {
             display: flex;
             justify-content: center;
-            padding: 15px;
-            input {
-                padding: 5px 10px;
+            font-size: 20px;
+            padding: 20px;
+            .review-submit-input {
+                padding: 10px 20px;
                 border: 2px solid #D8D9DB;
                 cursor: pointer;
 
+            }
+            .review-submit-input:hover {
+                background-color: #DA3743;
+                color: white;
+                border: none;
             }
         }
     }

@@ -1,21 +1,31 @@
 class Api::RestaurantsController < ApplicationController
 
     def index
-        restaurants = bounds ? Restaurant.with_attached_photo.in_bounds(bounds) : Restaurant.with_attached_photo.all
-        restaurants = restaurants.text_includes(search) if search
+    
+        restaurants = bounds ? Restaurant.in_bounds(bounds).with_attached_photo : Restaurant.none
+        restaurants = Restaurant.text_includes(search).with_attached_photo if search && search.length != 0
         
-        # cuisines = Cuisine.text_includes(search) if search
-        # if !cuisines.nil?
-        #     restaurants = []
+        if restaurants.length == 0
+            restaurants = Restaurant.joins(:cuisines).where(cuisines: { name: search }).with_attached_photo
+            if restaurants.length == 0
+                restaurants = Restaurant.all.with_attached_photo
+            end
+        end
+
+        
+
+        # cuisines = search ? Cuisine.text_includes(search) : []
+        # restaurants = Restaurant.joins(:cuisines).where(cuisines: { name: search })
+        # debugger
+        # if !cuisines.empty?
+        #     # restaurants = []
         #     cuisines.each do |cuisine|
-        #         cuisine.restaurants.each do |restaurant|
-        #             restaurants << restaurant
-        #         end
+        #         restaurants = restaurants.merge(cuisine.restaurants)
         #     end
         # end
 
-
-
+    
+ 
         @restaurants = restaurants.includes(:reviews, :cuisines)
         
         
@@ -48,6 +58,7 @@ class Api::RestaurantsController < ApplicationController
     def search
         params[:search]
     end
+
 
     # def cuisines
     #     params[:restCuisine]

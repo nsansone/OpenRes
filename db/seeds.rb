@@ -9,6 +9,8 @@
 Restaurant.destroy_all
 User.destroy_all 
 Review.destroy_all
+Cuisine.destroy_all
+RestaurantCuisine.destroy_all
 
 user = User.create!({
     fname: 'Nicole',
@@ -148,5 +150,9 @@ I got the everything bagel with scallion cream cheese and the gaspe nova. Did no
     author_id: user.id,
 
 })
+
+cuisine1 = Cuisine.create!({name: "dessert"})
+
+restaurant_cuisine1 = RestaurantCuisine.create!({restaurant_id: milkbar.id, cuisine_id: cuisine1.id})
 
 
