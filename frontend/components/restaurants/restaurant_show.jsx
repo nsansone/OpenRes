@@ -22,7 +22,7 @@ class RestaurantShow extends React.Component {
     
     render(){
         const { restaurant, reviews } = this.props;
-        const revHeader = reviews.length === 0 ? "No reviews yet!" : `What ${reviews.length} People Are Saying`
+        const revHeader = reviews.length === 0 ? "No reviews yet!" : reviews.length === 1 ? `What 1 Person Is Saying`: `What ${reviews.length} People Are Saying`
         const reviewList = (reviews) => (
             reviews.map(review => (
                 <ReviewListItemContainer review={review} key={review.id} />
