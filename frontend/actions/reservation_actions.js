@@ -24,12 +24,18 @@ export const fetchReservations = () => dispatch => (
     ResApiUtil.fetchReservations().then(payload => dispatch(receiveReservations(payload)))
 );
 
+export const fetchReservation = id => dispatch => (
+    ResApiUtil.fetchReservation(id).then(reservation => (
+        dispatch(receiveReservation(reservation))
+    ))
+);
+
 export const createReservation = reservation => dispatch => (
     ResApiUtil.createReservation(reservation).then(reservation => dispatch(receiveReservation(reservation)))
 );
 
-export const updateReservation = id => dispatch => (
-    ResApiUtil.updateReservation(id).then(reservation => dispatch(receiveReservation(reservation)))
+export const updateReservation = reservation => dispatch => (
+    ResApiUtil.updateReservation(reservation).then(reservation => dispatch(receiveReservation(reservation)))
 );
 
 export const deleteReservation = reservationId => dispatch => (

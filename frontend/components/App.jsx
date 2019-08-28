@@ -12,6 +12,7 @@ import SearchContainer from './search/search_container';
 import Footer from './footer';
 import ReviewFormContainer from './reviews/review_form_container';
 import ProfileContainer from './profile/profile_container';
+import UpdateResContainer from './reservations/update_res_container';
 
 const App = () => (
     <div>
@@ -28,6 +29,7 @@ const App = () => (
                 <Route exact path="/restaurants/:restaurantId" component={ RestaurantShowContainer } />
                 <Route exact path="/restaurants/:restaurantId/review"
                     component={ReviewFormContainer} /> 
+                <Route exact path="/users/:sessionId/profile/:reservationId/edit" component={ UpdateResContainer } />    
                 <Route exact path="/users/:sessionId/profile" component={ ProfileContainer }/>
                 <Route exact path="/" component={ Homepage } />
     

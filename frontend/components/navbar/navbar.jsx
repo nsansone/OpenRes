@@ -30,6 +30,8 @@ class Navbar extends React.Component {
         }
     }
 
+    
+
     componentWillMount() {
         document.addEventListener('mousedown', this.handleClick, false)
     }

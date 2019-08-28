@@ -3,10 +3,16 @@ import { Link, Route } from 'react-router-dom';
 
 
 const RestaurantDetail = ({ restaurant, reviews }) => {
-    let avgRat = reviews.length === 0 ? "" : restaurant.average_rating;
+    let totalRat = 0
+    reviews.forEach( review => {
+        totalRat += parseInt(review.rating)
+    })
+    
+    let avgRate = totalRat/reviews.length * 1.0
+    let avgRat = reviews.length === 0 ? "" : Math.round(avgRate * 10)/10.0;
     let revNum = reviews.length === 0 ? "No reviews yet!" : `${reviews.length} Reviews`
     let icon = reviews.length === 0 ? "" : (<i className="far fa-comment-alt fa-flip-horizontal"></i>)
-    const styleWidth = (parseFloat(restaurant.average_rating)/5)*100 
+    const styleWidth = (parseFloat(avgRate)/5)*100 
 
     return (
         <div className="rest-details">
@@ -22,7 +28,7 @@ const RestaurantDetail = ({ restaurant, reviews }) => {
             <hr />
             <span className="show-review">
                 <div className="header_stars" style={{ width: `${styleWidth}%` }}>
-                    <a href="#" className="header_star">
+                    <div className="header_star">
                             <i className="fa fa-star" aria-hidden="true"></i>
                             <i className="fa fa-star" aria-hidden="true"></i>
                             <i className="fa fa-star" aria-hidden="true"></i>
@@ -35,7 +41,7 @@ const RestaurantDetail = ({ restaurant, reviews }) => {
                             <i className="fa fa-star" aria-hidden="true"></i>
                             <i className="fa fa-star" aria-hidden="true"></i>
                         </div>
-                    </a>
+                    </div>
                 </div>     
 
                 <p>{avgRat}</p>&nbsp;&nbsp;&nbsp;&nbsp;

@@ -4,7 +4,10 @@ import { Link } from 'react-router-dom';
 const ResIndexItem = (props) => {
     let deleteButton;
     if (props.deleteReservation) {
-        deleteButton = <button onClick={() => props.deleteReservation(props.reservation.id)}>Cancel</button>
+        deleteButton = <div>
+                            <button onClick={() => props.deleteReservation(props.reservation.id)}>Cancel</button>
+                            <Link className="go-to-profile" to={`/users/${props.currentUser.id}/profile/${props.reservation.id}/edit`}>Edit</Link>
+                        </div >
     } else {
         deleteButton = (<div className="leave-review"> 
                             <i className="far fa-comment-alt"></i>

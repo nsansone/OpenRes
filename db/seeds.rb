@@ -11,6 +11,8 @@ User.destroy_all
 Review.destroy_all
 Cuisine.destroy_all
 RestaurantCuisine.destroy_all
+Location.destroy_all
+RestaurantLocation.destroy_all
 
 user = User.create!({
     fname: 'Nicole',
@@ -152,7 +154,25 @@ I got the everything bagel with scallion cream cheese and the gaspe nova. Did no
 })
 
 cuisine1 = Cuisine.create!({name: "dessert"})
+cuisine2 = Cuisine.create!({name: "italian"})
+cuisine3 = Cuisine.create!({name: "asian"})
+cuisine4 = Cuisine.create!({name: "deli"})
+cuisine5 = Cuisine.create!({name: "bagels"})
+
 
 restaurant_cuisine1 = RestaurantCuisine.create!({restaurant_id: milkbar.id, cuisine_id: cuisine1.id})
+restaurant_cuisine2 = RestaurantCuisine.create!({restaurant_id: pizza.id, cuisine_id: cuisine2.id})
+restaurant_cuisine3 = RestaurantCuisine.create!({restaurant_id: momo.id, cuisine_id: cuisine3.id})
+restaurant_cuisine4 = RestaurantCuisine.create!({restaurant_id: katz.id, cuisine_id: cuisine4.id})
+restaurant_cuisine5 = RestaurantCuisine.create!({restaurant_id: russ.id, cuisine_id: cuisine5.id})
+restaurant_cuisine6 = RestaurantCuisine.create!({restaurant_id: serra.id, cuisine_id: cuisine2.id})
 
+location1 = Location.create!({name: "Chelsea"})
+location2 = Location.create!({name: "East Village"})
 
+restaurant_location1 = RestaurantLocation.create!({restaurant_id: milkbar.id, location_id: location1.id})
+restaurant_location2 = RestaurantLocation.create!({restaurant_id: pizza.id, location_id: location2.id})
+restaurant_location3 = RestaurantLocation.create!({restaurant_id: momo.id, location_id: location2.id})
+restaurant_location4 = RestaurantLocation.create!({restaurant_id: katz.id, location_id: location2.id})
+restaurant_location5 = RestaurantLocation.create!({restaurant_id: russ.id, location_id: location2.id})
+restaurant_location6 = RestaurantLocation.create!({restaurant_id: serra.id, location_id: location2.id})

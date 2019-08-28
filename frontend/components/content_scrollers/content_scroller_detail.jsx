@@ -2,7 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 
 const ContentScrollerDetail = ({ restaurant }) => {
-    const styleWidth = (parseFloat(restaurant.average_rating) / 5) * 100; 
+    let totalRating = 0
+    restaurant.numReviews.forEach(review => {
+        totalRating += parseInt(review[1])
+    })
+    let averageRating = totalRating / restaurant.numReviews.length * 1.0
+    const styleWidth = (parseFloat(averageRating) / 5) * 100; 
     return (
         <li className="scroll-li">
             <img className="scroll-img" src={restaurant.photoUrl} alt="" />
@@ -13,7 +18,7 @@ const ContentScrollerDetail = ({ restaurant }) => {
                 <ul className="scroll-details">
                     <span className="show-review">
                         <div className="header_stars" style={{ width: `${styleWidth}%` }}>
-                            <a href="#" className="home-header_star">
+                            <div className="home-header_star">
                                     <i className="fa fa-star" aria-hidden="true"></i>
                                     <i className="fa fa-star" aria-hidden="true"></i>
                                     <i className="fa fa-star" aria-hidden="true"></i>
@@ -26,7 +31,7 @@ const ContentScrollerDetail = ({ restaurant }) => {
                                     <i className="fa fa-star" aria-hidden="true"></i>
                                     <i className="fa fa-star" aria-hidden="true"></i>
                                 </div>
-                            </a>
+                            </div>
                         </div>
                         <p>{restaurant.numReviews.length} Reviews</p>
                     </span>

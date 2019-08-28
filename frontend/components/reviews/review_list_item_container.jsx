@@ -25,7 +25,7 @@ const Review = ({ review, author }) => {
                 <div className="review-right">
                     <span className="show-review">
                         <div className="header_stars" style={{ width: `${styleWidth}%` }}>
-                            <a href="#" className="home-header_star">
+                            <div className="home-header_star">
                                 <i className="fa fa-star" aria-hidden="true"></i>
                                 <i className="fa fa-star" aria-hidden="true"></i>
                                 <i className="fa fa-star" aria-hidden="true"></i>
@@ -38,7 +38,7 @@ const Review = ({ review, author }) => {
                                     <i className="fa fa-star" aria-hidden="true"></i>
                                     <i className="fa fa-star" aria-hidden="true"></i>
                                 </div>
-                            </a>
+                            </div>
                         </div>
                         <p>{rating} stars out of 5</p>
                     </span>

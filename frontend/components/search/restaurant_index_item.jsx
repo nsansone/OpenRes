@@ -3,26 +3,32 @@ import { Link } from 'react-router-dom';
 
 const RestaurantIndexItem = ({restaurant}) => {
     let reviewWord = "";
+    let totalRating = 0
+    restaurant.numReviews.forEach(review => {
+        totalRating += parseInt(review[1])
+    })
+    let averageRating = totalRating/restaurant.numReviews.length * 1.0
+    
     let reviewNum = restaurant.numReviews.length !== 0 ? `(${restaurant.numReviews.length})` : ""; 
     if (restaurant.numReviews.length === 0){
         reviewWord = "No reviews yet!";
     }
-    if (restaurant.average_rating <= 2 && restaurant.numReviews.length !== 0){
+    if (averageRating <= 2 && restaurant.numReviews.length !== 0){
         reviewWord = "Not amazing";
     }
-    if (restaurant.average_rating > 2 && restaurant.average_rating < 3){
+    if (averageRating > 2 && averageRating < 3){
         reviewWord = "Okay";
     }
-    if (restaurant.average_rating >= 3 && restaurant.average_rating < 4) {
+    if (averageRating >= 3 && averageRating < 4) {
         reviewWord = "Good";
     }
-    if (restaurant.average_rating >= 4 && restaurant.average_rating < 4.7) {
+    if (averageRating >= 4 && averageRating < 4.7) {
         reviewWord = "Awesome";
     }
-    if (restaurant.average_rating >= 4.7) {
+    if (averageRating >= 4.7) {
         reviewWord = "Exceptional";
     }
-    const styleWidth = (parseFloat(restaurant.average_rating) / 5) * 100; 
+    const styleWidth = (parseFloat(averageRating) / 5) * 100; 
     return(
         <li className="index-li">
             <img className="index-img" src={restaurant.photoUrl} alt="" />
@@ -33,7 +39,7 @@ const RestaurantIndexItem = ({restaurant}) => {
                 <ul className="ind-details">
                     <span className="show-review">
                         <div className="header_stars" style={{ width: `${styleWidth}%` }}>
-                            <a href="#" className="header_star">
+                            <div className="header_star">
                                     <i className="fa fa-star" aria-hidden="true"></i>
                                     <i className="fa fa-star" aria-hidden="true"></i>
                                     <i className="fa fa-star" aria-hidden="true"></i>
@@ -46,7 +52,7 @@ const RestaurantIndexItem = ({restaurant}) => {
                                     <i className="fa fa-star" aria-hidden="true"></i>
                                     <i className="fa fa-star" aria-hidden="true"></i>
                                 </div>
-                            </a>
+                            </div>
                         </div>
                         <p>{reviewWord}</p> &nbsp;
                         <p>{reviewNum}</p>

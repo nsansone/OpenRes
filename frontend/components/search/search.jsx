@@ -5,6 +5,7 @@ import RestaurantIndex from './restaurant_index';
 import { Link } from 'react-router-dom';
 import SearchBar from './search_bar';
 import MarkerManager from '../../util/marker_manager';
+import Checkboxes from '../checkboxes';
 
 
 const mapOptions = {
@@ -39,7 +40,14 @@ class Search extends React.Component {
     componentDidMount(){
         if (this.props.history.location.fromPage !== "homepage") {
             this.props.fetchRestaurants()
-        } 
+        }
+    }
+
+    componentDidUpdate(prevProps){
+        if (prevProps.restaurants !== this.props.restaurants){
+            this.MarkerManager = new MarkerManager(this.map, this.handleClick);
+            this.MarkerManager.updateMarkers(this.props.restaurants)
+        }
     }
 
     handleClick(e){
@@ -51,7 +59,7 @@ class Search extends React.Component {
             // this.MarkerManager.updateMarkers(this.props.restaurants) 
             this.setState({ mapHidden: 'map-visible', asideVisible: 'aside-hid', buttonHid: "button-vis" , indexCont: "index-cont-map"});
             this.registerListeners();
-            this.MarkerManager.updateMarkers(this.props.restaurants) 
+            this.props.fetchRestaurants().then(this.MarkerManager.updateMarkers(this.props.restaurants)) 
         } else {
             this.setState({ mapHidden: 'map-hidden', asideVisible: 'aside-vis', buttonHid: 'button-hid'});
         }
@@ -67,6 +75,14 @@ class Search extends React.Component {
     }
 
     render(){
+        const searchText = this.props.history.location.searchText;
+        let searchMessage = "";
+        if (searchText === "" || searchText === undefined){
+            searchMessage = ""
+        } else {
+            searchMessage = `You searched "${searchText}":`
+        }
+        
         return(
             <div className="index-cont">
                 <img className="index-search-background" src={window.index_search_background} />
@@ -93,58 +109,14 @@ class Search extends React.Component {
 
                                 <button onClick={this.handleClick}><i className="far fa-map"></i>&nbsp;&nbsp;Map</button>
                             </div>
-                            <ul className="aside-checkbox">
-                                <li className="checkbox-title">
-                                    <i className="fas fa-map-marker-alt"> </i>  Neighborhood <br />
-                                </li>
-                                <li>
-                                    <input type="checkbox" value="East Village" /> East Village <br />
-                                </li>
-                                <li>
-                                    <input type="checkbox" value="Nolita" /> Nolita <br />
-                                </li>
-                                <li>
-                                    <input type="checkbox" value="Greenwich Village" /> Greenwich Village <br />
-                                </li>
-                                <li>
-                                    <input type="checkbox" value="Lower East Side" /> Lower East Side <br />
-                                </li>
-                                <li>
-                                    <input type="checkbox" value="Chelsea" /> Chelsea <br />
-                                </li>
-                                <li>
-                                    <p className="more">+ More</p>
-                                </li>
-                            </ul>
-                            <ul className="aside-checkbox">
-                                <li className="checkbox-title">
-                                    <i className="fas fa-utensils"> </i>  Cuisines <br />
-                                </li>
-                                <li>
-                                    <input type="checkbox" value="Italian" /> Italian <br />
-                                </li>
-                                <li>
-                                    <input type="checkbox" value="American" /> American <br />
-                                </li>
-                                <li>
-                                    <input type="checkbox" value="Seafood" /> Seafood <br />
-                                </li>
-                                <li>
-                                    <input type="checkbox" value="Japanese" /> Japanese <br />
-                                </li>
-                                <li>
-                                    <input type="checkbox" value="French" /> French <br />
-                                </li>
-                                <li>
-                                    <p className="more">+ More</p>
-                                </li>
-                            </ul>
+                            <Checkboxes />
+
                         </aside>
                     </div>
                     <div className={this.state.indexCont}>
   
                         <button className={this.state.buttonHid} onClick={this.handleClick}><i className="fa fa-list" aria-hidden="true"></i>&nbsp;&nbsp;List</button>
-
+                        <p className="search-message">{searchMessage}</p>
                         <RestaurantIndex restaurants={this.props.restaurants} />
 
                     </div>

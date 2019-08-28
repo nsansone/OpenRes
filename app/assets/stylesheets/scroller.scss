@@ -76,6 +76,7 @@
     padding: 15px;
     margin: 0px auto;
     li {
+        cursor: pointer;
         display: inline-block;
         height: 150px;
         width: 33.33333%;
@@ -87,6 +88,16 @@
             height: 100%;
         }
         p {
+            font-size: 20px;
+            font-family: 'Karla', sans-serif;
+            background: rgba(0,0,0,.5);
+            width: 100%;
+            text-align: center;
+            color: white;
+            position: relative;
+            line-height: 150px;
+        }
+        option {
             font-size: 20px;
             font-family: 'Karla', sans-serif;
             background: rgba(0,0,0,.5);

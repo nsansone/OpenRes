@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchRestaurants } from '../../actions/restaurant_actions';
 import { updateFilter } from '../../actions/filter_actions';
 import { withRouter } from 'react-router-dom';
 
@@ -26,7 +25,8 @@ class SearchBar extends React.Component {
             this.props.updateFilter("search", this.state.searchText).then(() => {
                     this.props.history.push({
                         pathname: '/restaurants',
-                        fromPage: `${page}`
+                        fromPage: `${page}`,
+                        searchText: `${this.state.searchText}`
                     }); 
                 
             });
@@ -36,11 +36,13 @@ class SearchBar extends React.Component {
     handleKeyUp(page){
         return (e) => {
             e.preventDefault();
+
             if (e.keyCode === 13){
                 this.props.updateFilter("search", this.state.searchText).then(() => {
                         this.props.history.push({
                             pathname: '/restaurants',
-                            fromPage: `${page}`
+                            fromPage: `${page}`,
+                            searchText: `${this.state.searchText}`
                         });
 
                 });

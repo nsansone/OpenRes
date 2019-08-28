@@ -35,9 +35,13 @@ class Restaurant < ApplicationRecord
         through: :restaurant_cuisines,
         source: :cuisine
 
-    def average_rating
-        reviews.average(:rating)
-    end
+    has_many :restaurant_locations,
+        foreign_key: :restaurant_id,
+        class_name: :RestaurantLocation 
+
+    has_many :locations,
+        through: :restaurant_locations,
+        source: :location
 
     def self.in_bounds(bounds)
         self.where("lat < ?", bounds[:northEast][:lat])

@@ -6,6 +6,7 @@ import ResIndexItem from '../reservations/res_index_item';
 class Profile extends React.Component {
     constructor(props){
         super(props);
+
         this.state= {
             date: new Date()
         };
@@ -44,6 +45,8 @@ class Profile extends React.Component {
                             key={`upcoming-resIndex-${reservation.id}`} 
                             reservation={reservation} restaurant={this.props.restaurants[reservation.restaurant_id]} 
                             deleteReservation={this.props.deleteReservation}
+                            updateReservation={this.props.updateReservation}
+                            currentUser={this.props.currentUser}
                         />
                 );
             }

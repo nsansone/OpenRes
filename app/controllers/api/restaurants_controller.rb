@@ -1,33 +1,37 @@
 class Api::RestaurantsController < ApplicationController
 
     def index
-    
+        
         restaurants = bounds ? Restaurant.in_bounds(bounds).with_attached_photo : Restaurant.none
+        
         restaurants = Restaurant.text_includes(search).with_attached_photo if search && search.length != 0
         
-        if restaurants.length == 0
-            restaurants = Restaurant.joins(:cuisines).where(cuisines: { name: search }).with_attached_photo
+        if restaurants.length == 0 && search
+            
+            restaurants = Restaurant.joins(:cuisines).where("LOWER(cuisines.name) LIKE '%#{search.downcase}%'").with_attached_photo
             if restaurants.length == 0
-                restaurants = Restaurant.all.with_attached_photo
+                restaurants = Restaurant.joins(:locations).where("LOWER(locations.name) LIKE '%#{search.downcase}%'").with_attached_photo
             end
         end
-
+             
+        if restaurants.length == 0
+            restaurants = Restaurant.all.with_attached_photo
+        end
         
+        if checked 
+            if checked.length != 0
+                checked.each do |filter|
 
-        # cuisines = search ? Cuisine.text_includes(search) : []
-        # restaurants = Restaurant.joins(:cuisines).where(cuisines: { name: search })
-        # debugger
-        # if !cuisines.empty?
-        #     # restaurants = []
-        #     cuisines.each do |cuisine|
-        #         restaurants = restaurants.merge(cuisine.restaurants)
-        #     end
-        # end
-
-    
- 
+                    if restaurants.joins(:locations).where("LOWER(locations.name) LIKE '%#{filter.downcase}%'").length 
+                        restaurants = restaurants.joins(:locations).where("LOWER(locations.name) LIKE '%#{filter.downcase}%'").with_attached_photo 
+                    elsif restaurants.joins(:cuisines).where("LOWER(cuisines.name) LIKE '%#{filter.downcase}%'")
+                        restaurants = restaurants.joins(:cuisines).where("LOWER(cuisines.name) LIKE '%#{filter.downcase}%'").with_attached_photo 
+                    end
+                end
+            end
+        end
+        
         @restaurants = restaurants.includes(:reviews, :cuisines)
-        
         
         render :index
     end
@@ -57,6 +61,10 @@ class Api::RestaurantsController < ApplicationController
 
     def search
         params[:search]
+    end
+
+    def checked
+        params[:checked]
     end
 
 

@@ -16,10 +16,9 @@ export const receiveRestaurant = ({ restaurant, reviews, authors }) => ({
     authors,
 });
 
-export const receiveReview = ({ review, average_rating, author }) => ({
+export const receiveReview = ({ review, author }) => ({
     type: RECEIVE_REVIEW,
     review,
-    average_rating,
     author,
 });
 

@@ -5,6 +5,13 @@ export const fetchReservations = () => (
     })
 );
 
+export const fetchReservation = id => (
+    $.ajax({
+        method: 'GET',
+        url: `api/reservations/${id}`
+    })
+);
+
 export const createReservation = reservation => (
     $.ajax({
         method: 'POST',
@@ -13,10 +20,12 @@ export const createReservation = reservation => (
     })
 );
 
-export const updateReservation = id => (
+export const updateReservation = reservation => (
     $.ajax({
         method: 'PATCH',
-        url: `api/reservations/${id}`
+        url: `api/reservations/${reservation.id}`,
+        data: { reservation }
+
     })
 );
 

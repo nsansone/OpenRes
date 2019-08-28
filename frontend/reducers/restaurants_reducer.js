@@ -11,10 +11,9 @@ const restaurantsReducer = (state = {}, action) => {
         case RECEIVE_RESTAURANT:
             return Object.assign({}, state, { [action.restaurant.id]: action.restaurant });
         case RECEIVE_REVIEW:
-            const { review, average_rating } = action;
+            const { review } = action;
             const newState = Object.assign({}, state);
             newState[review.restaurant_id].reviewIds.push(review.id);
-            newState[review.restaurant_id].average_rating = average_rating;
             return newState;
         default:
             return state;

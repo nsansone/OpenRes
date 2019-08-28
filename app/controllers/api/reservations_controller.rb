@@ -15,6 +15,24 @@ class Api::ReservationsController < ApplicationController
         end
     end
 
+    def update
+        
+        @reservation = Reservation.find(params[:id])
+        
+        if @reservation.update(reservation_params)
+            
+            render :show
+        else 
+            render json: ['invalid update parameters'], status: 422
+        end
+    end
+
+    def show 
+        
+        @reservation = Reservation.find(params[:id])
+        render :show
+    end
+
     def destroy
 
         @reservation = Reservation.find(params[:id])

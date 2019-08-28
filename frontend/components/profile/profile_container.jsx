@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Profile from './profile';
-import { deleteReservation, fetchReservations } from '../../actions/reservation_actions';
+import { deleteReservation, updateReservation, fetchReservations } from '../../actions/reservation_actions';
 import { fetchRestaurants } from '../../actions/restaurant_actions';
 
 const mapStateToProps = (state, ownProps) => {
@@ -15,7 +15,8 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => ({
 
     deleteReservation: id => dispatch(deleteReservation(id)),
-    fetchReservations: () => dispatch(fetchReservations())
+    fetchReservations: () => dispatch(fetchReservations()),
+    updateReservation: id => dispatch(updateReservation(id))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Profile);
