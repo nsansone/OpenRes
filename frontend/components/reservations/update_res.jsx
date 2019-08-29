@@ -34,7 +34,7 @@ class UpdateRes extends React.Component {
   }
   handleSubmit(e) {
     e.preventDefault();
-    const reservation = Object.assign(this.state, { restaurant_id: this.props.reservation.restaurant_id, user_id: this.props.currentUser.id });
+    const reservation = Object.assign(this.state, { id: this.props.reservation.id, restaurant_id: this.props.reservation.restaurant_id, user_id: this.props.currentUser.id });
     
     this.props.updateReservation(reservation).then(this.goToProfile);
     
@@ -52,30 +52,6 @@ class UpdateRes extends React.Component {
 
     };
   }
-
-  // handleClick2(e) {
-  //   e.preventDefault();
-
-  //   if (!this.props.user) {
-  //     this.setState({ hidden: 'hidden', confirm: "confirm-vis" });
-  //   } else {
-
-  //     const todaysDate = new Date();
-  //     const resDate = Date.parse(this.state.date);
-  //     const newToday = todaysDate.setDate(todaysDate.getDate() - 1);
-
-  //     if (newToday > resDate) {
-  //       this.setState({ hidden: 'hidden', pastRes: "past-res-vis" });
-  //     } else {
-
-  //       this.setState({ time: e.target.key });
-  //       const reservation = Object.assign(this.state, { restaurant_id: this.props.match.params.restaurantId, user_id: this.props.user.id });
-  //       this.props.createReservation(reservation).then(this.setState({ hidden: 'hidden', confirm: "confirm-vis" }))
-  //     }
-  //   }
-  // }
-
-
 
   render() {
     

@@ -49,10 +49,12 @@
                 p {
                     padding: 3px 0px;
                 }
-                button {
+                .res-buttons {
                     cursor: pointer;
                     color: #237B98;
                     padding-top: 3px;
+                    text-decoration: none;
+                    padding-right: 10px;
                 }
                 .leave-review {
                     color: red;

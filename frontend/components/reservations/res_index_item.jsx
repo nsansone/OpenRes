@@ -5,8 +5,8 @@ const ResIndexItem = (props) => {
     let deleteButton;
     if (props.deleteReservation) {
         deleteButton = <div>
-                            <button onClick={() => props.deleteReservation(props.reservation.id)}>Cancel</button>
-                            <Link className="go-to-profile" to={`/users/${props.currentUser.id}/profile/${props.reservation.id}/edit`}>Edit</Link>
+                            <button className="res-buttons" onClick={() => props.deleteReservation(props.reservation.id)}>Cancel</button>
+                            <Link className="res-buttons" to={`/users/${props.currentUser.id}/profile/${props.reservation.id}/edit`}>Modify</Link>
                         </div >
     } else {
         deleteButton = (<div className="leave-review"> 
