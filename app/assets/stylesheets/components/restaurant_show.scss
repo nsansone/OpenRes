@@ -1,3 +1,4 @@
+@import 'variables';
 .show-cont {
     display: block;
     height: 100%;
@@ -29,7 +30,7 @@
         }
         .map {
             border-radius: 4px;
-            font-family: 'Karla', sans-serif;
+              font-family: $font1;
             // z-index: 0;
             width: 300x;
             padding: 30px;
@@ -40,7 +41,7 @@
         }
         .map-address {
             margin: 10px;
-            font-family: 'Karla', sans-serif;
+              font-family: $font1;
             font-size: 15px;
             color: red;
             i {
@@ -54,7 +55,7 @@
     main {
         z-index: 3;
         font-size: 15px;
-        font-family: 'Karla', sans-serif;
+          font-family: $font1;
         width: 640px;
         display: block;
         margin-right: 16px;
@@ -108,7 +109,7 @@
         justify-content: center;
         flex-direction: column;
         font-size: 21px;
-        font-family: 'Karla', sans-serif;
+          font-family: $font1;
         height: 48px;
         text-align: center;
         // margin: 0px auto;
@@ -120,7 +121,7 @@
     }
     .res-cont {
         font-size: 16px;
-        font-family: 'Karla', sans-serif;
+          font-family: $font1;
         display: block;
         width: 288px;
         height: 130px;
@@ -194,7 +195,7 @@
                 font-weight: 500;
                 border-radius: 4px;
                 font-size: 16px;
-                font-family: 'Karla', sans-serif;
+                  font-family: $font1;
                 color: white;
                 background-color: #DA3743;
                 border: none;
@@ -212,7 +213,7 @@
     }
     .visible {
         p {
-            font-family: 'Karla', sans-serif;
+              font-family: $font1;
             padding-bottom: 3px;
             padding-left: 5px;
         }
@@ -273,7 +274,7 @@
     margin-bottom: 16px;
     margin-top: 32px !important;
     margin: 0px auto;
-    font-family: 'Karla', sans-serif;
+      font-family: $font1;
     color: #2D333F;
     h1 {
         display: block;

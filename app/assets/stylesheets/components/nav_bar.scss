@@ -1,4 +1,4 @@
-
+ @import 'variables';
 
 .login-button {
     padding: 0 1rem 0 1rem;
@@ -12,7 +12,7 @@
 .signup-button {
     border-radius: 3px;           
     padding: 0.6rem 1rem;
-    font-family: 'Karla', sans-serif;
+     font-family: $font1;
     font-size: 16px;
     color: white;
     background-color: #237b98;
@@ -29,7 +29,7 @@
     background-color: white;
     display: flex;
     justify-content: space-between;
-    font-family: 'Karla', sans-serif;
+     font-family: $font1;
     align-items: center;
     height: 54px;
     position: relative;

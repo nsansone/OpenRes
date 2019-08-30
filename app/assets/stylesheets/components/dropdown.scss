@@ -1,4 +1,4 @@
-
+@import 'variables';
 .dropdown-hidden {
     display: none;
 
@@ -27,7 +27,7 @@
     background-color: white;
     padding: 12.8px 16px;
     font-size: 16px;
-    font-family: 'Karla', sans-serif;
+      font-family: $font1;
     color: #484848;
     .go-to-profile {
         text-decoration: none;

@@ -1,3 +1,4 @@
+@import 'variables';
 html {
     background-color: #f7f7f7;
 }
@@ -34,7 +35,7 @@ html {
     background-color: #333333;
     justify-content: space-around;
     font-size: 16px;
-    font-family: 'Karla', sans-serif;
+      font-family: $font1;
     li {
         padding-top: 30px;
         color: white; 
@@ -92,7 +93,7 @@ html {
                 flex-basis: 33.3%;
                 color: grey;
                 font-size: 16px;
-                font-family: 'Karla', sans-serif;
+                  font-family: $font1;
                 font-stretch: 100%;
 
                 margin-bottom: 15px;
@@ -117,7 +118,7 @@ html {
         h1 {
             display: block;
             color: white;
-            font-family: 'Karla', sans-serif;        
+              font-family: $font1;        
             font-size: 45px;;
             font-weight: 600;
             font-stretch: 100%;
@@ -128,7 +129,7 @@ html {
                 background-color: white;
                 color: grey;
                 font-size: 16px;
-                font-family: 'Karla', sans-serif;
+                  font-family: $font1;
                 font-stretch: 100%;
                 margin-bottom: 15px;
                 padding: 16px;
@@ -152,7 +153,7 @@ html {
             font-weight: 500;
             border-radius: 4px;
             font-size: 16px;
-            font-family: 'Karla', sans-serif;
+              font-family: $font1;
             color: white;
             background-color: #DA3743;
             border-color: #b8222d;

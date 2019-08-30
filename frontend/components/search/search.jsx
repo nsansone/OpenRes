@@ -52,6 +52,8 @@ class Search extends React.Component {
 
     handleClick(e){
         e.preventDefault();
+       
+
         if (this.state.mapHidden === 'map-hidden') {
             const map = this.refs.map
             this.map = new google.maps.Map(map, mapOptions);
@@ -78,9 +80,11 @@ class Search extends React.Component {
         const searchText = this.props.history.location.searchText;
         let searchMessage = "";
         if (searchText === "" || searchText === undefined){
-            searchMessage = ""
+            searchMessage = "";
+        } else if (this.state.mapHidden === "map-visible"){
+            searchMessage = "";
         } else {
-            searchMessage = `You searched "${searchText}":`
+            searchMessage = `You searched "${searchText}":`;
         }
         
         return(

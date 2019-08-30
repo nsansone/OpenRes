@@ -1,4 +1,4 @@
-
+  @import 'variables';
 
 .modal-form {
   border-radius: 0 !important;
@@ -13,7 +13,7 @@
   padding: 20px;
   background: #fff;
   z-index: 3;
-  font-family: 'Karla', sans-serif;
+    font-family: $font1;
 
 }
 
@@ -29,7 +29,7 @@
   border: 1px solid rgba(0, 0, 0, 0.12);
   
   font-size: 14px;
-  font-family: 'Karla', sans-serif;
+    font-family: $font1;
   font-stretch: 100%;
   font-weight: 500;
   margin-bottom: 8px;
@@ -52,7 +52,7 @@
 
   margin-bottom: 1rem;
   cursor: pointer;
-  font-family: 'Karla', sans-serif;
+    font-family: $font1;
   margin: 0 0 1rem;
   position: relative;
   text-align: center;

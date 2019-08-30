@@ -1,3 +1,4 @@
+@import 'variables';
 .index-cont {
     .index-search {
         height: 80px;
@@ -6,7 +7,7 @@
         justify-content: center;
         align-items: center;
         font-size: 16px;
-        font-family: 'Karla', sans-serif;
+        font-family: $font1;
         color: rgb(45, 51, 63);
         li:first-of-type {
             border-top-left-radius: 4px;
@@ -58,7 +59,7 @@
         justify-content: center;
         .aside-checkbox {
             padding: 20px 10px;
-            font-family: 'Karla', sans-serif;
+              font-family: $font1;
             li {
                 padding: 3px 0px;
                 color: rgb(102, 102, 102);
@@ -110,18 +111,18 @@
         .ind-name {
             font-size: 20px;
             text-decoration: none;
-            font-family: 'Karla', sans-serif;
+              font-family: $font1;
             color: #247F9E;
         }
         p {
             font-size: 16px;
-            font-family: 'Karla', sans-serif;
+              font-family: $font1;
             color: rgb(45, 51, 63);
             padding: 10px 0px;
         }
         a {
             font-size: 16px;
-            font-family: 'Karla', sans-serif;
+              font-family: $font1;
             color: rgb(45, 51, 63);
             cursor: pointer;
         }
@@ -140,7 +141,7 @@
         padding: 1px;
     }
     p {
-        font-family: 'Karla', sans-serif;
+          font-family: $font1;
         color: rgb(45, 51, 63);
     }
 }
