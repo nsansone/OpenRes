@@ -42,8 +42,9 @@ class ReviewForm extends React.Component {
 
                 <form className="review-form" onSubmit={this.handleSubmit}>
                     <div className="label-cont">
-                        <label className="" htmlFor="rating-value">Rating:
+                        <label tabIndex="0" className="" htmlFor="rating-value">Rating:
                             <ReactStars
+                                tabIndex="0"
                                 className="react-stars"
                                 count={5}
                                 onChange={this.ratingChanged}

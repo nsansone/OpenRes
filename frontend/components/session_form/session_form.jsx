@@ -87,9 +87,7 @@ class SignupForm extends React.Component {
                 }
                 {this.props.formType === 'login' && 
                     <>
-                        <div className="forgot">
-                            <a href="#">Forgot Password?</a>
-                        </div>
+                        
                         <div className="submit">
                             <input className="session-submit" type="submit" value="Sign In"/>
                             <button onClick={this.handleClick} className="session-submit" >Demo User</button>

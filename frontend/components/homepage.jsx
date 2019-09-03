@@ -8,9 +8,9 @@ const Homepage = () => {
     return (
         <div className="homepage-cont">
             <span className="home-search-container">
-                <img className="first" src="https://resizer.otstatic.com/v2/photos/wide-huge/25160340.jpg" alt=""/>
-                <img className="second" src="https://resizer.otstatic.com/v2/photos/wide-huge/25161502.jpg" alt=""/>
-                <img className="third" src="https://resizer.otstatic.com/v2/photos/wide-huge/25160669.jpg" alt=""/>
+                <img className="first" src="https://resizer.otstatic.com/v2/photos/wide-huge/25160340.jpg" alt="generic background image"/>
+                <img className="second" src="https://resizer.otstatic.com/v2/photos/wide-huge/25161502.jpg" alt="generic background image"/>
+                <img className="third" src="https://resizer.otstatic.com/v2/photos/wide-huge/25160669.jpg" alt="generic background image"/>
                 <div className="splash-img"></div>
                 <form className="find-res-search">
                     <h1>Find your table for any occasion</h1>

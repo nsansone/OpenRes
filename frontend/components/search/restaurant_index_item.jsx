@@ -31,7 +31,7 @@ const RestaurantIndexItem = ({restaurant}) => {
     const styleWidth = (parseFloat(averageRating) / 5) * 100; 
     return(
         <li className="index-li">
-            <img className="index-img" src={restaurant.photoUrl} alt="" />
+            <img className="index-img" src={restaurant.photoUrl} alt="restaurant picture" />
             <div className="ind-details-cont">
                 <Link className="ind-name" to={`/restaurants/${restaurant.id}`}>
                     {restaurant.name}
@@ -58,7 +58,7 @@ const RestaurantIndexItem = ({restaurant}) => {
                         <p>{reviewNum}</p>
                     </span>
                     <p className="ind-address">{restaurant.address}</p>
-                    <a className="ind-web" href="https://www.katzsdelicatessen.com/menu_and_local-delivery">{restaurant.website}</a>
+                    <a className="ind-web" target="_blank" href={restaurant.website}>{restaurant.website}</a>
                 </ul>
             </div>
 

@@ -5,7 +5,8 @@ class ResForm extends React.Component {
     constructor(props){
         super(props);
         this.handleClick = this.handleClick.bind(this);
-        this.handleClick2 = this.handleClick2.bind(this);
+        this.handleKeyUp = this.handleKeyUp.bind(this);
+        this.confirmRes = this.confirmRes.bind(this);
         const today = new Date()
         const year = String(today.getFullYear());
         const month = (today.getMonth() + 1) < 10 ? "0".concat(String(today.getMonth() + 1)) : String(today.getMonth() + 1);
@@ -74,7 +75,7 @@ class ResForm extends React.Component {
         };
     }
 
-    handleClick2(e){
+    confirmRes(e){
         e.preventDefault();
 
         if (!this.props.user) {
@@ -92,6 +93,29 @@ class ResForm extends React.Component {
                 this.setState({time: e.target.key });
                 const reservation = Object.assign(this.state, {restaurant_id: this.props.match.params.restaurantId, user_id: this.props.user.id });
                 this.props.createReservation(reservation).then(this.setState({ hidden: 'hidden', confirm: "confirm-vis" }))
+            }
+        }
+    }
+
+    handleKeyUp(e){
+        e.preventDefault();
+        if (e.keyCode === 13) {
+            if (!this.props.user) {
+                this.setState({ hidden: 'hidden', confirm: "confirm-vis" });
+            } else {
+
+                const todaysDate = new Date();
+                const resDate = Date.parse(this.state.date);
+                const newToday = todaysDate.setDate(todaysDate.getDate() - 1);
+
+                if (newToday > resDate) {
+                    this.setState({ hidden: 'hidden', pastRes: "past-res-vis" });
+                } else {
+
+                    this.setState({ time: e.target.key });
+                    const reservation = Object.assign(this.state, { restaurant_id: this.props.match.params.restaurantId, user_id: this.props.user.id });
+                    this.props.createReservation(reservation).then(this.setState({ hidden: 'hidden', confirm: "confirm-vis" }))
+                }
             }
         }
     }
@@ -157,11 +181,11 @@ class ResForm extends React.Component {
                         <div className={this.state.hidden}>
                             <p>Select a time:</p>
                             <ul className="hidden-cont">
-                            <input onClick={this.handleClick2} className="times" type="text" placeholder={this.state.time1} key={this.state.time1}/>
-                            <input onClick={this.handleClick2} className="times" type="text" placeholder={this.state.time2} key={this.state.time2} />
-                            <input onClick={this.handleClick2} className="times" type="text" placeholder={this.state.time3} key={this.state.time3} />
-                            <input onClick={this.handleClick2} className="times" type="text" placeholder={this.state.time4} key={this.state.time4} />
-                            <input onClick={this.handleClick2} className="times" type="text" placeholder={this.state.time5} key={this.state.time5} />
+                            <input onKeyUp={this.handleKeyUp} onClick={this.confirmRes} className="times" type="text" placeholder={this.state.time1} key={this.state.time1}/>
+                            <input onKeyUp={this.handleKeyUp} onClick={this.confirmRes} className="times" type="text" placeholder={this.state.time2} key={this.state.time2} />
+                            <input onKeyUp={this.handleKeyUp} onClick={this.confirmRes} className="times" type="text" placeholder={this.state.time3} key={this.state.time3} />
+                            <input onKeyUp={this.handleKeyUp} onClick={this.confirmRes} className="times" type="text" placeholder={this.state.time4} key={this.state.time4} />
+                            <input onKeyUp={this.handleKeyUp} onClick={this.confirmRes} className="times" type="text" placeholder={this.state.time5} key={this.state.time5} />
 
                             </ul>
                         </div>

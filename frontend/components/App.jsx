@@ -13,12 +13,14 @@ import Footer from './footer';
 import ReviewFormContainer from './reviews/review_form_container';
 import ProfileContainer from './profile/profile_container';
 import UpdateResContainer from './reservations/update_res_container';
+import AccessibilityHeader from './navbar/accessibility';
 
 const App = () => (
     <div>
 
         <Modal />
             <header className="main-header">
+                <AccessibilityHeader />
                 <NavbarContainer />
 
             </header>

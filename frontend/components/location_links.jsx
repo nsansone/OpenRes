@@ -5,11 +5,12 @@ import { withRouter } from 'react-router-dom';
 
 
 
-class LocationGrid extends React.Component {
+class LocationLinks extends React.Component {
   constructor(props) {
     super(props);
     this.state = { searchText: "" };
     this.handleClick = this.handleClick.bind(this);
+    this.handleKeyUp = this.handleKeyUp.bind(this);
   }
 
   handleClick(page) {
@@ -26,31 +27,48 @@ class LocationGrid extends React.Component {
     };
   }
 
+  handleKeyUp(page) {
+    return (e) => {
+      e.preventDefault();
+      if (e.keyCode === 13) {
+      const pageText = e.target.innerText
+      this.props.updateFilter("search", pageText).then(() => {
+        this.props.history.push({
+          pathname: '/restaurants',
+          fromPage: `${page}`,
+          searchText: `${pageText}`
+        });
+      });
+      }
+    };
+    
+  }
+
   render() {
     return (
     <ul className="area-list">
-      <li onClick={this.handleClick('homepage')}>
+        <li tabIndex="0" onClick={this.handleClick('homepage')} onKeyUp={this.handleKeyUp('homepage')}>
           <img src="https://loving-newyork.com/wp-content/uploads/2018/09/Things-to-do-in-the-east-village-180927123616018-1600x960.jpg" alt="East Village" />
           <p>East Village</p>
       </li>
-      <li onClick={this.handleClick('homepage')}>
-          <img src="https://citizen-femme.com/wp-content/uploads/2018/01/1487788417-midtown-manhattan-766x494.jpg" alt="" />
+        <li tabIndex="0" onClick={this.handleClick('homepage')} onKeyUp={this.handleKeyUp('homepage')}>
+          <img src="https://citizen-femme.com/wp-content/uploads/2018/01/1487788417-midtown-manhattan-766x494.jpg" alt="Midtown " />
           <p>Midtown</p>
       </li>
-      <li onClick={this.handleClick('homepage')}>
-        <img src="https://cdn.vox-cdn.com/thumbor/8AnYlTm7fi2v1msdUeht9mzsd1k=/0x0:6000x4000/920x613/filters:focal(2520x1520:3480x2480):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/64823687/shutterstock_581905543.0.jpg" alt="" />
+        <li tabIndex="0" onClick={this.handleClick('homepage')} onKeyUp={this.handleKeyUp('homepage')}>
+        <img src="https://cdn.vox-cdn.com/thumbor/8AnYlTm7fi2v1msdUeht9mzsd1k=/0x0:6000x4000/920x613/filters:focal(2520x1520:3480x2480):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/64823687/shutterstock_581905543.0.jpg" alt="Chelsea" />
         <p>Chelsea</p>
       </li>
-      <li onClick={this.handleClick('homepage')}>
-          <img src="https://loving-newyork.com/wp-content/uploads/2016/07/Brooklyn-Bridge_170614090305011-1600x960.jpg" alt="" />
+        <li tabIndex="0" onClick={this.handleClick('homepage')} onKeyUp={this.handleKeyUp('homepage')}>
+          <img src="https://loving-newyork.com/wp-content/uploads/2016/07/Brooklyn-Bridge_170614090305011-1600x960.jpg" alt="Brooklyn" />
         <p>Brooklyn</p>
       </li>
-      <li onClick={this.handleClick('homepage')}>
-        <img src="https://images.ctfassets.net/ypfe9l9zihcg/3vqg9vDRLaIiWikq2mC0aY/6a44099b8530cbc643e852a7b145cdf2/upper_west_side_around_the_block_the_rental_market_2.jpg?fm=jpg&fl=progressive&q=85&w=900" alt="" />
+        <li tabIndex="0" onClick={this.handleClick('homepage')} onKeyUp={this.handleKeyUp('homepage')}>
+        <img src="https://images.ctfassets.net/ypfe9l9zihcg/3vqg9vDRLaIiWikq2mC0aY/6a44099b8530cbc643e852a7b145cdf2/upper_west_side_around_the_block_the_rental_market_2.jpg?fm=jpg&fl=progressive&q=85&w=900" alt="Upper West Side" />
         <p>Upper West Side</p>
       </li>
-      <li onClick={this.handleClick('homepage')}>
-        <img src="https://media-cdn.tripadvisor.com/media/attractions-splice-spp-540x360/06/75/57/b7.jpg" alt="" />
+        <li tabIndex="0" onClick={this.handleClick('homepage')} onKeyUp={this.handleKeyUp('homepage')}>
+        <img src="https://media-cdn.tripadvisor.com/media/attractions-splice-spp-540x360/06/75/57/b7.jpg" alt="Flatiron" />
         <p>Flatiron</p>
       </li>
     </ul>
@@ -62,4 +80,4 @@ const mapDispatchToProps = dispatch => ({
   updateFilter: (filter, value) => dispatch(updateFilter(filter, value))
 })
 
-export default connect(null, mapDispatchToProps)(withRouter(LocationGrid));
+export default connect(null, mapDispatchToProps)(withRouter(LocationLinks));

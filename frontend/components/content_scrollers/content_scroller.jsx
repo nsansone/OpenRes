@@ -1,5 +1,5 @@
 import React from 'react';
-import LocationGrid from '../location_links';
+import LocationLinks from '../location_links';
 import ContentScrollerDetail from '../content_scrollers/content_scroller_detail';
 
 class ContentScroller extends React.Component {
@@ -23,7 +23,7 @@ class ContentScroller extends React.Component {
                     </ul>
                 <h1 className="scroll-title">Featured Areas</h1>
                 <hr />
-                <LocationGrid />
+                <LocationLinks />
 
             </div>
         );

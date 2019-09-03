@@ -34,7 +34,7 @@ class RestaurantShow extends React.Component {
         
         return (
             <div className="show-cont">
-                <img className="rest-background" src={restaurant.photoUrl} alt="" />
+                <img alt="restaurant picture" className="rest-background" src={restaurant.photoUrl} alt="" />
                 <div className="show-body">
                     <main className="show-main">
                         <RestaurantDetail restaurant={restaurant} reviews={reviews} />

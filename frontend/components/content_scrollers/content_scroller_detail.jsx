@@ -10,7 +10,7 @@ const ContentScrollerDetail = ({ restaurant }) => {
     const styleWidth = (parseFloat(averageRating) / 5) * 100; 
     return (
         <li className="scroll-li">
-            <img className="scroll-img" src={restaurant.photoUrl} alt="" />
+            <img className="scroll-img" src={restaurant.photoUrl} alt="restaurant photo" />
             <div className="scroll-details-cont">
                 <Link className="scroll-name" to={`/restaurants/${restaurant.id}`}>
                     {restaurant.name}

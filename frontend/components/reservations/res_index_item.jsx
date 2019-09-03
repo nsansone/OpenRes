@@ -20,7 +20,7 @@ const ResIndexItem = (props) => {
     return (
         <li className="res-item">
             <Link to={`/restaurants/${props.restaurant.id}`}>
-                <img className="res-index-img" src={props.restaurant.photoUrl} alt="" />
+                <img className="res-index-img" src={props.restaurant.photoUrl} alt="restaurant image" />
             </Link>
             
             <ul className="res-ind-details-cont">
