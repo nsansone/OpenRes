@@ -1,5 +1,5 @@
-@import 'variables';
-// @import 'variables2';
+// @import 'variables';
+@import 'variables2';
 
 .login-button {
     padding: 0 1rem 0 1rem;
@@ -93,9 +93,6 @@
         padding-right: 10px;
     }
 }
-.accessibility-visible:focus {
-    color: red;
-}
 
 .accessibility-hidden{
    display: none; 
@@ -112,9 +109,6 @@
     button {
         background-color: inherit;
     }
-}
-.standard-visible:focus {
-    color: red;
 }
 
 .standard-hidden {

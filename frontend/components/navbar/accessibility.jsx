@@ -30,8 +30,8 @@ class AccessibilityHeader extends React.Component {
    
     return (
       <div className="accessibility-header">
-        <button className={this.state.accessibility} onClick={this.swapStyleSheet("/assets/main_accessibility.scss")}>Switch to Accessibility Mode&nbsp;&nbsp;</button>
-        <button className={this.state.standard} onClick={this.swapStyleSheet("/assets/main.scss")}>Switch to Standard Mode&nbsp;&nbsp;</button>
+        <button tabIndex="0" className={this.state.accessibility} onClick={this.swapStyleSheet("/assets/main_accessibility.scss")}>Switch to Accessibility Mode&nbsp;&nbsp;</button>
+        <button tabIndex="0" className={this.state.standard} onClick={this.swapStyleSheet("/assets/main.scss")}>Switch to Standard Mode&nbsp;&nbsp;</button>
       </div>
     );
   }
