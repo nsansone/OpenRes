@@ -28,6 +28,7 @@ time, mark, audio, video, Link, select {
 	border-radius: 0;
 	color: inherit;
 	font-family: inherit;
+	outline-color: grey;
 
 }
 /* HTML5 display-role reset for older browsers */

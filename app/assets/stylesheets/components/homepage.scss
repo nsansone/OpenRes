@@ -90,7 +90,9 @@ html {
         .res-detail-container {
             display: flex;
             .res-detail {
+                display: flex;
                 background-color: white;
+                align-items: center;
                 flex-basis: 33.3%;
                 color: $search-icon-color;
                 font-size: 16px;
@@ -98,13 +100,14 @@ html {
                 font-stretch: 100%;
 
                 margin-bottom: 15px;
-                padding: 16px;
                 i {
-                    padding-right: 7px;
+                    padding-left: 16px;
+                    
                 }
                 input {
-                    height: 100%;
-                    width: 85%;
+                    padding: 16px;
+                    height: 19px !important;
+                    width: 100%;
                     color: black;
                 }
                 input::placeholder {
@@ -131,23 +134,24 @@ html {
             padding-bottom: 35px;
          }
          .search-bar {
-                background-color: white;
-                color: $search-icon-color;
-                font-size: 16px;
-                font-family: $font1;
-                font-stretch: 100%;
-                margin-bottom: 15px;
-                padding: 16px;
-                border-radius: 4px;
+            display: flex;
+            align-items: center;
+            background-color: white;
+            color: $search-icon-color;
+            font-size: 16px;
+            font-family: $font1;
+            margin-bottom: 15px;
+            border-radius: 4px;
             input {
-                width: 85%;
-                height: 100%;
+                width: 100%;
+                padding: 16px;
+                height: 19px !important;
             }
             input::placeholder {
                 color: $search-icon-color;
             }
             i {
-                padding-right: 7px;
+                padding-left: 16px;
             }
          }
         .res-search-submit {
