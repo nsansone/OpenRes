@@ -15,9 +15,15 @@ class Checkboxes extends React.Component {
   update(page) {
     return (e) => {
     
+
       const pageText = e.target.value
       const lastCheckedDup = this.props.checked.slice()
-      lastCheckedDup.push(pageText)
+      if (lastCheckedDup.includes(pageText)){
+        let idx = lastCheckedDup.indexOf(pageText)
+        delete lastCheckedDup[idx]
+      } else {
+        lastCheckedDup.push(pageText)
+      }
       this.props.updateFilter("checked", lastCheckedDup)
         
     }
@@ -35,20 +41,23 @@ class Checkboxes extends React.Component {
               <input type="checkbox" value="East Village" /> East Village <br />
             </li>
             <li>
-              <input type="checkbox" value="Nolita" /> Nolita <br />
+              <input type="checkbox" value="Chelsea" /> Chelsea <br />
             </li>
             <li>
-              <input type="checkbox" value="Greenwich Village" /> Greenwich Village <br />
+              <input type="checkbox" value="Midtown" /> Midtown <br />
             </li>
             <li>
               <input  type="checkbox" value="Lower East Side" /> Lower East Side <br />
             </li>
             <li>
-              <input type="checkbox" value="Chelsea" /> Chelsea <br />
+              <input type="checkbox" value="Flatiron" /> Flatiron <br />
             </li>
             <li>
-              <p className="more">+ More</p>
+              <input type="checkbox" value="Brooklyn" /> Brooklyn <br />
             </li>
+            {/* <li>
+              <p className="more">+ More</p>
+            </li> */}
           </ul>
         </form>
         <ul className="aside-checkbox">
@@ -56,23 +65,26 @@ class Checkboxes extends React.Component {
             <i className="fas fa-utensils"> </i>  Cuisines <br />
           </li>
           <li>
-            <input type="checkbox" value="Italian" /> Italian <br />
+            <input onChange={this.update("checkbox")} type="checkbox" value="Italian" /> Italian <br />
           </li>
           <li>
-            <input type="checkbox" value="American" /> American <br />
+            <input onChange={this.update("checkbox")} type="checkbox" value="Asian" /> Asian <br />
           </li>
           <li>
             <input onChange={this.update("checkbox")} type="checkbox" value="Dessert" /> Dessert <br />
           </li>
           <li>
-            <input type="checkbox" value="Japanese" /> Japanese <br />
+            <input onChange={this.update("checkbox")} type="checkbox" value="Deli" /> Deli <br />
           </li>
           <li>
-            <input type="checkbox" value="French" /> French <br />
+            <input onChange={this.update("checkbox")} type="checkbox" value="French" /> French <br />
           </li>
           <li>
+            <input onChange={this.update("checkbox")} type="checkbox" value="Bagels" /> Bagels <br />
+          </li>
+          {/* <li>
             <p className="more">+ More</p>
-          </li>
+          </li> */}
         </ul>
       </div>
 

@@ -24,7 +24,7 @@ class Api::RestaurantsController < ApplicationController
 
                     if restaurants.joins(:locations).where("LOWER(locations.name) LIKE '%#{filter.downcase}%'").length 
                         restaurants = restaurants.joins(:locations).where("LOWER(locations.name) LIKE '%#{filter.downcase}%'").with_attached_photo 
-                    elsif restaurants.joins(:cuisines).where("LOWER(cuisines.name) LIKE '%#{filter.downcase}%'")
+                    elsif restaurants.joins(:cuisines).where("LOWER(cuisines.name) LIKE '%#{filter.downcase}%'").length
                         restaurants = restaurants.joins(:cuisines).where("LOWER(cuisines.name) LIKE '%#{filter.downcase}%'").with_attached_photo 
                     end
                 end

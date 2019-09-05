@@ -64,8 +64,8 @@ class LocationLinks extends React.Component {
         <p>Brooklyn</p>
       </li>
         <li tabIndex="0" onClick={this.handleClick('homepage')} onKeyUp={this.handleKeyUp('homepage')}>
-        <img src="https://images.ctfassets.net/ypfe9l9zihcg/3vqg9vDRLaIiWikq2mC0aY/6a44099b8530cbc643e852a7b145cdf2/upper_west_side_around_the_block_the_rental_market_2.jpg?fm=jpg&fl=progressive&q=85&w=900" alt="Upper West Side" />
-        <p>Upper West Side</p>
+          <img src="https://www.tripsavvy.com/thmb/cREDk7b9wOHZfugJ3e0xabtbA1Y=/2121x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/usa--new-york-city--manhattan--lower-east-side--typical-apartment-building-facades-with-external-staircases-575313898-5c20137bc9e77c0001071005.jpg" alt="Lower East Side" />
+        <p>Lower East Side</p>
       </li>
         <li tabIndex="0" onClick={this.handleClick('homepage')} onKeyUp={this.handleKeyUp('homepage')}>
         <img src="https://media-cdn.tripadvisor.com/media/attractions-splice-spp-540x360/06/75/57/b7.jpg" alt="Flatiron" />

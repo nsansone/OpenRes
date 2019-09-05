@@ -16,7 +16,7 @@ RestaurantLocation.destroy_all
 
 user = User.create!({
     fname: 'Nicole',
-    lname: 'Nicole',
+    lname: 'Sansone',
     email: 'Nicole',
     password: 'Nicole'
 })
@@ -114,6 +114,19 @@ file6 = open('https://s3.amazonaws.com/openres-aa-seeds/pizza.jpg')
 
 pizza.photo.attach(io: file6, filename: 'pizza.jpg')
 
+bernardin = Restaurant.create!({
+    name: 'Le Bernardin',
+    address: '155 W 51st St, New York, NY 10019',
+    phone: '(212) 554-1515',
+    website: 'le-bernardin.com',
+    lat: 40.720719337279355,
+    lng: -73.97180699999996,
+    description: 'Le Bernardin is a French seafood restaurant in Midtown Manhattan in New York City. Gilbert Le Coze and his sister Maguy Le Coze started the restaurant in Paris in 1972, where it was called Les Moines de St. Bernardin. They restarted the restaurant in New York in 1986, not long after receiving a third Michelin star.'
+})
+
+file7 = open('https://s3.amazonaws.com/openres-aa-seeds/bernardin.webp')
+bernardin.photo.attach(io: file7, filename: 'bernardin.webp')
+
 review1 = Review.create!({
     rating: 4,
     body: 'Respect for old school long tradition eatery.
@@ -153,11 +166,12 @@ I got the everything bagel with scallion cream cheese and the gaspe nova. Did no
 
 })
 
-cuisine1 = Cuisine.create!({name: "dessert"})
-cuisine2 = Cuisine.create!({name: "italian"})
-cuisine3 = Cuisine.create!({name: "asian"})
-cuisine4 = Cuisine.create!({name: "deli"})
-cuisine5 = Cuisine.create!({name: "bagels"})
+cuisine1 = Cuisine.create!({name: "Dessert"})
+cuisine2 = Cuisine.create!({name: "Italian"})
+cuisine3 = Cuisine.create!({name: "Asian"})
+cuisine4 = Cuisine.create!({name: "Deli"})
+cuisine5 = Cuisine.create!({name: "Bagels"})
+cuisine6 = Cuisine.create!({name: "French"})
 
 
 restaurant_cuisine1 = RestaurantCuisine.create!({restaurant_id: milkbar.id, cuisine_id: cuisine1.id})
@@ -166,13 +180,20 @@ restaurant_cuisine3 = RestaurantCuisine.create!({restaurant_id: momo.id, cuisine
 restaurant_cuisine4 = RestaurantCuisine.create!({restaurant_id: katz.id, cuisine_id: cuisine4.id})
 restaurant_cuisine5 = RestaurantCuisine.create!({restaurant_id: russ.id, cuisine_id: cuisine5.id})
 restaurant_cuisine6 = RestaurantCuisine.create!({restaurant_id: serra.id, cuisine_id: cuisine2.id})
+restaurant_cuisine7 = RestaurantCuisine.create!({restaurant_id: bernardin.id, cuisine_id: cuisine6.id})
 
 location1 = Location.create!({name: "Chelsea"})
 location2 = Location.create!({name: "East Village"})
+location3 = Location.create!({name: "Midtown"})
+location4 = Location.create!({name: "Brooklyn"})
+location5 = Location.create!({name: "Lower East Side"})
+location6 = Location.create!({name: "Flatiron"})
+
 
 restaurant_location1 = RestaurantLocation.create!({restaurant_id: milkbar.id, location_id: location1.id})
-restaurant_location2 = RestaurantLocation.create!({restaurant_id: pizza.id, location_id: location2.id})
+restaurant_location2 = RestaurantLocation.create!({restaurant_id: pizza.id, location_id: location4.id})
 restaurant_location3 = RestaurantLocation.create!({restaurant_id: momo.id, location_id: location2.id})
-restaurant_location4 = RestaurantLocation.create!({restaurant_id: katz.id, location_id: location2.id})
-restaurant_location5 = RestaurantLocation.create!({restaurant_id: russ.id, location_id: location2.id})
-restaurant_location6 = RestaurantLocation.create!({restaurant_id: serra.id, location_id: location2.id})
+restaurant_location4 = RestaurantLocation.create!({restaurant_id: katz.id, location_id: location5.id})
+restaurant_location5 = RestaurantLocation.create!({restaurant_id: russ.id, location_id: location5.id})
+restaurant_location6 = RestaurantLocation.create!({restaurant_id: serra.id, location_id: location6.id})
+restaurant_location7 = RestaurantLocation.create!({restaurant_id: bernardin.id, location_id: location3.id})
