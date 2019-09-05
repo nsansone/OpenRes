@@ -14,7 +14,7 @@ class Api::RestaurantsController < ApplicationController
             end
         end
              
-        if restaurants.length == 0
+        if restaurants.length == 0 
             restaurants = Restaurant.all.with_attached_photo
         end
         

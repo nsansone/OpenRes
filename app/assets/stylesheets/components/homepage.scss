@@ -61,8 +61,10 @@ html {
     img {
         position: absolute;
         width: 100%;
+        // height: 100%;
         top: -250px;
-        object-fit: fill;
+        min-height: 666px;
+        object-fit: cover;
         -webkit-transition: opacity 1s ease-in-out;
         -moz-transition: opacity 1s ease-in-out;
         -o-transition: opacity 1s ease-in-out;
