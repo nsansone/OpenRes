@@ -21,7 +21,6 @@ class Api::RestaurantsController < ApplicationController
         if checked 
             if checked.length != 0
                 checked.each do |filter|
-
                     if restaurants.joins(:locations).where("LOWER(locations.name) LIKE '%#{filter.downcase}%'").length 
                         restaurants = restaurants.joins(:locations).where("LOWER(locations.name) LIKE '%#{filter.downcase}%'").with_attached_photo 
                     elsif restaurants.joins(:cuisines).where("LOWER(cuisines.name) LIKE '%#{filter.downcase}%'").length

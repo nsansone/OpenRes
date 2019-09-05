@@ -1,6 +1,6 @@
 import { UPDATE_FILTER }from '../actions/filter_actions';
 
-const defaultFilters = Object.freeze({bounds: {}, search: "", checked: []});
+const defaultFilters = Object.freeze({bounds: {}, search: " ", checked: []});
 
 const filtersReducer = (state=defaultFilters, action) => {
     Object.freeze(state);
