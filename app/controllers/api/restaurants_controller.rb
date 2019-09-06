@@ -5,11 +5,6 @@ class Api::RestaurantsController < ApplicationController
         restaurants = bounds ? Restaurant.in_bounds(bounds).with_attached_photo : Restaurant.none
         
         restaurants = Restaurant.text_includes(search).with_attached_photo if search && search.length != 0
-        
-            if restaurants.length == 0 && search
-                restaurants = Restaurant.joins(:locations).where("LOWER(locations.name) LIKE '%#{search.downcase}%'").with_attached_photo
-            end
-
 
         if restaurants.length == 0 && search
             
