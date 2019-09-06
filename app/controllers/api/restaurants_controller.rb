@@ -6,6 +6,11 @@ class Api::RestaurantsController < ApplicationController
         
         restaurants = Restaurant.text_includes(search).with_attached_photo if search && search.length != 0
         
+            if restaurants.length == 0 && search
+                restaurants = Restaurant.joins(:locations).where("LOWER(locations.name) LIKE '%#{search.downcase}%'").with_attached_photo
+            end
+
+
         if restaurants.length == 0 && search
             
             restaurants = Restaurant.joins(:cuisines).where("LOWER(cuisines.name) LIKE '%#{search.downcase}%'").with_attached_photo
