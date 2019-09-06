@@ -9,9 +9,9 @@ class Api::RestaurantsController < ApplicationController
         if restaurants.length == 0 && search
             
             restaurants = Restaurant.joins(:cuisines).where("LOWER(cuisines.name) LIKE '%#{search.downcase}%'").with_attached_photo
-            if restaurants.length == 0
-                restaurants = Restaurant.joins(:locations).where("LOWER(locations.name) LIKE '%#{search.downcase}%'").with_attached_photo
-            end
+            # if restaurants.length == 0
+            #     restaurants = Restaurant.joins(:locations).where("LOWER(locations.name) LIKE '%#{search.downcase}%'").with_attached_photo
+            # end
         end
              
         if restaurants.length == 0 
