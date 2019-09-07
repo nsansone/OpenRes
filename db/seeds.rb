@@ -26,7 +26,7 @@ russ = Restaurant.create!({
     name: 'Russ & Daughters',
     address: '179 E Houston St, New York, NY 10002',
     phone: '(212) 475-4880',
-    website: 'shop.russanddaughters.com',
+    website: 'https://www.russanddaughters.com/',
     lat: 40.722645000000036,
     lng: -73.988292,
     description: 
@@ -43,7 +43,7 @@ katz = Restaurant.create!({
     name: "Katz\'s Delicatessen",
     address: "205 E Houston St, New York, NY 10002",
     phone: "(212) 254-2246",
-    website: "katzsdelicatessen.com",
+    website: "https://katzsdelicatessen.com/",
     lat: 40.72297400279524,
     lng: -73.98917,
     description: 'At Russ & Daughters Cafe, expert smoked salmon slicers work their craft in front of guests; an open kitchen provides an over-the-counter connection like one feels in the store;  a soda fountain bar beckons with homemade sodas, egg creams, shrubs, and superb cocktails; friendly staff proudly wear the iconic white Russ & Daughters lab coats; and 105 years of living history permeates throughout the entire space.
@@ -58,7 +58,7 @@ serra = Restaurant.create!({
     name: 'Serra by Birreria',
     address: '200 Fifth Avenue New York, NY 10010',
     phone: '(212) 937-8910',
-    website: 'eataly.com',
+    website: 'https://www.eataly.com/us_en/stores/nyc-flatiron/serra-by-birreria/',
     lat: 40.7420207,
     lng: -73.989928,
     description: 
@@ -74,7 +74,7 @@ momo = Restaurant.create!({
     name: 'Momofuku Noodle Bar',
     address: '171 1st Avenue, New York, NY 10003',
     phone: '(212) 777-7773',
-    website: 'noodlebar-ny.momofuku.com',
+    website: 'https://momofukunoodlebar.com/',
     lat: 40.729233,
     lng: -73.98451,
     description: 
@@ -88,7 +88,7 @@ milkbar = Restaurant.create!({
     name: 'Milk Bar',
     address: '220 8th Ave, New York, NY 10011',
     phone: '(917) 475-1187',
-    website: 'milkbarstore.com',
+    website: 'https://milkbarstore.com/',
     lat: 40.7440859,
     lng: -73.9991359,
     description: 
@@ -118,7 +118,7 @@ bernardin = Restaurant.create!({
     name: 'Le Bernardin',
     address: '155 W 51st St, New York, NY 10019',
     phone: '(212) 554-1515',
-    website: 'le-bernardin.com',
+    website: 'https://www.le-bernardin.com/',
     lat: 40.720719337279355,
     lng: -73.97180699999996,
     description: 'Le Bernardin is a French seafood restaurant in Midtown Manhattan in New York City. Gilbert Le Coze and his sister Maguy Le Coze started the restaurant in Paris in 1972, where it was called Les Moines de St. Bernardin. They restarted the restaurant in New York in 1986, not long after receiving a third Michelin star.'
