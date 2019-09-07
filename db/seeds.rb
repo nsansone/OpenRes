@@ -58,7 +58,7 @@ serra = Restaurant.create!({
     name: 'Serra by Birreria',
     address: '200 Fifth Avenue New York, NY 10010',
     phone: '(212) 937-8910',
-    website: 'https://www.eataly.com/us_en/stores/nyc-flatiron/serra-by-birreria/',
+    website: 'https://www.eataly.com/us_en',
     lat: 40.7420207,
     lng: -73.989928,
     description: 
