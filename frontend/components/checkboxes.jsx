@@ -17,6 +17,7 @@ class Checkboxes extends React.Component {
     
 
       const pageText = e.target.value
+      if (this.props.checked){
       const lastCheckedDup = this.props.checked.slice()
       if (lastCheckedDup.includes(pageText)){
         let idx = lastCheckedDup.indexOf(pageText)
@@ -24,42 +25,42 @@ class Checkboxes extends React.Component {
       } else {
         lastCheckedDup.push(pageText)
       }
-      this.props.updateFilter("checked", lastCheckedDup)
-        
+      this.props.updateFilter("checked", lastCheckedDup)    
+      }
     }
   }
 
   render() {
     return (
       <div>
-        <form onChange={this.update("checkbox")}>
+        {/* <form onChange={this.update("checkbox")}> */}
           <ul className="aside-checkbox">
             <li className="checkbox-title">
               <i className="fas fa-map-marker-alt"> </i>  Neighborhood <br />
             </li>
             <li>
-              <input type="checkbox" value="East Village" /> East Village <br />
+              <input onChange={this.update("checkbox")} type="checkbox" value="East Village" /> East Village <br />
             </li>
             <li>
-              <input type="checkbox" value="Chelsea" /> Chelsea <br />
+              <input onChange={this.update("checkbox")} type="checkbox" value="Chelsea" /> Chelsea <br />
             </li>
             <li>
-              <input type="checkbox" value="Midtown" /> Midtown <br />
+              <input onChange={this.update("checkbox")}type="checkbox" value="Midtown" /> Midtown <br />
             </li>
             <li>
-              <input  type="checkbox" value="Lower East Side" /> Lower East Side <br />
+              <input onChange={this.update("checkbox")}type="checkbox" value="Lower East Side" /> Lower East Side <br />
             </li>
             <li>
-              <input type="checkbox" value="Flatiron" /> Flatiron <br />
+              <input onChange={this.update("checkbox")} type="checkbox" value="Flatiron" /> Flatiron <br />
             </li>
             <li>
-              <input type="checkbox" value="Brooklyn" /> Brooklyn <br />
+              <input onChange={this.update("checkbox")} type="checkbox" value="Brooklyn" /> Brooklyn <br />
             </li>
             {/* <li>
               <p className="more">+ More</p>
             </li> */}
           </ul>
-        </form>
+        {/* </form> */}
         <ul className="aside-checkbox">
           <li className="checkbox-title">
             <i className="fas fa-utensils"> </i>  Cuisines <br />
@@ -71,7 +72,7 @@ class Checkboxes extends React.Component {
             <input onChange={this.update("checkbox")} type="checkbox" value="Asian" /> Asian <br />
           </li>
           <li>
-            <input onChange={this.update("checkbox")} type="checkbox" value="Dessert" /> Dessert <br />
+            <input onChange={this.update("checkbox")} type="checkbox" value="dessert" /> Dessert <br />
           </li>
           <li>
             <input onChange={this.update("checkbox")} type="checkbox" value="Deli" /> Deli <br />
