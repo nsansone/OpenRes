@@ -21,7 +21,8 @@ class SearchBar extends React.Component {
 
     handleClick(page) {
         return (e) => {
-            e.preventDefault();
+            
+            let searchText = this.state.searchText;
             this.props.updateFilter("search", this.state.searchText).then(() => {
                     this.props.history.push({
                         pathname: '/restaurants',
@@ -29,13 +30,29 @@ class SearchBar extends React.Component {
                         searchText: `${this.state.searchText}`
                     }); 
                 
+
+
             });
         };
+        
+    }
+
+    handleClickIndex(page) {
+        return (e) => {
+
+            let searchText = this.state.searchText;
+            this.props.updateFilter("search", this.state.searchText)
+            
+
+
+
+ 
+        };
+
     }
 
     handleKeyUp(page){
         return (e) => {
-            e.preventDefault();
 
             if (e.keyCode === 13){
                 this.props.updateFilter("search", this.state.searchText).then(() => {
@@ -49,6 +66,17 @@ class SearchBar extends React.Component {
             }
         };
     }
+
+    handleKeyUpIndex(page) {
+        return (e) => {
+
+            if (e.keyCode === 13) {
+                this.props.updateFilter("search", this.state.searchText)
+            }
+        };
+    }
+
+
 
     render() {
         if (this.props.page === "homepage") {
@@ -68,10 +96,10 @@ class SearchBar extends React.Component {
             <>
                 <li className="index-search-bar">
                     <i className="fas fa-search"></i>&nbsp;&nbsp;
-                <input onKeyUp={this.handleKeyUp('index')} onChange={this.update('searchText')} placeholder="Location, Restaurant, or Cuisine" type="text" value={this.state.searchText} />
+                <input onKeyUp={this.handleKeyUpIndex('index')} onChange={this.update('searchText')} placeholder="Location, Restaurant, or Cuisine" type="text" value={this.state.searchText} />
                 </li>
                 <li className="res-search-submit">
-                    <a className="res-search-submit" onClick={this.handleClick('index')}>Let's go</a>
+                    <a className="res-search-submit" onClick={this.handleClickIndex('index')}>Let's go</a>
                 </li>
             </>
         );
@@ -79,9 +107,15 @@ class SearchBar extends React.Component {
     }
 }
 
+const mapStateToProps = state => {
+    return(
+        {checked: state.ui.filters.checked}
+    );
+}
+
 const mapDispatchToProps = dispatch => ({
     updateFilter: (filter, value) => dispatch(updateFilter(filter, value))
 
-})
+});
 
-export default connect(null, mapDispatchToProps)(withRouter(SearchBar));
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(SearchBar));

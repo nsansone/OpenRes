@@ -6,7 +6,9 @@ import { fetchRestaurants } from '../../actions/restaurant_actions';
 
 const mapStateToProps = state => ({
     restaurants: Object.values(state.entities.restaurants),
-    singleRest: false
+    singleRest: false,
+    checked: state.ui.filters.checked,
+    searchText: state.ui.filters.search
 });
 
 const mapDispatchToProps = dispatch => ({

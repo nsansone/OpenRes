@@ -23,7 +23,8 @@ class Search extends React.Component {
         this.state = {mapHidden: "map-hidden",
                       asideVisible: "aside-vis",
                       buttonHid: "button-hid",
-                      indexCont: "index-cont-no-map"
+                      indexCont: "index-cont-no-map",
+                      searchText: this.props.searchText
                     }
         this.registerListeners = this.registerListeners.bind(this);
     }
@@ -40,14 +41,21 @@ class Search extends React.Component {
     componentDidMount(){
         if (this.props.history.location.fromPage !== "homepage") {
             this.props.fetchRestaurants()
+
         }
+        
     }
 
     componentDidUpdate(prevProps){
         if (prevProps.restaurants !== this.props.restaurants){
             this.MarkerManager = new MarkerManager(this.map, this.handleClick);
             this.MarkerManager.updateMarkers(this.props.restaurants)
+            this.forceUpdate();
         }
+        if (prevProps.searchText !== this.props.searchText){
+            this.setState({searchText: this.props.searchText})
+        }
+
     }
 
     handleClick(e){
@@ -77,9 +85,10 @@ class Search extends React.Component {
     }
 
     render(){
-        const searchText = this.props.history.location.searchText;
+        
+        let searchText = this.state.searchText;
         let searchMessage = "";
-        if (searchText === "" || searchText === undefined){
+        if (searchText === "" || searchText === undefined || searchText === []){
             searchMessage = "";
         } else if (this.state.mapHidden === "map-visible"){
             searchMessage = "";

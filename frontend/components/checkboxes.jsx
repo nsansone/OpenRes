@@ -8,25 +8,27 @@ import { withRouter } from 'react-router-dom';
 class Checkboxes extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { searchText: "" };
+    this.state = { searchText: "", checked: this.props.checked };
     
   }
+  
+
 
   update(page) {
     return (e) => {
-    
 
       const pageText = e.target.value
-      if (this.props.checked){
       const lastCheckedDup = this.props.checked.slice()
       if (lastCheckedDup.includes(pageText)){
         let idx = lastCheckedDup.indexOf(pageText)
         delete lastCheckedDup[idx]
+        this.setState({checked: lastCheckedDup})
       } else {
+
         lastCheckedDup.push(pageText)
+        this.setState({ checked: lastCheckedDup })
       }
       this.props.updateFilter("checked", lastCheckedDup)    
-      }
     }
   }
 
@@ -72,7 +74,7 @@ class Checkboxes extends React.Component {
             <input onChange={this.update("checkbox")} type="checkbox" value="Asian" /> Asian <br />
           </li>
           <li>
-            <input onChange={this.update("checkbox")} type="checkbox" value="dessert" /> Dessert <br />
+            <input onChange={this.update("checkbox")} type="checkbox" value="Dessert" /> Dessert <br />
           </li>
           <li>
             <input onChange={this.update("checkbox")} type="checkbox" value="Deli" /> Deli <br />
