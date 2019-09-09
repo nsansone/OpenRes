@@ -37,6 +37,16 @@ OpenRes is a single-page, full-stack web application modeled after OpenTable tha
   * Accessibility mode changes the font/contrasts/sizing to enhance user experience for those with visual/cognitive impairments
   * The app has been configured so that it can be navigated without a mouse, using the tab bar to access all functionality in order to increase usability for those with physical disabilities  
 
+## Technologies
+
+* React/Redux
+* Ruby on Rails
+* PostgreSQL
+* JavaScript
+* HTML5/SCSS
+* Webpack
+* Amazon Web Services S3
+* Google Maps API
 
 ## Bonus
 
