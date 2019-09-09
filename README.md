@@ -6,7 +6,7 @@
 
 OpenRes is a single-page, full-stack web application modeled after OpenTable that uses Ruby on Rails with a PostgresSQL database on the back-end, and React.js and Redux on the front-end. It also utilizes Amazon Web Services for image hosting and implements Google Maps API for searching based on geographical map bounds. 
 
-![openres gif](./assets/images/openres.gif)
+![openres gif](./app/assets/images/openres.gif)
 
 
 ## Key Features
