@@ -13,7 +13,7 @@ end
 
     json.authors do 
         json.set! review.author.id do
-            json.extract! review.author, :id, :fname
+            json.extract! review.author, :id, :fname, :lname
         end
     end
 end

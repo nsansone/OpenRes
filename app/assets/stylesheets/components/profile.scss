@@ -1,9 +1,11 @@
 @import 'variables';
 // @import 'variables2';
 .profile-cont {
-    height: 100vh;
+    position: relative;
+    height: 100%;
     background-color: #f7f7f7;
     font-family: $font2;
+    padding-bottom: 30px;
     .name-cont {
         height: 90px;
         width: 100%;
@@ -25,6 +27,7 @@
         width: 913px;
         margin: 0 auto;
         background-color: white;
+        margin-bottom: 20px;
 
         .section-titles {
             width: 913px;

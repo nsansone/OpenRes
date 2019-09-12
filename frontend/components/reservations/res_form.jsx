@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 class ResForm extends React.Component {
     constructor(props){
@@ -143,7 +143,8 @@ class ResForm extends React.Component {
 
 
     render(){
-        const resConfirm = !this.props.user ? "Whoops! Please log in to make a reservation!" : "Your reservation has been confirmed! Please see your profile for details on upcoming reservations."
+    
+    const resConfirm = !this.props.user ? "Whoops! Please log in to make a reservation!" : <>Your reservation has been confirmed! Please see your <Link to={`/users/${this.props.user.id}/profile`}>profile</Link> for details on upcoming reservations.</>
       
         return (
                 <form className="make-res">

@@ -22,7 +22,6 @@ html {
 }
 .footer-cont {
     position: absolute;
-
     width: 100%;
     max-width: 1600px;
     height: 100px;
@@ -36,7 +35,7 @@ html {
     background-color: #333333;
     justify-content: space-around;
     font-size: 16px;
-      font-family: $font1;
+    font-family: $font1;
     li {
         padding-top: 30px;
         color: white; 
