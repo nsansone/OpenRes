@@ -89,13 +89,17 @@ class ResForm extends React.Component {
             if (newToday > resDate) {
                 this.setState({ hidden: 'hidden', pastRes: "past-res-vis" });
             } else {
-
-                this.setState({time: e.target.key });
+                if (this.state.pastRes !== "past-res-vis") {
+                    this.setState({ time: e.target.key });
+                } else {
+                    this.setState({pastRes: "past-res-hidden"});
+                }
                 const reservation = Object.assign(this.state, {restaurant_id: this.props.match.params.restaurantId, user_id: this.props.user.id });
                 this.props.createReservation(reservation).then(this.setState({ hidden: 'hidden', confirm: "confirm-vis" }))
             }
         }
     }
+
 
     handleKeyUp(e){
         e.preventDefault();
@@ -111,8 +115,11 @@ class ResForm extends React.Component {
                 if (newToday > resDate) {
                     this.setState({ hidden: 'hidden', pastRes: "past-res-vis" });
                 } else {
-
-                    this.setState({ time: e.target.key });
+                    if (this.state.pastRes !== "past-res-vis"){
+                        this.setState({ time: e.target.key });
+                    } else {
+                        this.setState({ pastRes: "past-res-hidden" });
+                    }
                     const reservation = Object.assign(this.state, { restaurant_id: this.props.match.params.restaurantId, user_id: this.props.user.id });
                     this.props.createReservation(reservation).then(this.setState({ hidden: 'hidden', confirm: "confirm-vis" }))
                 }
@@ -144,7 +151,7 @@ class ResForm extends React.Component {
 
     render(){
     
-    const resConfirm = !this.props.user ? "Whoops! Please log in to make a reservation!" : <>Your reservation has been confirmed! Please see your <Link to={`/users/${this.props.user.id}/profile`}>profile</Link> for details on upcoming reservations.</>
+    const resConfirm = !this.props.user ? <>Whoops! Please log in to make a reservation!</> : <>Your reservation has been confirmed! Please see your <Link to={`/users/${this.props.user.id}/profile`}>profile</Link> for details on upcoming reservations.</>
       
         return (
                 <form className="make-res">
@@ -176,18 +183,18 @@ class ResForm extends React.Component {
                         </div>
                     </div>
                     <div className="res-search-submit">
-                    <button onClick={this.handleClick} className={this.state.buttonHidden}>{this.state.buttonText}</button>
+                        <button onClick={this.handleClick} className={this.state.buttonHidden}>{this.state.buttonText}</button>
                         <p className={this.state.confirm}>{resConfirm}</p>
                         <p className={this.state.pastRes}>Whoops! Please select a date that has not already passed.</p>
+                        <button className={this.state.pastRes} onClick={this.confirmRes} onKeyUp={this.handleKeyUp}>Confirm</button>
                         <div className={this.state.hidden}>
                             <p>Select a time:</p>
                             <ul className="hidden-cont">
-                            <input onKeyUp={this.handleKeyUp} onClick={this.confirmRes} className="times" type="text" placeholder={this.state.time1} key={this.state.time1}/>
-                            <input onKeyUp={this.handleKeyUp} onClick={this.confirmRes} className="times" type="text" placeholder={this.state.time2} key={this.state.time2} />
-                            <input onKeyUp={this.handleKeyUp} onClick={this.confirmRes} className="times" type="text" placeholder={this.state.time3} key={this.state.time3} />
-                            <input onKeyUp={this.handleKeyUp} onClick={this.confirmRes} className="times" type="text" placeholder={this.state.time4} key={this.state.time4} />
-                            <input onKeyUp={this.handleKeyUp} onClick={this.confirmRes} className="times" type="text" placeholder={this.state.time5} key={this.state.time5} />
-
+                                <input onKeyUp={this.handleKeyUp} onClick={this.confirmRes} className="times" type="text" placeholder={this.state.time1} key={this.state.time1}/>
+                                <input onKeyUp={this.handleKeyUp} onClick={this.confirmRes} className="times" type="text" placeholder={this.state.time2} key={this.state.time2} />
+                                <input onKeyUp={this.handleKeyUp} onClick={this.confirmRes} className="times" type="text" placeholder={this.state.time3} key={this.state.time3} />
+                                <input onKeyUp={this.handleKeyUp} onClick={this.confirmRes} className="times" type="text" placeholder={this.state.time4} key={this.state.time4} />
+                                <input onKeyUp={this.handleKeyUp} onClick={this.confirmRes} className="times" type="text" placeholder={this.state.time5} key={this.state.time5} />
                             </ul>
                         </div>
 

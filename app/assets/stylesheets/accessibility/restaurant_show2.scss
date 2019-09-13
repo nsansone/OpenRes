@@ -197,7 +197,7 @@
                 font-weight: 500;
                 border-radius: 4px;
                 font-size: 16px;
-                  font-family: $font1;
+                font-family: $font1;
                 color: white;
                 background-color: #DA3743;
                 border: none;
@@ -235,7 +235,6 @@
             font-size: 16px;
             padding:4px 2px;;
             width: 80px;
-            // height: 36px;
             background-color: #DA3743;
             border:  none;
             margin: 5px;
@@ -267,6 +266,21 @@
         margin-top: 30px;
         font-size: 14px;
     }
+}
+
+button.past-res-vis {
+    cursor: pointer;
+    text-align: center;
+    border-radius: 4px;
+    color: white !important;
+    font-family: 'Darker Grotesque',sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    padding:4px 2px;;
+    width: 80px;
+    background-color: #DA3743;
+    border:  none;
+    margin: 0 auto;
 }
 
 .rest-details {
