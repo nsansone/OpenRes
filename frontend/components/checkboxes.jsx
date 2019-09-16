@@ -14,11 +14,12 @@ class Checkboxes extends React.Component {
   
 
 
-  update(page) {
+  update(type) {
     return (e) => {
 
       const pageText = e.target.value
       const lastCheckedDup = this.props.checked.slice()
+
       if (lastCheckedDup.includes(pageText)){
         let idx = lastCheckedDup.indexOf(pageText)
         delete lastCheckedDup[idx]
@@ -41,22 +42,22 @@ class Checkboxes extends React.Component {
               <i className="fas fa-map-marker-alt"> </i>  Neighborhood <br />
             </li>
             <li>
-              <input onChange={this.update("checkbox")} type="checkbox" value="East Village" /> East Village <br />
+              <input onChange={this.update("location")} type="checkbox" value="East Village" /> East Village <br />
             </li>
             <li>
-              <input onChange={this.update("checkbox")} type="checkbox" value="Chelsea" /> Chelsea <br />
+              <input onChange={this.update("location")} type="checkbox" value="Chelsea" /> Chelsea <br />
             </li>
             <li>
-              <input onChange={this.update("checkbox")}type="checkbox" value="Midtown" /> Midtown <br />
+              <input onChange={this.update("location")}type="checkbox" value="Midtown" /> Midtown <br />
             </li>
             <li>
-              <input onChange={this.update("checkbox")}type="checkbox" value="Lower East Side" /> Lower East Side <br />
+              <input onChange={this.update("location")}type="checkbox" value="Lower East Side" /> Lower East Side <br />
             </li>
             <li>
-              <input onChange={this.update("checkbox")} type="checkbox" value="Flatiron" /> Flatiron <br />
+              <input onChange={this.update("location")} type="checkbox" value="Flatiron" /> Flatiron <br />
             </li>
             <li>
-              <input onChange={this.update("checkbox")} type="checkbox" value="Brooklyn" /> Brooklyn <br />
+              <input onChange={this.update("location")} type="checkbox" value="Brooklyn" /> Brooklyn <br />
             </li>
             {/* <li>
               <p className="more">+ More</p>
