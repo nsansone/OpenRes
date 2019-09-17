@@ -67,11 +67,9 @@ class ResForm extends React.Component {
         return (e) => {
             if (field === "party_size"){
                 this.setState({ [field]: parseInt(e.target.value) });
-
             } else {
             this.setState({[field]: e.target.value});
             }
-
         };
     }
 
@@ -81,11 +79,9 @@ class ResForm extends React.Component {
         if (!this.props.user) {
             this.setState({ hidden: 'hidden', confirm: "confirm-vis" });
         } else {
-
             const todaysDate = new Date();
             const resDate = Date.parse(this.state.date);
             const newToday = todaysDate.setDate(todaysDate.getDate() - 1);
-
             if (newToday > resDate) {
                 this.setState({ hidden: 'hidden', pastRes: "past-res-vis" });
             } else {
@@ -107,11 +103,9 @@ class ResForm extends React.Component {
             if (!this.props.user) {
                 this.setState({ hidden: 'hidden', confirm: "confirm-vis" });
             } else {
-
                 const todaysDate = new Date();
                 const resDate = Date.parse(this.state.date);
                 const newToday = todaysDate.setDate(todaysDate.getDate() - 1);
-
                 if (newToday > resDate) {
                     this.setState({ hidden: 'hidden', pastRes: "past-res-vis" });
                 } else {
@@ -129,10 +123,8 @@ class ResForm extends React.Component {
 
     handleClick(e){
         e.preventDefault();
-
         this.pickTimes(this.state.time);
         this.setState({hidden: 'visible', buttonHidden: '.button-hid', buttonText: ""});
-        
     }
 
     pickTimes(time){
@@ -143,16 +135,12 @@ class ResForm extends React.Component {
             time2: String(hour-13).concat(":").concat(String(45)).concat(" PM"),       
             time3: String(hour-12).concat(":").concat("00").concat(" PM"),
             time4: String(hour-12).concat(":").concat(String(15)).concat(" PM"),       
-            time5: String(hour-12).concat(":").concat(String(30)).concat(" PM") });
+            time5: String(hour-12).concat(":").concat(String(30)).concat(" PM") 
+        });
     }
 
-
-
-
     render(){
-    
-    const resConfirm = !this.props.user ? <>Whoops! Please log in to make a reservation!</> : <>Your reservation has been confirmed! Please see your <Link to={`/users/${this.props.user.id}/profile`}>profile</Link> for details on upcoming reservations.</>
-      
+        const resConfirm = !this.props.user ? <>Whoops! Please log in to make a reservation!</> : <>Your reservation has been confirmed! Please see your <Link to={`/users/${this.props.user.id}/profile`}>profile</Link> for details on upcoming reservations.</>
         return (
                 <form className="make-res">
                     <h1>Make a reservation</h1>
@@ -170,15 +158,15 @@ class ResForm extends React.Component {
                             <div className="new-res-detail">
                                 <p>Time</p>
                                 <select className="res-date" onChange={this.update('time')}>
-                                        <option value="16:00:00">4:00 PM</option>
-                                        <option value="17:00:00">5:00 PM</option>
-                                        <option value="18:00:00">6:00 PM</option>
-                                        <option value="19:00:00">7:00 PM</option>
-                                        <option value="20:00:00">8:00 PM</option>
-                                        <option value="21:00:00">9:00 PM</option>
-                                        <option value="22:00:00">10:00 PM</option>
-                                        <option value="23:00:00">11:00 PM</option>
-                                    </select>
+                                    <option value="16:00:00">4:00 PM</option>
+                                    <option value="17:00:00">5:00 PM</option>
+                                    <option value="18:00:00">6:00 PM</option>
+                                    <option value="19:00:00">7:00 PM</option>
+                                    <option value="20:00:00">8:00 PM</option>
+                                    <option value="21:00:00">9:00 PM</option>
+                                    <option value="22:00:00">10:00 PM</option>
+                                    <option value="23:00:00">11:00 PM</option>
+                                </select>
                             </div>
                         </div>
                     </div>
@@ -197,9 +185,7 @@ class ResForm extends React.Component {
                                 <input onKeyUp={this.handleKeyUp} onClick={this.confirmRes} className="times" type="text" placeholder={this.state.time5} key={this.state.time5} />
                             </ul>
                         </div>
-
                     </div>
-    
                 </form>
         )
     }
