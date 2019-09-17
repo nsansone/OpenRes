@@ -16,9 +16,69 @@ OpenRes is a single-page, full-stack web application modeled after OpenTable tha
   * Users can use a demo log in to test out the site
   * Users cannot use certain features unless logged in
 
+  ```ruby
+  class User < ApplicationRecord
+
+    validates :email, :fname, :lname, :password_digest, :session_token, presence: true
+    validates :email, uniqueness: true
+    validates :password, length: {minimum: 6, allow_nil: true}
+
+    has_many :reservations 
+
+    has_many :reviews,
+        foreign_key: :author_id
+    
+    after_initialize :ensure_session_token
+
+    attr_reader :password
+
+    def self.find_by_credentials(email, password)
+        user = User.find_by(email: email)
+        return nil unless user && user.is_password?(password)
+        user
+    end
+
+    def password=(password)
+        @password = password
+        self.password_digest = BCrypt::Password.create(password)
+    end
+
+    def is_password?(password)
+        bcrypt_password = BCrypt::Password.new(self.password_digest)
+        bcrypt_password.is_password?(password)
+    end
+
+    def reset_session_token!
+        self.update!(session_token: SecureRandom.urlsafe_base64)
+        self.session_token
+    end
+
+    def ensure_session_token
+        self.session_token ||= SecureRandom.urlsafe_base64
+    end
+  end
+```
+
 ### Restaurants and Search
  * Restaurants can be searched by either name, location, or cuisine. Additionally, the index page can be toggled to a map that allows filtering based on the zoom of the map
  * Each restaurant page features a description, details about the restaurants, a list of reviews, a form to create a reservation, and a map showing the location of that specific restaurant 
+
+```ruby
+  class Restaurant < ApplicationRecord
+    //...
+      def self.in_bounds(bounds)
+        self.where("lat < ?", bounds[:northEast][:lat])
+            .where("lat > ?", bounds[:southWest][:lat])
+            .where("lng > ?", bounds[:southWest][:lng])
+            .where("lng < ?", bounds[:northEast][:lng])
+      end
+
+      def self.text_includes(string)
+          self.where("lower(name) LIKE '%#{string.downcase}%'")
+      end
+    //...
+  end
+```
 
 ### Reservations
   * Logged in users are able to create a reservation for a future date
