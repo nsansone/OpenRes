@@ -50,6 +50,6 @@
   },
   "homepage": "https://github.com/nsansone/OpenRes#readme",
   "devDependencies": {
-    "webpack-cli": "^3.3.6"
+    "webpack-cli": "^3.3.12"
   }
 }
